@@ -1,0 +1,17 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "<span data-ttu-id=\"d64d5-101\">帐户</span><span class=\"sxs-lookup\"><span data-stu-id=\"d64d5-101\">Accounts</span></span>",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "performance-storage",
+            "resourceType": "microsoft.resources/subscriptions/resourcegroups",
+            "order": 100
+        },
+        {
+            "type": "failure-storage",
+            "resourceType": "microsoft.resources/subscriptions/resourcegroups",
+            "order": 100
+        }
+    ]
+}
