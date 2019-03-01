@@ -1,0 +1,12 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "性能计数器",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "tsg",
+            "resourceType": "microsoft.insights/components",
+            "order": 400
+        }
+    ]
+}
