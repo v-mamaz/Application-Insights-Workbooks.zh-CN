@@ -1,0 +1,229 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
+    "version": "Notebook/1.0",
+    "isLocked": true,
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "# <a name=\"investigating-transaction-failures\"></a>调查事务失败"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "34ea9bf4-837f-48e4-b3fd-ade518019950",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "StorageAccount",
+                        "type": 5,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "resourceTypeFilter": {
+                                "microsoft.storage/storageaccounts": true
+                            },
+                            "additionalResourceOptions": [
+                                "value::1"
+                            ],
+                            "selectedAdditionalResourceOptions": [
+                                "value::1"
+                            ]
+                        },
+                        "value": [
+                            "value::1"
+                        ]
+                    },
+                    {
+                        "id": "031e0cf8-ad0d-4328-8a4e-cec21dd90dc8",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "TimeRange",
+                        "type": 4,
+                        "description": null,
+                        "isRequired": true,
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "selectableValues": [
+                                {
+                                    "durationMs": 300000,
+                                    "createdTime": "2018-06-26T21:41:37.864Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 900000,
+                                    "createdTime": "2018-06-26T21:41:37.864Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 1800000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 3600000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 14400000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 43200000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 86400000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 172800000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 259200000,
+                                    "createdTime": "2018-06-26T21:41:37.866Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 604800000,
+                                    "createdTime": "2018-06-26T21:41:37.866Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                }
+                            ],
+                            "allowCustom": null
+                        },
+                        "value": {
+                            "durationMs": 14400000,
+                            "createdTime": "2018-06-26T21:41:37.865Z",
+                            "isInitialTime": false,
+                            "grain": 1,
+                            "useDashboardTimeRange": false
+                        }
+                    }
+                ],
+                "resourceType": "microsoft.resourcegroup/resourcegroups"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"transactions-by-response-type\"></a>按响应类型划分的事务"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbookeea84fcb-f288-4c8d-a901-9f0bebbb6c31",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 86400000,
+                    "endTime": null,
+                    "createdTime": "2018-07-12T23:05:28.336Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-Transactions",
+                        "aggregation": 1,
+                        "chartType": 2,
+                        "splitBy": "ResponseType",
+                        "color": "blue"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "事务 - 向存储服务发出的请求数。 此数字包括成功和失败的请求数，以及引发错误的请求数。 \n\n响应类型 - 事务响应类型。 可用的值包括： \n\n* __ServerOtherError__：除描述的错误以外的其他所有服务器端错误\n* __ServerBusyError__：返回了 HTTP 503 状态代码的已经过身份验证的请求。\n* __ServerTimeoutError__：返回了 HTTP 500 状态代码的超时已经过身份验证的请求。 由于服务器错误而发生超时。\n* __AuthorizationError__：由于未经授权访问数据或者授权失败，经过身份验证的请求失败。\n* __NetworkError__：由于网络错误，经过身份验证的请求失败。 往往发生于客户端在超时失效之前提前关闭了连接时。\n* __ClientThrottlingError__：客户端限制错误。\n* __ClientTimeoutError__：返回了 HTTP 500 状态代码的超时已经过身份验证的请求。 如果将客户端的网络超时或请求超时设置为比存储服务预期值更小的值，则预期会发生此超时。 否则，会报告为 ServerTimeoutError。\n* __ClientOtherError__：除描述的错误以外的其他所有客户端错误。\n* __成功__：请求成功\n\n以下资源对了解与存储相关的状态和错误代码很有帮助：\n\n* [常见的 REST API 错误代码](https://docs.microsoft.com/en-us/rest/api/storageservices/Common-REST-API-Error-Codes?redirectedfrom=MSDN)。\n* [Blob 服务错误代码](https://docs.microsoft.com/en-us/rest/api/storageservices/Blob-Service-Error-Codes?redirectedfrom=MSDN)。\n* [队列服务错误代码](https://docs.microsoft.com/en-us/rest/api/storageservices/Queue-Service-Error-Codes?redirectedfrom=MSDN)。\n* [表服务错误代码](https://docs.microsoft.com/en-us/rest/api/storageservices/Table-Service-Error-Codes?redirectedfrom=MSDN)。\n* [文件服务错误代码](https://docs.microsoft.com/en-us/rest/api/storageservices/File-Service-Error-Codes?redirectedfrom=MSDN)。\n\n\n"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"common-issues\"></a>常见问题"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"the-client-is-receiving-http-403-forbidden-messages\"></a>客户端正在接收“HTTP 403 (禁止访问)”消息\n如果客户端应用程序引发“HTTP 403 (禁止访问)”错误，则可能的原因是客户端在发送存储请求时使用了过期的共享访问签名 (SAS)（虽然其他可能的原因包括时钟偏差、无效密钥和空标头）。 如果已过期的 SAS 密钥是原因，则不会在服务器端存储日志记录日志数据中看到任何条目。\n\n如果问题与 SAS 令牌相关，应调查在客户端将该令牌发送到服务器之前 SAS 令牌即将到期的原因：\n* 通常，创建 SAS 供客户端立即使用时，不应设置开始时间。 如果使用当前时间生成 SAS 的主机与存储服务之间存在较小的时钟差异，则存储服务有可能收到尚未生效的 SAS。\n* 不要在 SAS 上设置太短的到期时间。 同样，生成 SAS 的主机与存储服务之间的较小时钟差异可能会导致 SAS 似乎早于预期到期。\n* SAS 密钥中的版本参数（例如 sv=2015-04-05）是否与正在使用的存储客户端库的版本匹配？ 建议始终使用最新版本的存储客户端库。\n* 如果重新生成存储访问密钥，可能会使任何现有的 SAS 令牌无效。 如果生成的 SAS 令牌具有较长的到期时间供客户端应用程序缓存，可能会出现此问题。\n* 如果使用存储客户端库生成 SAS 令牌，则可轻松生成有效令牌。 但是，如果使用的是存储 REST API 并手动构造 SAS 令牌，请参阅使用共享访问签名委派访问权限。"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"the-client-is-receiving-http-404-not-found-messages\"></a>客户端正在接收“HTTP 404 (未找到)”消息\n如果客户端应用程序从服务器收到“HTTP 404 (未找到)”消息，这意味着客户端正在尝试使用的对象（如实体、表、Blob、容器或队列）在存储服务中不存在。 有多种原因可能会导致此问题，例如：\n\n* [客户端或其他进程以前删除了该对象](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#client-previously-deleted-the-object)\n* [共享访问签名 (SAS) 授权问题](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#SAS-authorization-issue)\n* [客户端 JavaScript 代码无权访问该对象](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#JavaScript-code-does-not-have-permission)\n* [网络故障](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#network-failure)"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"the-client-is-receiving-http-409-conflict-messages\"></a>客户端正在接收“HTTP 409 (冲突)”消息\n此错误的常见原因是删除客户端应用程序然后立即使用相同名称重新创建存储单元。 当客户端删除 Blob 容器、表或队列时，需要经过一段较短的时间，该名称才能再次变为可用。\n\n客户端应用程序在创建新容器时应使用唯一的容器名称（如果“删除/重新创建”模式很常见）。"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"troubleshooting-guidence\"></a>故障排除指南\n有关诊断和解决问题的详细信息，请参阅此[文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#troubleshooting-guidance)"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        }
+    ]
+}

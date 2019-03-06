@@ -1,0 +1,429 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
+    "version": "Notebook/1.0",
+    "isLocked": true,
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "# <a name=\"table-storage-classic-metrics\"></a>表存储（经典）指标"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "99846120-1f35-44fc-ad8a-6f69f7261a62",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "StorageResources",
+                        "type": 5,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "value": [
+                            "value::3"
+                        ],
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "resourceTypeFilter": {
+                                "microsoft.classicstorage/storageaccounts": true
+                            },
+                            "additionalResourceOptions": [
+                                "value::all",
+                                "value::3"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "1ef46e50-5030-43fe-8c94-7e0564f4ae5f",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "TimeRange",
+                        "type": 4,
+                        "isRequired": true,
+                        "value": {
+                            "durationMs": 14400000,
+                            "createdTime": "2018-08-22T17:44:54.405Z",
+                            "isInitialTime": false,
+                            "grain": 1,
+                            "useDashboardTimeRange": false
+                        },
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "selectableValues": [
+                                {
+                                    "durationMs": 300000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 900000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 1800000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 3600000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 14400000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 43200000,
+                                    "createdTime": "2018-08-22T17:44:54.404Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 86400000,
+                                    "createdTime": "2018-08-22T17:44:54.405Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 172800000,
+                                    "createdTime": "2018-08-22T17:44:54.405Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 259200000,
+                                    "createdTime": "2018-08-22T17:44:54.405Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 604800000,
+                                    "createdTime": "2018-08-22T17:44:54.405Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "resourceType": "microsoft.resources/resourcegroups"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"total-requests\"></a>请求总数"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"availability\"></a>可用性"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook1efa2216-beb3-4350-ae7c-678c7f1705bf",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T23:37:28.175Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/table",
+                        "metric": "microsoft.classicstorage/services/table--TotalRequests",
+                        "aggregation": 1,
+                        "chartType": 2,
+                        "color": "blue"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook9cfa71e6-07a5-4b1b-9e25-f4e2be4b5da4",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T23:37:28.180Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/table",
+                        "metric": "microsoft.classicstorage/services/table--Availability",
+                        "aggregation": 4,
+                        "chartType": 2,
+                        "color": "purple"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "“请求总数”是指向存储服务或指定的 API 操作发出的请求数。 此数值包括成功和失败的请求数，以及引发错误的请求数。"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "“可用性”是存储服务或指定的 API 操作的可用性百分比。 可用性通过由 TotalBillableRequests 值除以适用的请求数（其中包括引发意外错误的请求）计算得出。 所有意外错误都会导致存储服务或指定的 API 操作的可用性下降。 "
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": ""
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"total-ingress\"></a>入口总数"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"total-egress\"></a>出口总数"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook1efa2216-beb3-4350-ae7c-678c7f1705bf",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T23:37:28.240Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/table",
+                        "metric": "microsoft.classicstorage/services/table--TotalIngress",
+                        "aggregation": 1,
+                        "chartType": 2,
+                        "color": "blue"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook9cfa71e6-07a5-4b1b-9e25-f4e2be4b5da4",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T23:37:28.270Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/table",
+                        "metric": "microsoft.classicstorage/services/table--TotalEgress",
+                        "aggregation": 1,
+                        "chartType": 2,
+                        "color": "purple"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "“入口总数”指流入的数据量（以字节为单位）。 此数字包括从外部客户端到 Azure 存储流入的数据量，以及流入 Azure 中的数据量。"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "“出口总数”指流出的数据量（以字节为单位）。 此数字包括从外部客户端到 Azure 存储流出的数据量，以及流出 Azure 中的数据量。 因此，此数字不反映计费的流出量。"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": ""
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"average-e2e-latency\"></a>平均 E2E 延迟"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"average-server-latency\"></a>平均服务器延迟"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook1efa2216-beb3-4350-ae7c-678c7f1705bf",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T23:37:28.199Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/table",
+                        "metric": "microsoft.classicstorage/services/table--AverageE2ELatency",
+                        "aggregation": 4,
+                        "chartType": 2,
+                        "color": "blue"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook9cfa71e6-07a5-4b1b-9e25-f4e2be4b5da4",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0,
+                    "endTime": null,
+                    "createdTime": "2018-08-22T23:37:28.204Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.classicstorage/storageaccounts",
+                "resourceParameter": "StorageResources",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.classicstorage/storageaccounts/services/table",
+                        "metric": "microsoft.classicstorage/services/table--AverageServerLatency",
+                        "aggregation": 4,
+                        "chartType": 2,
+                        "color": "purple"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "“平均 E2E 延迟”是对存储服务或指定 API 操作的成功请求的平均端到端延迟（以毫秒为单位）。 此值包括在 Azure 存储中读取请求、发送响应和接收响应确认所需的处理时间。"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "“平均服务器延迟”是 Azure 存储用于处理成功请求的平均延迟（以毫秒为单位）。 此值不包括 AverageE2ELatency 中指定的网络延迟。"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50"
+        }
+    ]
+}

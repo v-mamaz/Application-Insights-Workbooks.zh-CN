@@ -1,0 +1,17 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "已获得身份验证的用户时间表",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "microsoft.insights/components",
+            "order": 1000
+        },
+        {
+            "type": "usage",
+            "resourceType": "microsoft.insights/components",
+            "order": 1000
+        }
+    ]
+}

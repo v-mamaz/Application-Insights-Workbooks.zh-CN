@@ -1,0 +1,218 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
+    "version": "Notebook/1.0",
+    "isLocked": true,
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "# <a name=\"n-period-retention\"></a>N 周期保留期\n\nN 周期保留期会衡量用户在执行应用中的 `CohortingActivities` 之一后，在特定时间段内有多少用户返回执行 `RetainingActivities` 之一。 例如，可以测量从首次下载应用之日起到第 10 天内返回使用应用的用户数。 查看第 1-10 天的保留趋势将指示应用的粘性。 \n\nN 周期保留期非常适合游戏应用，或其他试图让用户养成日常习惯的应用。"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"activity-selection\"></a>活动选择\n使用这些字段设置与感兴趣用户活动相对应的事件。 底部的 `Understanding Retention Parameter` 部分介绍了这些参数的详细信息。"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "97ae2ae5-ec95-455b-bac2-36caf2db61db",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "CohortingActivities",
+                        "type": 2,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "union customEvents, pageViews\n| where timestamp >= ago(7d)\n| summarize count() by name\n| order by count_ desc\n| project Id=name, Title=name, Selected=false\n| union (\ndatatable(Id:string, Title:string, Selected:boolean)[\n'*', 'All Custom Events and Page Views', true,\n'&', 'All Page Views', false,\n'@', 'All Custom Events', false\n]\n)",
+                        "isHiddenWhenLocked": false
+                    },
+                    {
+                        "name": "CohortingFilters",
+                        "id": "94bacf68-78db-4755-8a40-c2702dea4018",
+                        "type": 1,
+                        "value": ""
+                    },
+                    {
+                        "id": "6cb4afed-7dac-4608-892b-154f4943ddb6",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RetainingActivities",
+                        "type": 2,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "union customEvents, pageViews\n| where timestamp >= ago(7d)\n| summarize count() by name\n| order by count_ desc\n| project Id=name, Title=name, Selected=false\n| union (\ndatatable(Id:string, Title:string, Selected:boolean)[\n'#', 'Same as cohorting activities', true,\n'*', 'All Custom Events and Page Views', false,\n'&', 'All Page Views', false,\n'@', 'All Custom Events', false\n]\n)",
+                        "isHiddenWhenLocked": false
+                    },
+                    {
+                        "id": "0cc5211a-557e-4648-9569-1236bf16559f",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RetainingFilters",
+                        "type": 1,
+                        "isRequired": false,
+                        "query": "datatable(x:int)[ 1 ]\r\n| extend retainingFilter = iff('#' in ({RetainingActivities}), '{CohortingFilters}', '')\r\n| project retainingFilter",
+                        "isHiddenWhenLocked": false
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"retention-parameters\"></a>保留参数\n使用这些字段自定义保留期设置。 "
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "e62098ae-ac3f-4800-8e62-3e7d9a052e56",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RetentionPeriod",
+                        "type": 2,
+                        "description": "1 天：每日，7 天：每周，30/28 天：每月",
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(id:string, text:string)[\n'1d', 'Daily',\n'7d', 'Weekly',\n'28d', 'Monthly (28 days)', \n'30d', 'Monthly (30 days)'\n]",
+                        "value": "7d"
+                    },
+                    {
+                        "id": "fa4b29d9-bfc1-46e3-98f1-3cba05afbea3",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "CohortsToAnalyze",
+                        "type": 1,
+                        "description": "要分析的队列周期数",
+                        "isRequired": true,
+                        "value": "6"
+                    },
+                    {
+                        "id": "2cdfcf8e-2413-41d2-a829-249e27d817ee",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "BasedOn",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(v:string, t:string)[\r\n'user_Id', 'Anonymous Users',\r\n'user_AuthenticatedId', 'Authenticated Users'\r\n]",
+                        "isHiddenWhenLocked": false,
+                        "value": "user_Id"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let periodsToAnalyze = {CohortsToAnalyze};\nlet cohortSize = {RetentionPeriod};\nlet retainingActivities = iff('#' in ({RetainingActivities}), dynamic([{CohortingActivities}]), dynamic([{RetainingActivities}]));\nlet cohortUnit = case(cohortSize == 30d or cohortSize == 28d, \"month\", cohortSize == 7d, \"week\", \"day\");\nlet timeRange = startofday(now()) - case(cohortSize == 30d or cohortSize == 28d, startofmonth(now() - periodsToAnalyze * cohortSize), cohortSize == 7d, startofweek(now() - periodsToAnalyze * cohortSize), startofday(now() - periodsToAnalyze * cohortSize));\nlet cohorts = union customEvents, pageViews\n| where timestamp > startofday(now() - timeRange)\n| where name in ({CohortingActivities}) or '*' in ({CohortingActivities}) or ('&' in ({CohortingActivities}) and itemType == 'pageView') or ('@' in ({CohortingActivities}) and itemType == 'customEvent')\n{CohortingFilters}\n| extend Cohort = case(cohortSize == 30d or cohortSize == 28d, startofmonth(timestamp), cohortSize == 7d, startofweek(timestamp), startofday(timestamp))\n| summarize EarliestInCohort = min(startofday(timestamp)) by {BasedOn}, Cohort\n| summarize UsersInCohort = hll({BasedOn}) by EarliestInCohort, Cohort;\nlet users = union customEvents, pageViews\n| where timestamp > startofday(now() - timeRange)\n| where name in (retainingActivities) or '*' in (retainingActivities) or ('&' in (retainingActivities) and itemType == 'pageView') or ('@' in (retainingActivities) and itemType == 'customEvent')\n{RetainingFilters}\n| summarize Users = hll({BasedOn}) by Day = startofday(timestamp);\nlet Retention = materialize(range i from 0d to timeRange step 1d\n| extend Day = startofday(now() - i)\n| extend RetentionRange = range(1d, timeRange, 1d)\n| mvexpand RetentionRange limit 10000\n| extend RetentionDay = Day + totimespan(RetentionRange)\n| extend RetentionWeek = toint(totimespan(RetentionRange) / cohortSize)\n| where RetentionDay <= startofday(now())\n| project Day, RetentionDay, RetentionWeek\n| join kind=inner\n(\n    users\n    | project UsersOnDay = Users, RetentionDay = Day\n) on RetentionDay\n| summarize UsersForRetentionWeek = hll_merge(UsersOnDay) by Day, RetentionWeek\n| join kind=inner\n(\n    cohorts\n    | project UsersInCohort, Cohort, Day = EarliestInCohort\n)\non Day\n| project-away Day1\n| evaluate dcount_intersect(UsersInCohort, UsersForRetentionWeek)\n| summarize RetainedUsers = sum(s1) by Cohort, RetentionWeek\n);\ncohorts\n| summarize UsersInCohort = hll_merge(UsersInCohort) by Cohort\n| project Cohort, CohortUsers = dcount_hll(UsersInCohort) \n| join kind=inner (Retention) on Cohort\n| project-away Cohort1\n| extend RetentionRate = round(100.0 * RetainedUsers / CohortUsers, 2)\n| project-away RetainedUsers \n| order by Cohort asc, RetentionWeek asc\n| serialize rank = row_number()\n| extend RetentionWeek = case(RetentionWeek == 0, strcat(\"<1 \", cohortUnit), strcat(\"+\", RetentionWeek, \" \", cohortUnit))\n| extend month = monthofyear(Cohort)\n| extend friendlyMonthName = case(month == 1, 'January', month == 2, 'February', month == 3, 'March', month == 4, 'April', month == 5, 'May', month == 6, 'June', month == 7, 'July', month == 8, 'August', month == 9, 'September', month == 10, 'October', month == 11, 'November', 'December')\n| extend dayofweek = dayofweek(Cohort)\n| extend friendlyDayOfweek = case(dayofweek == 0d, \"Sun\", dayofweek == 1d, \"Mon\", dayofweek == 2d, \"Tue\", dayofweek == 3d, \"Wed\", dayofweek == 4d, \"Thu\", dayofweek == 5d, \"Fri\", \"Sat\")\n| extend Cohort = iff(cohortSize == 1d, strcat(friendlyMonthName, ' ', dayofmonth(Cohort), ' (', friendlyDayOfweek, ')'), strcat(friendlyMonthName, ' ', dayofmonth(Cohort)))\n| project-away month, friendlyMonthName, dayofweek, friendlyDayOfweek\n| order by rank asc\n| project Cohort, ['Users'] = CohortUsers, RetentionWeek, RetentionRate\n| evaluate pivot(RetentionWeek, sum(RetentionRate))",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "week|month|day",
+                            "formatter": 8,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "green"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"interpreting-the-data\"></a>解释数据\n以下部分显示了每周保留报告中的一行：\n"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "datatable(Cohort:string, Users:int, ['<1 week']:int, ['+1 week']:int, ['+2 week']:int, ['+3 week']:int, ['+4 week']:int, ['+5 week']:int, ['+6 week']:int)[ \r\n'April 1', 1000, 50, 30, 20, 15, 10, 7, 5,\r\n]\r\n",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "week",
+                            "formatter": 8,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "green"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "| 列 | 说明 | 示例中的解释 |\n| ----- | :----- | :----- |\n| 队列 | 标识队列段。 | 此行解释在 4 月 1 日到 4 月 7 日的一周中使用应用的用户的保留行为 |\n| 用户 | 队列期间内使用应用的唯一用户数  | 在 4 月 1 日至 4 月 7 日的一周中，有 1000 位唯一用户使用了应用 |\n| 少于 1 周 | 1 至 6 天内返回使用应用的队列用户的百分比（在同一天再次使用不计入保留）  | 50% 或 500 位用户在第一周内返回使用应用 |\n| 超过 1 周 | 7 至 13 天内返回使用应用的队列用户的百分比  | 30% 或 300 位用户在一周后返回使用应用 |\n| 超过 N 周 | 在第 N 周返回使用应用的队列用户的百分比  | 当 N = 3 时，有 15% 或 150 位用户  |\n\n\n\n\n"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"understanding-retention-parameters\"></a>了解保留参数\n| 参数 | 用途 |\n| ----- | ----- |\n| 保持期 | 保留计算中使用的时间段。 可以为每日、每周或每月 |\n| 要分析的队列  | 要分析的队列数。 这对应于 N 周期保留中的 N |\n| 排队活动  | 选择一组用户的活动。 示例：使用了事件“阅读产品评论”（排队活动）的用户。 |\n| 保留活动  | 指示保留上面所选的一组用户的活动。 示例：使用了事件“阅读产品评论”（排队活动）并返回到使用“购买产品”（保留活动）的用户。 |\n| 排队/保留筛选器  | 用于进一步筛选排队活动的分析查询代码片段。 示例：&#124; 其中 application_Version = '1.0' |\n"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"what-is-a-week-for-a-user\"></a>对用户而言一周意味着什么？\n\n简短的回答是它对每个用户都是唯一的。 我们的分析单独处理每个用户的保留窗口 - 使用应用准确查看其实际行为。 \n\n请考虑下面 4 月 1-6 日队列中两个用户 X 和 Y 的示例： \n\n| 用户 | 首次使用应用 | 用户周 |\n| ----- | :----- | :----- |\n| X | 4 月 3 日 | w1 = 4 月 10 日、w2 = 4 月 17 日、w3 = 4 月 24 日  |\n| Y | 4 月 5 日 | w1 = 4 月 12 日、w2 = 4 月 19 日、w3 = 4 月 26 日  |\n\n每个用户获取单独的保留时段。 因此，如果两位用户都在 4 月 18 日返回，那么被视为用户 X 第 2 周使用，用户 Y 第 1 周使用。 \n\n这允许他们在保留时段内标准使用应用 - 看起来就好像队列中的所有用户在同一天使用了该应用。 这样可以更好地分析和比较用户行为。"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"related-workbook-templates\"></a>保留相关工作簿模板\n* 保留期 - 括号\n* 保留期 - 无限制\n* 队列分析"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        }
+    ]
+}

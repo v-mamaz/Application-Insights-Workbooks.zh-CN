@@ -1,0 +1,6 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "虚拟机性能",
+    "author": "Microsoft",
+    "galleries": []
+}

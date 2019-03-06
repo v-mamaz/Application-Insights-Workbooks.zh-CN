@@ -1,0 +1,9 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "事件选取器",
+    "description": "此处显示说明",
+    "icon": "",
+    "tags": [],
+    "author": "Microsoft",
+    "order": 100
+}

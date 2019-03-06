@@ -1,0 +1,346 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
+    "version": "Notebook/1.0",
+    "isLocked": true,
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "# <a name=\"analysis-of-page-views\"></a>页面视图分析\n页面视图对应于应用中的用户活动。 了解用户与网页互动的方式可以深入了解应用中的工作内容以及需要改进的方面。 \n\n此报表有助于了解常见的页面视图行为，例如：\n* 使用情况\n* 在页面上所花费的时间\n* 首次互动的时间\n* 退出率 \n\n如果遥测不包括页面视图，请遵照这些[说明](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-javascript)开始收集 -- 这样做相对简单些。"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "2006c356-d32b-4f16-a22c-6a76d0e84288",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Pages",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "let mostUsedEvent = union pageViews\n| where timestamp >= ago(7d)\n| summarize Count = count() by name\n| top 3 by Count desc\n| summarize makelist(name);\nunion pageViews\n| where timestamp >= ago(7d)\n| summarize Count = count() by name\n| extend IsSelected = iff(name in (mostUsedEvent), true, false)\n| order by Count desc\n| project v = name, t = name, IsSelected\n| union (\ndatatable(v:string, t:string, IsSelected:boolean)[\n'*', 'All Page Views', false\n]\n)"
+                    },
+                    {
+                        "id": "03ad1f6b-7d7c-4abc-8b8d-446621ad479e",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "OtherFilters",
+                        "type": 1,
+                        "description": null,
+                        "isRequired": false,
+                        "value": ""
+                    },
+                    {
+                        "id": "815b8c50-0d4a-4374-a073-bc9394103aed",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "TimeRange",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(key:string, display:string) \n[ \n\"1h\", \"Last Hour\", \n\"1d\", \"Last 24 hours\", \n\"2d\", \"Last 48 hours\", \n\"3d\", \"Last 3 days\", \n\"7d\", \"Last 7 days\", \n\"14d\", \"Last 14 days\", \n\"30d\", \"Last 30 days\", \n\"60d\", \"Last 60 days\", \n\"90d\", \"Last 90 days\"\n] ",
+                        "value": "30d"
+                    },
+                    {
+                        "id": "4548f4fe-0130-42c9-b796-385cd12ccb24",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "OptimizeCalculationsFor",
+                        "type": 2,
+                        "description": "使用此参数来实质上设置要在计算（采样）中使用的用户会话数。 这样可以在分析的性能和准确性之间找到适当的平衡点。 优化对象：性能 = 10000 个会话、平衡 = 100000 个示例、准确性 = 1000000 个会话",
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(x:string, y:string)[\n'10000', 'Performance',\n'100000', 'Balance',\n'1000000', 'Accuracy'\n]",
+                        "value": "100000"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "---\n## <a name=\"usage\"></a>使用情况\n本部分有助于了解应用页面的使用方式 -- 就用户数、会话数和观看数而言。 "
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {TimeRange};\nlet allEvents = pageViews\n| where timestamp > ago(timeRange);\nlet interestingEvents = allEvents\n| where name in ({Pages}) or '*' in ({Pages}) \n{OtherFilters};\ninterestingEvents\n| summarize Users = dcount(user_Id), Sessions = dcount(session_Id), Instances = count() by name\n| extend rank = 2, name = strcat('🔷 ', name)\n| union (interestingEvents\n        | summarize Users = dcount(user_Id), Sessions = dcount(session_Id), Instances = count()\n        | extend name = '🔶 Overall', rank = 1)\n| extend jkey = 1\n| join kind = inner (allEvents \n                    | summarize AllUsers = dcount(user_Id), AllSessions = dcount(session_Id), AllInstances = count()\n                    | extend jkey = 1) on jkey \n| project ['Page Name'] = name, ['Unique Users'] = Users, ['As % of app Users'] = round(100.0 * Users / AllUsers, 2),\n          ['Unique Sessions'] = Sessions, ['As % of app Sessions'] = round(100.0 * Sessions / AllSessions, 2),\n          ['Total Page Views'] = Instances , ['As % of app Page Views'] = round(100.0 * Instances / AllInstances, 2), rank\n| order by rank asc, ['Unique Users'] desc\n| project-away rank",
+                "showQuery": false,
+                "size": 1,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "Unique Users",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "blue"
+                            }
+                        },
+                        {
+                            "columnMatch": "Unique Sessions",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "green"
+                            }
+                        },
+                        {
+                            "columnMatch": "Total Page Views",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "yellow"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "- `As % of App Users/Sessions/Views` 列比较所选页面视图和整个应用的使用情况。\n"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "---\n## <a name=\"time-spent-on-page\"></a>在页面上所花费的时间\n此报表有助于了解客户在页面上花费的时间。 花费时间较长的页面通常表示良好的参与度，是理想的行为。"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "0411936a-4cb9-44dd-946d-b449ce3b284e",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "IgnoreDurationsOver",
+                        "type": 1,
+                        "description": "使用此参数可以筛选可能花费更多时间的页面视图（例如，在非活动选项卡中保持打开状态）。 默认值为 1 小时。 ",
+                        "isRequired": true,
+                        "query": "datatable(x:string)[ '3600s' ]"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {TimeRange};\nlet samples = {OptimizeCalculationsFor};\nlet pageDurationThreshold = {IgnoreDurationsOver};\nlet allEvents = union pageViews\n| where timestamp > ago(timeRange);\nlet allInterestingEvents = allEvents\n| where name in ({Pages}) or '*' in ({Pages}) \n{OtherFilters};\nlet sampledSessions = materialize(allInterestingEvents\n| summarize by session_Id\n| sample samples\n| summarize makelist(session_Id, samples));\nlet data = allInterestingEvents\n| where session_Id in (sampledSessions)\n| project session_Id, timestamp, name\n| join kind= inner (allEvents\n        | where session_Id in (sampledSessions)\n        | project session_Id, timestamp\n        ) on session_Id \n| project session_Id, TimeDiff = timestamp  - timestamp1, name, timestamp\n| where TimeDiff > 0s and TimeDiff <= pageDurationThreshold\n| summarize SecondsSpentOnPage = min(TimeDiff) / 1s by session_Id, name, timestamp;\ndata\n| summarize Instances = count(), (Median, p75, p90) = percentiles(SecondsSpentOnPage, 50, 75, 90), Mean = avg(SecondsSpentOnPage) by name\n| extend rank = 2, name = strcat('🔷 ', name)\n| union (data\n        | summarize Instances = count(), (Median, p75, p90) = percentiles(SecondsSpentOnPage, 50, 75, 90), Mean = avg(SecondsSpentOnPage)\n        | extend name = '🔶 Overall', rank = 1)\n| order by rank asc, Median desc\n| project-away rank\n| project ['Page Name'] = name, ['Sampled Page Views'] = Instances, ['Median (seconds)'] = round(Median, 1), ['75th Percentile (seconds)'] = round(p75, 1), ['90th Percentile (seconds)'] = round(p90, 1), ['Mean (seconds)'] = round(Mean, 1)",
+                "showQuery": false,
+                "size": 1,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "visualization": "table",
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "Sampled Page Views",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "blue"
+                            }
+                        },
+                        {
+                            "columnMatch": "Median (seconds)",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "yellow"
+                            }
+                        },
+                        {
+                            "columnMatch": "90th Percentile (seconds)",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "red"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "- 计算可能会使用基于 `OptimizeCalculationsFor` 参数的采样。 \n- 此计算中在页面上所花费的时间不考虑退出时间（此会话的最后一页）。 因此，`Sampled Page Views` 列可能少于 {OptimizeCalculationsFor} 的采样计数。\n"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "---\n## <a name=\"time-to-first-interaction\"></a>首次互动的时间\n此报表有助于了解客户首次与应用的关键功能进行互动所花费的时间。 它还有助于发现功能的可发现性或应用 UI/流的直观性问题。"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "65e9a492-2e89-477a-a041-e99a61481c65",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "TimeFrom",
+                        "type": 2,
+                        "description": "对于用户，首次使用计算为该时间范围内的首次使用。 用户可能会在时间范围之前开始使用应用。",
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(x:string, y:string)[\n'session_Id', 'Start of the Session',\n'user_Id', 'First use by Anonymous User ⚠️',\n'user_AuthenticatedId', 'First use by Authenticated User ⚠️',\n];",
+                        "value": "session_Id"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let samples = {OptimizeCalculationsFor};\nlet allEvents = union customEvents, pageViews\n| where timestamp > ago({TimeRange});\nlet allInterestingEvents = allEvents\n| where name in ({Pages}) or '*' in ({Pages})\n{OtherFilters};\nlet sampledSessions = materialize(allInterestingEvents\n| summarize by {TimeFrom}\n| sample samples\n| summarize makelist({TimeFrom}, samples));\nlet sessionStart = allEvents\n| where {TimeFrom} in (sampledSessions)\n| summarize Start = min(timestamp) by {TimeFrom};\nlet firstInterestingEvent = allInterestingEvents\n| where {TimeFrom} in (sampledSessions)\n| summarize Interaction = min(timestamp) by {TimeFrom}, name;\nlet segmentedFirstInteraction = firstInterestingEvent\n| join kind = inner (sessionStart) on {TimeFrom}\n| project FirstInteractionTime = Interaction - Start, name\n| summarize Sessions = count(), Mean = avg(FirstInteractionTime), (Median, p75, p90) = percentiles(FirstInteractionTime, 50, 75, 90) by name;\nsegmentedFirstInteraction\n| union (firstInterestingEvent\n| summarize Interaction = min(Interaction) by {TimeFrom}\n| join kind = inner (sessionStart) on {TimeFrom}\n| project FirstInteractionTime = Interaction - Start\n| summarize Sessions = count(), Mean = avg(FirstInteractionTime), (Median, p75, p90) = percentiles(FirstInteractionTime, 50, 75, 90)\n| extend name = '🔶 Overall', o = 0m)\n| extend Mean = round(Mean / 1m, 2), Median = round(Median / 1m, 2), p75 = round(p75 / 1m, 2), p90 = round(p90 / 1m, 2)\n| order by o asc, Median asc, Sessions desc\n| project [\"Page Name\"] = name, ['Sampled Views'] = Sessions, ['Median (in minutes)'] = Median, ['75th Percentile (in minutes)'] = p75, ['90th Percentile (in minutes)'] = p90, ['Mean (in minutes)'] = Mean\n",
+                "showQuery": false,
+                "size": 1,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "Sampled Views",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "blue"
+                            }
+                        },
+                        {
+                            "columnMatch": "Median (in minutes)",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "yellow"
+                            }
+                        },
+                        {
+                            "columnMatch": "90th Percentile (in minutes)",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "red"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "- 计算可能会使用基于 `OptimizeCalculationsFor` 参数的采样。 "
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "---\n## <a name=\"page-exit-rates\"></a>页面退出率\n当页面视图是在会话中查看的最后一页时，它被认为是对退出做出的贡献。 假设用户已经退出应用 -- 通过导航到另一个应用或关闭应用/浏览器。 \n\n页面的退出率是会话中的最后一个视图百分比。 "
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let samples = {OptimizeCalculationsFor};\nlet allEvents = pageViews\n| where timestamp > ago({TimeRange});\nlet allInterestingEvents = allEvents\n| where name in ({Pages}) or '*' in ({Pages})\n{OtherFilters};\nlet sampledSessions = materialize(allInterestingEvents\n| summarize by session_Id\n| sample samples\n| summarize makelist(session_Id, samples));\nlet bounces = allEvents\n| where session_Id in (sampledSessions)\n| summarize (timestamp, name) = argmax(timestamp, name) by session_Id;\nlet sessionsWithInterestingEvents = allInterestingEvents\n| where session_Id in (sampledSessions);\nlet allSessionData = sessionsWithInterestingEvents\n| summarize Sessions = dcount(session_Id) by name\n| union (sessionsWithInterestingEvents\n        | summarize Sessions = dcount(session_Id) | extend name = 'Overall');\nlet bouncesWithInterestingEvents = bounces\n| where name in ({Pages}) or '*' in ({Pages});\nbouncesWithInterestingEvents\n| summarize BouncedSessions = dcount(session_Id) by name\n| extend rank = 2\n| union (bouncesWithInterestingEvents\n        | summarize BouncedSessions = dcount(session_Id) | extend name = 'Overall', rank = 1)\n| join kind=inner\n(\n    allSessionData\n)\non name\n| extend BounceRate = round(100.0 * BouncedSessions / Sessions, 2)\n| order by rank asc, BounceRate desc\n| project ['Page Name'] = iff(name == 'Overall', '🔶 Overall', strcat('🔷 ', name)), ['Sampled Sessions with Page View'] = Sessions, ['Sampled Sessions Ended after Page View'] = BouncedSessions, ['Exit Rate (%)'] = BounceRate",
+                "showQuery": false,
+                "size": 1,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "Sampled Sessions",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "blue"
+                            }
+                        },
+                        {
+                            "columnMatch": "Exit Rate (%)",
+                            "formatter": 4,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": 100,
+                                "palette": "red"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "- 计算可能会使用基于 `OptimizeCalculationsFor` 参数的采样。 "
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        }
+    ]
+}

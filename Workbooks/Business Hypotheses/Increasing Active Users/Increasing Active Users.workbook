@@ -1,0 +1,217 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
+    "version": "Notebook/1.0",
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "# <a name=\"hypothesis---proposed-change-will-increase-active-users-by-expected-improvement\"></a>假设 - [建议的更改]会通过[预期改进]增加活动用户\n---\n一个好的假设是制定数据驱动决策的核心。 假设帮助你将客户的应用使用情况相关信息转化为可操作性建议以实现改进。 利用此工作簿创建一个关于增加应用每月 (MAU)、每周 (WAU) 或每天 (DAU) 的活动用户的假设。"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"problem---problem-statement\"></a>问题 - [问题声明]\n在此部分中添加问题的摘要。 摘要应简洁，不宜冗长。 请清楚地描述问题并避免不必要的详细信息。 \n\n\n"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"whats-the-active-usage-problem\"></a>活动使用情况有什么问题？\n修改以下参数以显示正在分析的活动的活动使用情况。 目标应突出显示应用中的活动使用情况问题。"
+            }
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "e552c6ce-183d-4b5d-8405-d60313b3eb8e",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Activities",
+                        "type": 2,
+                        "description": "以逗号分隔的一组页面视图或要计为活动的事件。 或使用“*”以包括所有事件。",
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "union customEvents, pageViews\r\n| where timestamp >= ago(7d)\r\n| summarize count() by name\r\n| order by count_ desc\r\n| project Id=name, Title=name, Selected=false\r\n| union (\r\ndatatable(Id:string, Title:string, Selected:boolean)[\r\n'*', 'All Events and Page Views', true\r\n]\r\n)"
+                    },
+                    {
+                        "id": "68b8c1f5-9f24-401a-bea4-9739a7438069",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Metric",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(key:string, display:string) \r\n[ \r\n\"1d\", \"Daily Active Users\", \r\n\"7d\", \"Weekly Active Users\", \r\n\"28d\", \"Monthly Active Users (28 days)\", \r\n\"30d\", \"Monthly Active Users (30 days)\"\r\n] ",
+                        "value": "28d"
+                    },
+                    {
+                        "id": "7813b809-0b92-4531-ad05-90add0674de0",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "TimeRange",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(key:string, display:string) \r\n[ \r\n\"7d\", \"Last 7 days\", \r\n\"14d\", \"Last 14 days\", \r\n\"30d\", \"Last 30 days\", \r\n] ",
+                        "value": "30d"
+                    }
+                ]
+            }
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {TimeRange};\r\nlet monthDefinition = {Metric};\r\nlet hlls = union customEvents, pageViews\r\n| where timestamp >= startofmonth(now() - timeRange - monthDefinition)\r\n| where name in ({Activities}) or '*' in ({Activities})\r\n| summarize Hlls = hll(user_Id) by bin(timestamp, 1d)\r\n| project DaysToMerge = timestamp, Hlls;\r\nrange d from 0d to timeRange step 1d\r\n| extend Day = startofday(now() - d)\r\n| extend R = range(0d, monthDefinition - 1d, 1d)\r\n| mvexpand R\r\n| extend DaysToMerge = Day - totimespan(R)\r\n| join kind= inner (hlls) on DaysToMerge \r\n| project Day, ThisMonthHlls = Hlls\r\n| summarize ThisMonth = hll_merge(ThisMonthHlls) by Day\r\n| project Day, [\"Monthly Active Users\"] = dcount_hll(ThisMonth) \r\n",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 5,
+                "showAnnotations": false,
+                "visualization": "timechart"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"as-a-benchmark-whats-the-usage-of-a-similar-feature\"></a>作为基准，类似功能的使用情况如何？\n使用此部分将活动的活动用户与类似活动用户进行比较。 这将有助于设置想要做出的改进的上下文。"
+            }
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "35df6f18-6009-4c8c-898a-3d47414ee7cd",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RelatedActivities",
+                        "type": 2,
+                        "description": "选择一组自定义事件和页面视图以用作基准活动。",
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "union customEvents, pageViews\r\n| where timestamp >= ago(7d)\r\n| summarize count() by name\r\n| order by count_ desc\r\n| project Id=name, Title=name, Selected=false\r\n| union (\r\ndatatable(Id:string, Title:string, Selected:boolean)[\r\n'*', 'All Events and Page Views', true\r\n]\r\n)"
+                    }
+                ]
+            }
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {TimeRange};\r\nlet monthDefinition = {Metric};\r\nlet hlls = union customEvents, pageViews\r\n| where timestamp >= startofmonth(now() - timeRange - monthDefinition)\r\n| where name in ({RelatedActivities}) or '*' in ({RelatedActivities})\r\n| summarize Hlls = hll(user_Id) by bin(timestamp, 1d)\r\n| project DaysToMerge = timestamp, Hlls;\r\nrange d from 0d to timeRange step 1d\r\n| extend Day = startofday(now() - d)\r\n| extend R = range(0d, monthDefinition - 1d, 1d)\r\n| mvexpand R\r\n| extend DaysToMerge = Day - totimespan(R)\r\n| join kind= inner (hlls) on DaysToMerge \r\n| project Day, ThisMonthHlls = Hlls\r\n| summarize ThisMonth = hll_merge(ThisMonthHlls) by Day\r\n| project Day, [\"Monthly Active Users\"] = dcount_hll(ThisMonth) \r\n",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 5,
+                "showAnnotations": false,
+                "visualization": "timechart"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"why-do-you-suspect-active-usage-of-this-feature-is-low\"></a>为什么怀疑此功能的活动使用情况低？\n此部分解释了活动用户数量较低的原因。 建议的解决方案将解决此处识别的一部分或全部问题。"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"what-customer-evidence-do-you-have\"></a>你是否拥有客户证据？\n添加客户反馈，确认存在问题以及提出的解决方案将真正解决问题。"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"how-are-your-competitors-solving-this-problem\"></a>你的竞争对手如何解决此问题？\n使用此部分显示竞争对手解决应用中的此问题的方法。\n"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"open-questions\"></a>未解决的问题\n列出所有仍未解决的问题或讨论。"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"potential-solution---solution-description\"></a>可能的解决方案 - [解决方案描述]\n使用本部分描述建议的解决方案。\n"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"why-it-will-work\"></a>解决方案为什么有用？\n描述用户行为理论，该行为将导致此提案产生更多活动用户。"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"why-might-it-not-work\"></a>为什么解决方案可能无效？\n思考一下并列出解决方案无法达成预期结果的原因 - 例如关于问题原因的替代理论。"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"will-it-affect-other-scenarios\"></a>解决方案是否会影响其他方案？\n列出可能受建议的解决方案影响的其他功能和方案。 "
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"expected-outcome---active-usage-hits-threshold\"></a>预期结果 - 活动使用情况达到 [阈值]\n本部分中明确列出了实现建议的解决方案会出现的可预测性结果。\n\n"
+            }
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "ed501437-ae26-454f-bc58-db07649f4c0c",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Goal",
+                        "type": 1,
+                        "description": null,
+                        "isRequired": true,
+                        "query": "let monthDefinition = {Metric};\r\nunion customEvents, pageViews\r\n| where timestamp >= startofday(now() - monthDefinition + 1d)\r\n| where name in ({Activities}) or '*' in ({Activities})\r\n| summarize MAU=dcount(user_Id)\r\n| extend Goal = round(MAU * 1.1), lg = exp10(bin(log10(MAU), 1) - 1)\r\n| project AdjustedGoal = case(lg <= 0.1, round(MAU * 1.5), round(round(Goal / lg) * lg))"
+                    }
+                ]
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"primary-goal---active-usage-hits-goal\"></a>主要目标 - 活动使用情况达到 {目标}\n选择的默认目标比当前 MAU 高约 10%。 将其更改为应用的目标。 "
+            }
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let timeRange = {TimeRange};\nlet monthDefinition = {Metric};\nlet hlls = union customEvents, pageViews\n| where timestamp >= startofmonth(now() - timeRange - monthDefinition)\n| where name in ({Activities}) or '*' in ({Activities})\n| summarize Hlls = hll(user_Id) by bin(timestamp, 1d)\n| project DaysToMerge = timestamp, Hlls;\nrange d from 0d to timeRange step 1d\n| extend Day = startofday(now() - d)\n| extend R = range(0d, monthDefinition - 1d, 1d)\n| mvexpand R\n| extend DaysToMerge = Day - totimespan(R)\n| join kind= inner (hlls) on DaysToMerge \n| project Day, ThisMonthHlls = Hlls\n| summarize ThisMonth = hll_merge(ThisMonthHlls) by Day\n| project Day, [\"Monthly Active Users\"] = dcount_hll(ThisMonth), Goal = {Goal}\n",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 5,
+                "showAnnotations": false,
+                "visualization": "timechart"
+            }
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"other-goals\"></a>其他目标\n列出可能与此工作相关的任何次要目标。 "
+            }
+        }
+    ]
+}

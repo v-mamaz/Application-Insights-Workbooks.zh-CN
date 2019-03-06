@@ -1,0 +1,9 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "请求失败的操作",
+    "description": "此处显示说明",
+    "icon": "",
+    "tags": [],
+    "author": "Microsoft",
+    "order": 200
+}

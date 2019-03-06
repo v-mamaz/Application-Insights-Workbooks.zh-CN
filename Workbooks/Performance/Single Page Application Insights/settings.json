@@ -1,0 +1,18 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "单页应用程序见解",
+    "description": "单页应用程序遥测数据的可视化由 Mezzurite 计时库创建",
+    "author": "Microsoft",
+    "tags": [
+        "SPA",
+        "Angular",
+        "React"
+    ],
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "microsoft.insights/components",
+            "order": 300
+        }
+    ]
+}

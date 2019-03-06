@@ -1,0 +1,17 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "新用户、老用户和流失的用户",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "microsoft.insights/components",
+            "order": 500
+        },
+        {
+            "type": "usage",
+            "resourceType": "microsoft.insights/components",
+            "order": 500
+        }
+    ]
+}
