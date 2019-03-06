@@ -1,0 +1,229 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
+    "version": "Notebook/1.0",
+    "isLocked": true,
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "# <a name=\"investigating-transaction-failures\"></a><span data-ttu-id=\"bd7c0-101\">调查事务失败</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-101\">Investigating Transaction Failures</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "34ea9bf4-837f-48e4-b3fd-ade518019950",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "StorageAccount",
+                        "type": 5,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "resourceTypeFilter": {
+                                "microsoft.storage/storageaccounts": true
+                            },
+                            "additionalResourceOptions": [
+                                "value::1"
+                            ],
+                            "selectedAdditionalResourceOptions": [
+                                "value::1"
+                            ]
+                        },
+                        "value": [
+                            "value::1"
+                        ]
+                    },
+                    {
+                        "id": "031e0cf8-ad0d-4328-8a4e-cec21dd90dc8",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "TimeRange",
+                        "type": 4,
+                        "description": null,
+                        "isRequired": true,
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "selectableValues": [
+                                {
+                                    "durationMs": 300000,
+                                    "createdTime": "2018-06-26T21:41:37.864Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 900000,
+                                    "createdTime": "2018-06-26T21:41:37.864Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 1800000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 3600000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 14400000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 43200000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 86400000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 172800000,
+                                    "createdTime": "2018-06-26T21:41:37.865Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 259200000,
+                                    "createdTime": "2018-06-26T21:41:37.866Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                },
+                                {
+                                    "durationMs": 604800000,
+                                    "createdTime": "2018-06-26T21:41:37.866Z",
+                                    "isInitialTime": false,
+                                    "grain": 1,
+                                    "useDashboardTimeRange": false
+                                }
+                            ],
+                            "allowCustom": null
+                        },
+                        "value": {
+                            "durationMs": 14400000,
+                            "createdTime": "2018-06-26T21:41:37.865Z",
+                            "isInitialTime": false,
+                            "grain": 1,
+                            "useDashboardTimeRange": false
+                        }
+                    }
+                ],
+                "resourceType": "microsoft.resourcegroup/resourcegroups"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"transactions-by-response-type\"></a><span data-ttu-id=\"bd7c0-102\">按响应类型划分的事务</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-102\">Transactions by Response Type</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbookeea84fcb-f288-4c8d-a901-9f0bebbb6c31",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 86400000,
+                    "endTime": null,
+                    "createdTime": "2018-07-12T23:05:28.336Z",
+                    "isInitialTime": false,
+                    "grain": 1,
+                    "useDashboardTimeRange": false
+                },
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-Transactions",
+                        "aggregation": 1,
+                        "chartType": 2,
+                        "splitBy": "ResponseType",
+                        "color": "blue"
+                    }
+                ]
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"bd7c0-103\">事务 - 向存储服务发出的请求数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-103\">*Transactions* - the number of requests made to a storage service.</span></span> <span data-ttu-id=\"bd7c0-104\">此数字包括成功和失败的请求数，以及引发错误的请求数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-104\">This number includes successful and failed requests, as well as requests that produced errors.</span></span> \n\n<span data-ttu-id=\"bd7c0-105\">响应类型 - 事务响应类型。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-105\">*Response type* - the transaction response type.</span></span> <span data-ttu-id=\"bd7c0-106\">可用的值包括：</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-106\">The available values include:</span></span> \n\n* <span data-ttu-id=\"bd7c0-107\">__ServerOtherError__：除描述的错误以外的其他所有服务器端错误</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-107\">__ServerOtherError__: All other server-side errors except described ones</span></span>\n* <span data-ttu-id=\"bd7c0-108\">__ServerBusyError__：返回了 HTTP 503 状态代码的已经过身份验证的请求。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-108\">__ServerBusyError__: Authenticated request that returned an HTTP 503 status code.</span></span>\n* <span data-ttu-id=\"bd7c0-109\">__ServerTimeoutError__：返回了 HTTP 500 状态代码的超时已经过身份验证的请求。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-109\">__ServerTimeoutError__: Timed-out authenticated request that returned an HTTP 500 status code.</span></span> <span data-ttu-id=\"bd7c0-110\">由于服务器错误而发生超时。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-110\">The timeout occurred due to a server error.</span></span>\n* <span data-ttu-id=\"bd7c0-111\">__AuthorizationError__：由于未经授权访问数据或者授权失败，经过身份验证的请求失败。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-111\">__AuthorizationError__: Authenticated request that failed due to unauthorized access of data or an authorization failure.</span></span>\n* <span data-ttu-id=\"bd7c0-112\">__NetworkError__：由于网络错误，经过身份验证的请求失败。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-112\">__NetworkError__: Authenticated request that failed due to network errors.</span></span> <span data-ttu-id=\"bd7c0-113\">往往发生于客户端在超时失效之前提前关闭了连接时。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-113\">Most commonly occurs when a client prematurely closes a connection before timeout expiration.</span></span>\n* <span data-ttu-id=\"bd7c0-114\">__ClientThrottlingError__：客户端限制错误。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-114\">__ClientThrottlingError__: Client-side throttling error.</span></span>\n* <span data-ttu-id=\"bd7c0-115\">__ClientTimeoutError__：返回了 HTTP 500 状态代码的超时已经过身份验证的请求。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-115\">__ClientTimeoutError__: Timed-out authenticated request that returned an HTTP 500 status code.</span></span> <span data-ttu-id=\"bd7c0-116\">如果将客户端的网络超时或请求超时设置为比存储服务预期值更小的值，则预期会发生此超时。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-116\">If the client's network timeout or the request timeout is set to a lower value than expected by the storage service, it is an expected timeout.</span></span> <span data-ttu-id=\"bd7c0-117\">否则，会报告为 ServerTimeoutError。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-117\">Otherwise, it is reported as a ServerTimeoutError.</span></span>\n* <span data-ttu-id=\"bd7c0-118\">__ClientOtherError__：除描述的错误以外的其他所有客户端错误。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-118\">__ClientOtherError__: All other client-side errors except described ones.</span></span>\n* <span data-ttu-id=\"bd7c0-119\">__成功__：请求成功</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-119\">__Success__: Successful request</span></span>\n\n<span data-ttu-id=\"bd7c0-120\">以下资源对了解与存储相关的状态和错误代码很有帮助：</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-120\">The following resources are useful for understanding storage-related status and error codes:</span></span>\n\n* <span data-ttu-id=\"bd7c0-121\">[常见的 REST API 错误代码](https://docs.microsoft.com/en-us/rest/api/storageservices/Common-REST-API-Error-Codes?redirectedfrom=MSDN)。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-121\">[Common REST API Error Codes](https://docs.microsoft.com/en-us/rest/api/storageservices/Common-REST-API-Error-Codes?redirectedfrom=MSDN).</span></span>\n* <span data-ttu-id=\"bd7c0-122\">[Blob 服务错误代码](https://docs.microsoft.com/en-us/rest/api/storageservices/Blob-Service-Error-Codes?redirectedfrom=MSDN)。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-122\">[Blob Service Error Codes](https://docs.microsoft.com/en-us/rest/api/storageservices/Blob-Service-Error-Codes?redirectedfrom=MSDN).</span></span>\n* <span data-ttu-id=\"bd7c0-123\">[队列服务错误代码](https://docs.microsoft.com/en-us/rest/api/storageservices/Queue-Service-Error-Codes?redirectedfrom=MSDN)。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-123\">[Queue Service Error Codes](https://docs.microsoft.com/en-us/rest/api/storageservices/Queue-Service-Error-Codes?redirectedfrom=MSDN).</span></span>\n* <span data-ttu-id=\"bd7c0-124\">[表服务错误代码](https://docs.microsoft.com/en-us/rest/api/storageservices/Table-Service-Error-Codes?redirectedfrom=MSDN)。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-124\">[Table Service Error Codes](https://docs.microsoft.com/en-us/rest/api/storageservices/Table-Service-Error-Codes?redirectedfrom=MSDN).</span></span>\n* <span data-ttu-id=\"bd7c0-125\">[文件服务错误代码](https://docs.microsoft.com/en-us/rest/api/storageservices/File-Service-Error-Codes?redirectedfrom=MSDN)。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-125\">[File Service Error Codes](https://docs.microsoft.com/en-us/rest/api/storageservices/File-Service-Error-Codes?redirectedfrom=MSDN).</span></span>\n\n\n"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"common-issues\"></a><span data-ttu-id=\"bd7c0-126\">常见问题</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-126\">Common Issues</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"the-client-is-receiving-http-403-forbidden-messages\"></a><span data-ttu-id=\"bd7c0-127\">客户端正在接收“HTTP 403 (禁止访问)”消息</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-127\">The client is receiving HTTP 403 (Forbidden) messages</span></span>\n<span data-ttu-id=\"bd7c0-128\">如果客户端应用程序引发“HTTP 403 (禁止访问)”错误，则可能的原因是客户端在发送存储请求时使用了过期的共享访问签名 (SAS)（虽然其他可能的原因包括时钟偏差、无效密钥和空标头）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-128\">If your client application is throwing HTTP 403 (Forbidden) errors, a likely cause is that the client is using an expired Shared Access Signature (SAS) when it sends a storage request (although other possible causes include clock skew, invalid keys, and empty headers).</span></span> <span data-ttu-id=\"bd7c0-129\">如果已过期的 SAS 密钥是原因，则不会在服务器端存储日志记录日志数据中看到任何条目。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-129\">If an expired SAS key is the cause, you will not see any entries in the server-side Storage Logging log data.</span></span>\n\n<span data-ttu-id=\"bd7c0-130\">如果问题与 SAS 令牌相关，应调查在客户端将该令牌发送到服务器之前 SAS 令牌即将到期的原因：</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-130\">If the issue is related to SAS tokens, you should investigate why the SAS token is expiring before the client sends the token to the server:</span></span>\n* <span data-ttu-id=\"bd7c0-131\">通常，创建 SAS 供客户端立即使用时，不应设置开始时间。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-131\">Typically, you should not set a start time when you create a SAS for a client to use immediately.</span></span> <span data-ttu-id=\"bd7c0-132\">如果使用当前时间生成 SAS 的主机与存储服务之间存在较小的时钟差异，则存储服务有可能收到尚未生效的 SAS。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-132\">If there are small clock differences between the host generating the SAS using the current time and the storage service, then it is possible for the storage service to receive a SAS that is not yet valid.</span></span>\n* <span data-ttu-id=\"bd7c0-133\">不要在 SAS 上设置太短的到期时间。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-133\">Do not set a very short expiry time on a SAS.</span></span> <span data-ttu-id=\"bd7c0-134\">同样，生成 SAS 的主机与存储服务之间的较小时钟差异可能会导致 SAS 似乎早于预期到期。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-134\">Again, small clock differences between the host generating the SAS and the storage service can lead to a SAS apparently expiring earlier than anticipated.</span></span>\n* <span data-ttu-id=\"bd7c0-135\">SAS 密钥中的版本参数（例如 sv=2015-04-05）是否与正在使用的存储客户端库的版本匹配？</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-135\">Does the version parameter in the SAS key (for example sv=2015-04-05) match the version of the Storage Client Library you are using?</span></span> <span data-ttu-id=\"bd7c0-136\">建议始终使用最新版本的存储客户端库。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-136\">We recommend that you always use the latest version of the Storage Client Library.</span></span>\n* <span data-ttu-id=\"bd7c0-137\">如果重新生成存储访问密钥，可能会使任何现有的 SAS 令牌无效。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-137\">If you regenerate your storage access keys, any existing SAS tokens may be invalidated.</span></span> <span data-ttu-id=\"bd7c0-138\">如果生成的 SAS 令牌具有较长的到期时间供客户端应用程序缓存，可能会出现此问题。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-138\">This issue may arise if you generate SAS tokens with a long expiry time for client applications to cache.</span></span>\n* <span data-ttu-id=\"bd7c0-139\">如果使用存储客户端库生成 SAS 令牌，则可轻松生成有效令牌。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-139\">If you are using the Storage Client Library to generate SAS tokens, then it is easy to build a valid token.</span></span> <span data-ttu-id=\"bd7c0-140\">但是，如果使用的是存储 REST API 并手动构造 SAS 令牌，请参阅使用共享访问签名委派访问权限。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-140\">However, if you are using the Storage REST API and constructing the SAS tokens by hand, see Delegating Access with a Shared Access Signature.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"the-client-is-receiving-http-404-not-found-messages\"></a><span data-ttu-id=\"bd7c0-141\">客户端正在接收“HTTP 404 (未找到)”消息</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-141\">The client is receiving HTTP 404 (Not found) messages</span></span>\n<span data-ttu-id=\"bd7c0-142\">如果客户端应用程序从服务器收到“HTTP 404 (未找到)”消息，这意味着客户端正在尝试使用的对象（如实体、表、Blob、容器或队列）在存储服务中不存在。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-142\">If the client application receives an HTTP 404 (Not found) message from the server, this implies that the object the client was attempting to use (such as an entity, table, blob, container, or queue) does not exist in the storage service.</span></span> <span data-ttu-id=\"bd7c0-143\">有多种原因可能会导致此问题，例如：</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-143\">There are a number of possible reasons for this, such as:</span></span>\n\n* [<span data-ttu-id=\"bd7c0-144\">客户端或其他进程以前删除了该对象</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-144\">The client or another process previously deleted the object</span></span>](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#client-previously-deleted-the-object)\n* [<span data-ttu-id=\"bd7c0-145\">共享访问签名 (SAS) 授权问题</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-145\">A Shared Access Signature (SAS) authorization issue</span></span>](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#SAS-authorization-issue)\n* [<span data-ttu-id=\"bd7c0-146\">客户端 JavaScript 代码无权访问该对象</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-146\">Client-side JavaScript code does not have permission to access the object</span></span>](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#JavaScript-code-does-not-have-permission)\n* [<span data-ttu-id=\"bd7c0-147\">网络故障</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-147\">Network failure</span></span>](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#network-failure)"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"the-client-is-receiving-http-409-conflict-messages\"></a><span data-ttu-id=\"bd7c0-148\">客户端正在接收“HTTP 409 (冲突)”消息</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-148\">The client is receiving HTTP 409 (Conflict) messages</span></span>\n<span data-ttu-id=\"bd7c0-149\">此错误的常见原因是删除客户端应用程序然后立即使用相同名称重新创建存储单元。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-149\">The common cause of this error is a client application deleting and then immediately recreating a storage unit using the same name.</span></span> <span data-ttu-id=\"bd7c0-150\">当客户端删除 Blob 容器、表或队列时，需要经过一段较短的时间，该名称才能再次变为可用。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-150\">When a client deletes blob containers, tables, or queues there is a brief period before the name becomes available again.</span></span>\n\n<span data-ttu-id=\"bd7c0-151\">客户端应用程序在创建新容器时应使用唯一的容器名称（如果“删除/重新创建”模式很常见）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-151\">The client application should use unique container names whenever it creates new containers if the delete/recreate pattern is common.</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"troubleshooting-guidence\"></a><span data-ttu-id=\"bd7c0-152\">故障排除指南</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-152\">Troubleshooting guidence</span></span>\n<span data-ttu-id=\"bd7c0-153\">有关诊断和解决问题的详细信息，请参阅此[文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#troubleshooting-guidance)</span><span class=\"sxs-lookup\"><span data-stu-id=\"bd7c0-153\">More information to diagnose and solves issues can be found in this [document](https://docs.microsoft.com/en-us/azure/storage/common/storage-monitoring-diagnosing-troubleshooting?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#troubleshooting-guidance)</span></span>"
+            },
+            "conditionalVisibility": null,
+            "halfWidth": false
+        }
+    ]
+}

@@ -1,0 +1,245 @@
+{
+    "version": "Notebook/1.0",
+    "isLocked": true,
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "# <a name=\"cohort-analysis\"></a><span data-ttu-id=\"74bc7-101\">队列分析</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-101\">Cohort Analysis</span></span>\n\n<span data-ttu-id=\"74bc7-102\">“队列分析”会衡量用户在执行应用中的 `CohortingActivities` 之一后，在特定时间段内有多少用户返回执行 `RetainingActivities` 之一 - 按选择的维度划分。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-102\">Cohort Analysis measures how many of your users come back to perform one of the `RetainingActivities` in a particular period after they perform one of the `CohortingActivities` in your app - split by a dimension you choose.</span></span> <span data-ttu-id=\"74bc7-103\">例如，可以测量从首次下载应用程序之日起到第 10 天内返回使用应用的用户数，按国家/地区划分。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-103\">For instance, you could be measuring the number of users who returned to use your app on the 10th day from the day they first downloaded it, split by the country they are from.</span></span> <span data-ttu-id=\"74bc7-104\">查看第 1-10 天的保留趋势将指示应用的粘性。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-104\">Seeing the retention trend for days 1-10 will give you an indication of the stickiness of your app.</span></span> \n\n<span data-ttu-id=\"74bc7-105\">“队列分析”类似于 N 天或括号保留期，并且仅在如何定义队列方面不同。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-105\">Cohort Analysis is similar to N-day or Bracket retention and is only different in how the cohorts are defined.</span></span> \n\n<span data-ttu-id=\"74bc7-106\">这种分析非常适合游戏应用，或其他试图让用户养成日常习惯的应用。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-106\">This type of analysis is well-suited for gaming apps, or other kinds of app where you are trying to get users to develop a daily habit.</span></span> <span data-ttu-id=\"74bc7-107\">队列分析将有助于了解国家/地区、应用版本等标准维度或自定义维度（如“高级客户”或“实验组中的航班名称”）中用户保留的差异。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-107\">Cohort Analysis will help you see differences in user retention across standard dimensions like country, app version, etc. or custom dimensions like 'Is Premium Customer' or 'Flight name in an experiment group'.</span></span>"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"activity-selection\"></a><span data-ttu-id=\"74bc7-108\">活动选择</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-108\">Activity Selection</span></span>\n<span data-ttu-id=\"74bc7-109\">使用这些字段设置与感兴趣用户活动相对应的事件。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-109\">Use these fields to set events that that correspond to interesting user activities.</span></span> <span data-ttu-id=\"74bc7-110\">底部的 `Understanding Cohort Analysis Parameters` 部分介绍了这些参数的详细信息。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-110\">The `Understanding Cohort Analysis Parameters` section at the bottom describes these parameters in detail.</span></span>"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "97ae2ae5-ec95-455b-bac2-36caf2db61db",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "CohortingActivities",
+                        "type": 2,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "let events = union customEvents, pageViews\n| where timestamp >= ago(7d)\n| summarize Count = count() by name;\nlet top3 = events\n| top 3 by Count desc\n| summarize makelist(name);\nevents\n| order by Count desc\n| project Id=name, Title=name, Selected=iff(name in (top3), true, false)\n| union (\ndatatable(Id:string, Title:string, Selected:boolean)[\n'*', 'All Events and Page Views', false\n]\n)"
+                    },
+                    {
+                        "name": "CohortingFilters",
+                        "id": "94bacf68-78db-4755-8a40-c2702dea4018",
+                        "type": 1,
+                        "value": ""
+                    },
+                    {
+                        "id": "6cb4afed-7dac-4608-892b-154f4943ddb6",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RetainingActivities",
+                        "type": 2,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "union customEvents, pageViews\n| where timestamp >= ago(7d)\n| summarize count() by name\n| order by count_ desc\n| project Id=name, Title=name, Selected=false\n| union (\ndatatable(Id:string, Title:string, Selected:boolean)[\n'#', 'Same as cohorting activities', true,\n'*', 'All Events and Page Views', false\n]\n)"
+                    },
+                    {
+                        "id": "0cc5211a-557e-4648-9569-1236bf16559f",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RetainingFilters",
+                        "type": 1,
+                        "isRequired": false,
+                        "query": "datatable(x:int)[ 1 ]\r\n| extend retainingFilter = iff('#' in ({RetainingActivities}), '{CohortingFilters}', '')\r\n| project retainingFilter",
+                        "isHiddenWhenLocked": false
+                    }
+                ],
+                "style": "pills",
+                "resourceType": "microsoft.insights/components"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"cohort-analysis-parameters\"></a><span data-ttu-id=\"74bc7-111\">队列分析参数</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-111\">Cohort Analysis Parameters</span></span>\n<span data-ttu-id=\"74bc7-112\">使用这些字段自定义保留期设置。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-112\">Use these fields to customize your retention settings.</span></span>"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "1c53914e-0c06-4944-b2b8-fd4abaeb2f9f",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "CohortType",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(value:string, text:string)[\n'itemType', '❌ None',\n'name', '📛 Activity',\n'cloud_RoleInstance', '🖥️ Machine',\n'client_CountryOrRegion', '📍 Country or Region',\n'client_StateOrProvince', '📍 State or Province',\n'client_City', '📍 City',\n'client_Browser', '🌐 Client Browser',\n'client_OS', '️️🖥️ Client Operating System',\n'client_Model', '📱 Client Model',\n'application_Version', '⚪ Application Version',\n'operation_Name', '⚪ Operation',\n]\n| union (union pageViews, customEvents\n| where timestamp >= ago(1d)\n| where name in ({CohortingActivities}) or '*' in ({CohortingActivities})\n| project customDimensions \n| summarize schema = buildschema(customDimensions) \n| mvexpand schema\n| extend e = extract(@'{\"(.+)\":.+}', 1, tostring(schema))\n| project text = strcat('❄️ ', e), value = strcat('customDimensions[\"', e, '\"]'))",
+                        "value": "name"
+                    },
+                    {
+                        "id": "e62098ae-ac3f-4800-8e62-3e7d9a052e56",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "RetentionPeriod",
+                        "type": 2,
+                        "description": "<span data-ttu-id=\"74bc7-113\">1 天：每日，7 天：每周，30/28 天：每月</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-113\">1d: Daily, 7d: Weekly, 30/28d: Monthly</span></span>",
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(id:string, text:string)[\n'1d', 'Daily',\n'7d', 'Weekly',\n'28d', 'Monthly (28 days)', \n'30d', 'Monthly (30 days)'\n]",
+                        "value": "7d"
+                    },
+                    {
+                        "id": "fa4b29d9-bfc1-46e3-98f1-3cba05afbea3",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "PeriodsToAnalyze",
+                        "type": 1,
+                        "description": "<span data-ttu-id=\"74bc7-114\">要分析的队列周期数</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-114\">Number of cohort periods to analyze</span></span>",
+                        "isRequired": true,
+                        "value": "4"
+                    },
+                    {
+                        "id": "7912aca9-1688-4886-aec1-838c68131e25",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "BasedOn",
+                        "type": 2,
+                        "description": null,
+                        "isRequired": true,
+                        "multiSelect": null,
+                        "query": "datatable(v:string, t:string)[\r\n'user_Id', 'Anonymous Users',\r\n'user_AuthenticatedId', 'Authenticated Users'\r\n]",
+                        "isHiddenWhenLocked": false,
+                        "value": "user_Id"
+                    },
+                    {
+                        "id": "f6511ffa-e2ea-4a34-ad2e-454856288bd5",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Show",
+                        "type": 2,
+                        "isRequired": true,
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "additionalResourceOptions": []
+                        },
+                        "jsonData": "[\r\n    { \"value\": \"RetentionRate\", \"label\": \"Retention Rate\", \"selected\": true},\r\n    { \"value\": \"RetainedCount\", \"label\": \"Retained Users\", \"selected\": false},\r\n    { \"value\": \"UserCount\", \"label\": \"Potentially Retainable Users\", \"selected\": false}\r\n]",
+                        "timeContextFromParameter": null
+                    }
+                ],
+                "style": "pills",
+                "resourceType": "microsoft.insights/components"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"cohort-analysis-table\"></a><span data-ttu-id=\"74bc7-115\">队列分析表</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-115\">Cohort Analysis Table</span></span>"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "let periodsToAnalyze = {PeriodsToAnalyze};\nlet cohortSize = {RetentionPeriod};\nlet retainingActivities = iff(({RetainingActivities}) in ('#'), dynamic([{CohortingActivities}]), dynamic([{RetainingActivities}]));\nlet cohortUnit = case(cohortSize == 30d or cohortSize == 28d, \"month\", cohortSize == 7d, \"week\", \"day\");\nlet timeRange = startofday(now()) - case(cohortSize == 30d or cohortSize == 28d, startofmonth(now() - periodsToAnalyze * cohortSize), cohortSize == 7d, startofweek(now() - periodsToAnalyze * cohortSize), startofday(now() - periodsToAnalyze * cohortSize));\nlet data = union customEvents, pageViews\n| where user_Id != \"undefined\"\n| where timestamp > startofday(now() - timeRange);\nlet cohorts = data\n| where name in ({CohortingActivities}) or '*' in ({CohortingActivities})\n| extend Cohort = iff('{CohortType}' == 'itemType', 'Overall', iff({CohortType} == '', 'Unknown', {CohortType})) // reusing itemType to indicate no segmentation\n| summarize EarliestInCohort = min(startofday(timestamp)) by user_Id, Cohort\n| summarize NewUsers = hll(user_Id) by EarliestInCohort, Cohort;\nlet usage = data\n| where name in (retainingActivities) or '*' in (retainingActivities)\n| extend Cohort = iff('{CohortType}' == 'itemType', 'Overall', iff({CohortType} == '', 'Unknown', {CohortType})) // reusing itemType to indicate no segmentation\n| summarize UsersInCohort = hll(user_Id) by Day = startofday(timestamp), Cohort;\ncohorts\n| extend RetentionEvaluationDay = range(EarliestInCohort + 1d, now(), 1d)\n| mvexpand RetentionEvaluationDay to typeof(datetime) limit 1000\n| extend RetentionWeek = bin((RetentionEvaluationDay - EarliestInCohort) / cohortSize, 1)\n| join kind=inner\n(\n    usage\n)\non $left.RetentionEvaluationDay == $right.Day, Cohort\n| project EarliestInCohort, Cohort, RetentionWeek, EvaluationDayUsers = UsersInCohort, NewUsers\n| summarize Users = hll_merge(EvaluationDayUsers), NewUsers = hll_merge(NewUsers) by EarliestInCohort, Cohort, RetentionWeek\n| evaluate dcount_intersect(NewUsers, Users)\n| project EarliestInCohort, Cohort, RetentionWeek, CohortUserCount = s0, CohortRetainedCount = s1\n| summarize UserCount = sum(CohortUserCount), RetainedCount = sum(CohortRetainedCount) by Cohort, RetentionWeek\n| extend RetentionRate = round(100.0 * RetainedCount / UserCount, 2)\n| order by RetentionWeek asc, UserCount desc\n| project Cohort, RetentionWeek, Metric = {Show}\n| extend RetentionWeek = case(RetentionWeek == 0, strcat(\"<1 \", cohortUnit), strcat(\"+\", toint(RetentionWeek), \" \", cohortUnit))\n| serialize\n| evaluate pivot(RetentionWeek, sum(Metric))\n\n\n\n\n",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "showAnalytics": false,
+                "timeContextFromParameter": null,
+                "resourceType": "microsoft.insights/components",
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "week|month|day",
+                            "formatter": 8,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "green"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"interpreting-the-table\"></a><span data-ttu-id=\"74bc7-116\">解释表</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-116\">Interpreting the table</span></span>\n<span data-ttu-id=\"74bc7-117\">本部分介绍如何读取和解释保留期表。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-117\">This section shows how to read and interpret a retention table.</span></span> <span data-ttu-id=\"74bc7-118\">以下部分显示了将尝试阅读的每周保留期报表中的一行。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-118\">The section below shows a row from a weekly retention report that we will try to read.</span></span>\n"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "datatable(Cohort:string, Users:int, ['<1 week']:int, ['+1 week']:int, ['+2 week']:int, ['+3 week']:int, ['+4 week']:int)[ \r\n'Add to Cart', 1000, 50, 30, 20, 15, 10\r\n]\r\n",
+                "showQuery": false,
+                "size": 0,
+                "aggregation": 0,
+                "showAnnotations": false,
+                "showAnalytics": false,
+                "timeContextFromParameter": null,
+                "resourceType": "microsoft.insights/components",
+                "gridSettings": {
+                    "formatters": [
+                        {
+                            "columnMatch": "week",
+                            "formatter": 8,
+                            "formatOptions": {
+                                "min": 0,
+                                "max": null,
+                                "palette": "green"
+                            }
+                        }
+                    ]
+                }
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "| <span data-ttu-id=\"74bc7-119\">列</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-119\">Column</span></span> | <span data-ttu-id=\"74bc7-120\">说明</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-120\">Explanation</span></span> | <span data-ttu-id=\"74bc7-121\">示例中的解释</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-121\">Interpretation in the example</span></span> |\n| ----- | :----- | :----- |\n| <span data-ttu-id=\"74bc7-122\">队列</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-122\">Cohort</span></span> | <span data-ttu-id=\"74bc7-123\">标识 CohortType 参数指定的排队条件。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-123\">Identifies the cohorting criteria specified by the CohortType parameter.</span></span> | <span data-ttu-id=\"74bc7-124\">此行说明了使用“添加到购物车”事件的用户的保留行为。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-124\">This row explains the retention behavior of users who used the 'Add to Cart' event.</span></span> |\n| <span data-ttu-id=\"74bc7-125\">总用户数</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-125\">Total Users</span></span> | <span data-ttu-id=\"74bc7-126\">使用“添加到购物车”功能的唯一用户数</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-126\">Number of unique users who used the Add to Cart feature</span></span>  | <span data-ttu-id=\"74bc7-127\">1000 个唯一用户在应用中将商品添加到购物车中</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-127\">1000 unique users added an item to their cart in your app</span></span> |\n| <span data-ttu-id=\"74bc7-128\">少于 1 周</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-128\"><1 week</span></span> | <span data-ttu-id=\"74bc7-129\">使用“添加到购物车”后 1 至 6 天内返回的队列用户的百分比（在同一天再次使用它不计入保留）</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-129\">Percentage of cohort users who returned between 1 and 6 days after using 'Add to Cart' (using it again the same day does not count towards retention)</span></span>  | <span data-ttu-id=\"74bc7-130\">50% 或 500 名用户在将商品添加到购物车中后的第一周内返回使用应用</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-130\">50% or 500 users returned to use your app within the first week after they added an item to their cart</span></span> |\n| <span data-ttu-id=\"74bc7-131\">超过 1 周</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-131\">+1 week</span></span> | <span data-ttu-id=\"74bc7-132\">使用“添加到购物车”后 7 到 13 天内返回的队列用户的百分比</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-132\">Percentage of cohort users who returned between 7 and 13 days after using 'Add to Cart'</span></span>  | <span data-ttu-id=\"74bc7-133\">30% 或 300 位用户在一周后返回使用应用</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-133\">30% or 300 users returned to use your app a week later</span></span> |\n| <span data-ttu-id=\"74bc7-134\">超过 N 周</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-134\">+N week</span></span> | <span data-ttu-id=\"74bc7-135\">“添加到购物车”后第 N 周返回的队列用户百分比</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-135\">Percentage of cohort users who returned in the Nth week after 'Add to Cart'</span></span>  | <span data-ttu-id=\"74bc7-136\">当 N = 3 时，有 15% 或 150 位用户</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-136\">15% or 150 users, when N = 3</span></span>  |\n\n\n\n\n"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"understanding-cohort-analysis-parameters\"></a><span data-ttu-id=\"74bc7-137\">了解队列分析参数</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-137\">Understanding Cohort Analysis Parameters</span></span>\n| <span data-ttu-id=\"74bc7-138\">参数</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-138\">Parameter</span></span> | <span data-ttu-id=\"74bc7-139\">用途</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-139\">Used for</span></span> |\n| ----- | ----- |\n| <span data-ttu-id=\"74bc7-140\">队列类型</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-140\">Cohort Type</span></span> | <span data-ttu-id=\"74bc7-141\">拆分保留数所依据的维度</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-141\">The dimension by which to split the retention numbers</span></span> |\n| <span data-ttu-id=\"74bc7-142\">保持期</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-142\">Retention Period</span></span> | <span data-ttu-id=\"74bc7-143\">保留计算中使用的时间段。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-143\">The period to use in retention calculation.</span></span> <span data-ttu-id=\"74bc7-144\">可以为每日、每周或每月</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-144\">Can be Daily, Weekly or Monthly</span></span> |\n| <span data-ttu-id=\"74bc7-145\">要分析的周期</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-145\">Periods To Analyze</span></span>  | <span data-ttu-id=\"74bc7-146\">要分析的保持期数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-146\">The number of retention periods to analyze.</span></span>  |\n| <span data-ttu-id=\"74bc7-147\">排队活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-147\">Cohorting Activities</span></span>  | <span data-ttu-id=\"74bc7-148\">选择一组用户的活动。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-148\">The activities that selects a cohort of users.</span></span> <span data-ttu-id=\"74bc7-149\">示例：使用了事件“阅读产品评论”（排队活动）的用户。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-149\">Example: Users who used event *Read Product Review* (cohorting activity).</span></span> |\n| <span data-ttu-id=\"74bc7-150\">保留活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-150\">Retaining Activities</span></span>  | <span data-ttu-id=\"74bc7-151\">指示保留上面所选的一组用户的活动。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-151\">The activities that indicates retention of a cohorted user selected above.</span></span> <span data-ttu-id=\"74bc7-152\">示例：使用了事件“阅读产品评论”（排队活动）并返回到使用“购买产品”（保留活动）的用户。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-152\">Example: Users who used event *Read Product Review* (cohorting activity) and returned to use *Purchase Product* (retaining activity).</span></span> |\n| <span data-ttu-id=\"74bc7-153\">排队/保留筛选器</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-153\">Cohorting/Retaining Filters</span></span>  | <span data-ttu-id=\"74bc7-154\">用于进一步筛选排队活动的分析查询代码片段。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-154\">An analytics query snippet to further filter the cohorting activity.</span></span> <span data-ttu-id=\"74bc7-155\">示例：*&#124; 其中 application_Version = '1.0'*</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-155\">Example: *&#124; where application_Version = '1.0'*</span></span> |\n| <span data-ttu-id=\"74bc7-156\">显示</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-156\">Show</span></span>  | <span data-ttu-id=\"74bc7-157\">在表中显示的指标。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-157\">The metric to visualize in the table.</span></span> <span data-ttu-id=\"74bc7-158\">“保留率”显示用户在列中的时间段返回的概率。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-158\">*Retention Rate* shows the rate at which users returned for the time period in the column.</span></span> <span data-ttu-id=\"74bc7-159\">“保留用户”是该时间段内保留用户的原始数量。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-159\">*Retained Users* is raw number of retained users for the time period.</span></span> <span data-ttu-id=\"74bc7-160\">“潜在可保留用户”是可能在此期间保留的用户数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-160\">*Potentially Retainable Users* is the number of users who could potentially have been retained for that period.'</span></span> |\n"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"what-is-a-week-for-a-user\"></a><span data-ttu-id=\"74bc7-161\">对用户而言一周意味着什么？</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-161\">What is a week for a user?</span></span>\n<span data-ttu-id=\"74bc7-162\">简短的回答是它对每个用户都是唯一的。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-162\">The short answer is that it is unique for each user.</span></span> <span data-ttu-id=\"74bc7-163\">我们的分析单独处理每个用户的保留窗口 - 使用应用准确查看其实际行为。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-163\">Our analysis treats each user's retention window seperately - giving an accurate view of their actual behavior with your app.</span></span> \n\n<span data-ttu-id=\"74bc7-164\">请参考下面的示例，两名用户为 X 和 Y：</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-164\">Consider the example below of two users X and Y:</span></span> \n\n| <span data-ttu-id=\"74bc7-165\">用户</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-165\">User</span></span> | <span data-ttu-id=\"74bc7-166\">首次使用应用</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-166\">First use of app</span></span> | <span data-ttu-id=\"74bc7-167\">用户周</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-167\">Weeks for user</span></span> |\n| ----- | :----- | :----- |\n| <span data-ttu-id=\"74bc7-168\">X</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-168\">X</span></span> | <span data-ttu-id=\"74bc7-169\">4 月 3 日</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-169\">April 3</span></span> | <span data-ttu-id=\"74bc7-170\">w1 = 4 月 10 日、w2 = 4 月 17 日、w3 = 4 月 24 日</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-170\">w1 = April 10, w2 = April 17, w3 = April 24</span></span>  |\n| <span data-ttu-id=\"74bc7-171\">Y</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-171\">Y</span></span> | <span data-ttu-id=\"74bc7-172\">4 月 5 日</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-172\">April 5</span></span> | <span data-ttu-id=\"74bc7-173\">w1 = 4 月 12 日、w2 = 4 月 19 日、w3 = 4 月 26 日</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-173\">w1 = April 12, w2 = April 19, w3 = April 26</span></span>  |\n\n<span data-ttu-id=\"74bc7-174\">每个用户获取单独的保留时段。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-174\">Each user gets a seperate retention window.</span></span> <span data-ttu-id=\"74bc7-175\">因此，如果两位用户都在 4 月 18 日返回，那么被视为用户 X 第 2 周使用，用户 Y 第 1 周使用。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-175\">So, if both users came back on April 18, then it considered as Week 2 usage for User X but Week 1 usage for User Y.</span></span> \n\n<span data-ttu-id=\"74bc7-176\">这允许他们在保留时段内标准使用应用 - 看起来就好像队列中的所有用户在同一天使用了该应用。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-176\">This allows the normalization their app use over the retention window - making it seem as if all users in a cohort used the app on the same day.</span></span> <span data-ttu-id=\"74bc7-177\">这样可以更好地分析和比较用户行为。</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-177\">This allow for better analysis and comparision of user behavior.</span></span>"
+            },
+            "conditionalVisibility": null
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"related-workbook-templates\"></a><span data-ttu-id=\"74bc7-178\">保留相关工作簿模板</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-178\">Related Workbook Templates</span></span>\n* <span data-ttu-id=\"74bc7-179\">保留期 - N 周期</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-179\">Retention - N-Period</span></span>\n* <span data-ttu-id=\"74bc7-180\">保留期 - 无限制</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-180\">Retention - Unbounded</span></span>\n* <span data-ttu-id=\"74bc7-181\">保留期 - 括号</span><span class=\"sxs-lookup\"><span data-stu-id=\"74bc7-181\">Retention - Bracket</span></span>"
+            },
+            "conditionalVisibility": null
+        }
+    ],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}

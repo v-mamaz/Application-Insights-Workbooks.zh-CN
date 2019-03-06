@@ -1,0 +1,17 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "<span data-ttu-id=\"ff078-101\">失败分析</span><span class=\"sxs-lookup\"><span data-stu-id=\"ff078-101\">Failure Analysis</span></span>",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "failure-websites",
+            "resourceType": "microsoft.resources/subscriptions/resourcegroups",
+            "order": 100
+        },
+        {
+            "type": "failure-appinsights",
+            "resourceType": "microsoft.resources/subscriptions/resourcegroups",
+            "order": 100
+        }
+    ]
+}

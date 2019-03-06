@@ -1,0 +1,9 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "<span data-ttu-id=\"51633-101\">事件选取器</span><span class=\"sxs-lookup\"><span data-stu-id=\"51633-101\">Events Picker</span></span>",
+    "description": "<span data-ttu-id=\"51633-102\">此处显示说明</span><span class=\"sxs-lookup\"><span data-stu-id=\"51633-102\">description goes here</span></span>",
+    "icon": "",
+    "tags": [],
+    "author": "Microsoft",
+    "order": 100
+}
