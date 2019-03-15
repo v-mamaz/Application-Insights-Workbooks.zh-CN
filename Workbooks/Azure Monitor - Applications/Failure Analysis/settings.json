@@ -1,11 +1,11 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"5d05e-101\">登录</span><span class=\"sxs-lookup\"><span data-stu-id=\"5d05e-101\">Sign-ins</span></span>",
+    "name": "<span data-ttu-id=\"8ee6a-101\">失败分析</span><span class=\"sxs-lookup\"><span data-stu-id=\"8ee6a-101\">Failure Analysis</span></span>",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "workbook",
-            "resourceType": "microsoft.aadiam/tenant",
+            "resourceType": "Azure Monitor",
             "order": 100
         }
     ]
