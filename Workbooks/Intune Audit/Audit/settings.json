@@ -1,11 +1,11 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"cd508-101\">登录和条件访问</span><span class=\"sxs-lookup\"><span data-stu-id=\"cd508-101\">Sign-ins and Conditional Access</span></span>",
+    "name": "<span data-ttu-id=\"d3db7-101\">Intune 审核活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"d3db7-101\">Intune Audit Activity</span></span>",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "workbook",
-            "resourceType": "microsoft.aadiam/tenant",
+            "resourceType": "microsoft.intune/tenant",
             "order": 100
         }
     ]
