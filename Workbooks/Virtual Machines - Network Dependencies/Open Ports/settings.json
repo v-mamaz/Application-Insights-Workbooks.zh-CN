@@ -1,12 +1,12 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"fda84-101\">连接概述</span><span class=\"sxs-lookup\"><span data-stu-id=\"fda84-101\">Connections Overview</span></span>",
+    "name": "<span data-ttu-id=\"b4ff7-101\">打开端口</span><span class=\"sxs-lookup\"><span data-stu-id=\"b4ff7-101\">Open Ports</span></span>",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "workbook",
             "resourceType": "microsoft.operationalinsights/workspaces",
-            "order": 100
+            "order": 175
         }
     ]
 }
