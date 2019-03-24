@@ -1,15 +1,12 @@
 {
-    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
     "version": "Notebook/1.0",
-    "isLocked": true,
     "items": [
         {
             "type": 1,
             "content": {
                 "json": "# <a name=\"troubleshooting-issues-using-performance-counters\"></a>使用性能计数器排除故障问题"
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 9,
@@ -95,26 +92,22 @@
                             "allowCustom": null
                         },
                         "value": {
-                            "durationMs": 14400000,
-                            "createdTime": "2018-05-16T21:34:47.842Z",
-                            "isInitialTime": false,
-                            "grain": 1,
-                            "useDashboardTimeRange": false
+                            "durationMs": 14400000
                         }
                     }
                 ],
+                "style": "pills",
+                "queryType": 0,
                 "resourceType": "microsoft.insights/components"
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
                 "json": "## <a name=\"problem---high-cpu-utilization\"></a>问题 - CPU 利用率较高\nCPU 利用率持续较高会导致部署的应用程序中出现性能和可用性问题。 本节将帮助你了解哪些服务器运行得足够热，可能会影响应用程序的可靠性。 "
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 9,
@@ -168,10 +161,11 @@
                         "value": ">"
                     }
                 ],
+                "style": "pills",
+                "queryType": 0,
                 "resourceType": "microsoft.insights/components"
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 3,
@@ -183,6 +177,9 @@
                 "aggregation": 0,
                 "showAnnotations": false,
                 "showAnalytics": false,
+                "noDataMessage": "Looks like this app is not collecting the specified performance counter. More info on collecting counters can be found at: https://docs.microsoft.com/en-us/azure/azure-monitor/app/performance-counters",
+                "timeContextFromParameter": null,
+                "queryType": 0,
                 "resourceType": "microsoft.insights/components",
                 "visualization": "table",
                 "gridSettings": {
@@ -208,24 +205,22 @@
                     ]
                 }
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"causes\"></a>原因\nCPU 利用率较高通常表示系统上的负载超出预配的计算资源的处理能力。 如果应用程序的使用量增加或部署中应用的性能下降，则可能发生这种情况。\n\n其他可能的原因包括：计算机上的频繁作业或计划任务，过多的模块/插件/扩展，从框中维护过多的 Web 应用，搜索引擎蜘蛛程序和机器人等。 "
+                "json": "## <a name=\"causes\"></a>原因\nCPU 利用率较高通常表示系统上的负载超出预配的计算资源的处理能力。 如果应用程序的使用量增加或部署中应用的性能下降，则可能发生这种情况。\n\n其他可能的原因包括： \n1. 计算机上频繁的作业或计划的任务， \n2. 过多的模块/插件/扩展， \n3. 基础计算资源上运行的过多 Web 应用， \n4. 搜索引擎蜘蛛程序和机器人。 "
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
                 "json": "## <a name=\"solutions\"></a>解决方案\n如果 CPU 利用率确实是负载增加的结果，则扩展最适当的响应：\n* 横向扩展 - 添加更多计算资源。 如果 10 个 VM 用于为应用程序提供服务，请将其扩展为 15 个以减轻现有 VM 的负载。\n* 纵向扩展 - 使用更高质量的资源（从 2 核 CPU 升级到 8 核 CPU）"
             },
-            "conditionalVisibility": null,
-            "halfWidth": false
+            "conditionalVisibility": null
         }
-    ]
+    ],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
 }
