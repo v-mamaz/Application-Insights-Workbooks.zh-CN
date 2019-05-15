@@ -1,0 +1,402 @@
+{
+    "version": "Notebook/1.0",
+    "items": [
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "487a9f92-5350-4eec-8d68-15bdf2470550",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "StorageAccount",
+                        "type": 5,
+                        "isRequired": true,
+                        "value": "value::1",
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "resourceTypeFilter": {
+                                "microsoft.storage/storageaccounts": true
+                            },
+                            "additionalResourceOptions": [
+                                "value::1"
+                            ]
+                        },
+                        "timeContextFromParameter": null
+                    }
+                ],
+                "style": "pills",
+                "queryType": 0,
+                "resourceType": "microsoft.storage/storageaccounts"
+            },
+            "conditionalVisibility": {
+                "parameterName": "1",
+                "comparison": "isEqualTo",
+                "value": "2"
+            },
+            "name": "parameters - 5"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"storageaccountname\"></a><span data-ttu-id=\"dad79-101\">{StorageAccount:name}</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-101\">{StorageAccount:name}</span></span> "
+            },
+            "conditionalVisibility": null,
+            "name": "text - 6"
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "query": "",
+                "crossComponentResources": [],
+                "parameters": [
+                    {
+                        "id": "d04c2e2c-b67c-4ae1-9b80-a36e27310200",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "TimeRange",
+                        "type": 4,
+                        "isRequired": true,
+                        "value": {
+                            "durationMs": 86400000
+                        },
+                        "isHiddenWhenLocked": false,
+                        "typeSettings": {
+                            "selectableValues": [
+                                {
+                                    "durationMs": 300000
+                                },
+                                {
+                                    "durationMs": 900000
+                                },
+                                {
+                                    "durationMs": 1800000
+                                },
+                                {
+                                    "durationMs": 3600000
+                                },
+                                {
+                                    "durationMs": 14400000
+                                },
+                                {
+                                    "durationMs": 43200000
+                                },
+                                {
+                                    "durationMs": 86400000
+                                },
+                                {
+                                    "durationMs": 172800000
+                                },
+                                {
+                                    "durationMs": 259200000
+                                },
+                                {
+                                    "durationMs": 604800000
+                                },
+                                {
+                                    "durationMs": 1209600000
+                                }
+                            ]
+                        },
+                        "timeContextFromParameter": null
+                    }
+                ],
+                "style": "pills",
+                "queryType": 0,
+                "resourceType": "microsoft.storage/storageaccounts"
+            },
+            "conditionalVisibility": null,
+            "name": "parameters - 1"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-Transactions",
+                        "aggregation": 1,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "blue"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Transactions",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "name": "metric - 0"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"dad79-102\">事务 - 向存储服务发出的请求数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-102\">*Transactions* - the number of requests made to the storage service.</span></span> <span data-ttu-id=\"dad79-103\">此数字包括成功和失败的请求数，以及引发错误的请求数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-103\">This number includes successful and failed requests, as well as requests that produced errors.</span></span> \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "name": "text - 10"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-Availability",
+                        "aggregation": 4,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "green"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Availability",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 1"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Capacity-UsedCapacity",
+                        "aggregation": 4,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "lightBlue"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Used capacity",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 2"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"dad79-104\">*可用性* - 存储服务的可用性百分比。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-104\">*Availability* - the percentage of availability for the storage service.</span></span> <span data-ttu-id=\"dad79-105\">可用性通过由“计费请求总数”值除以适用的请求数（包括引发意外错误的请求）计算得出。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-105\">Availability is calculated by taking the total billable requests value and dividing it by the number of applicable requests, including those requests that produced unexpected errors.</span></span> <span data-ttu-id=\"dad79-106\">所有意外错误都会导致存储服务或指定的 API 操作的可用性下降。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-106\">All unexpected errors result in reduced availability for the storage service or the specified API operation.</span></span> \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 11"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"dad79-107\">*使用的容量* - 存储帐户使用的存储量。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-107\">*Used capacity* - the amount of storage used by the storage account.</span></span> <span data-ttu-id=\"dad79-108\">对于标准存储帐户，该指标是 Blob、表、文件和队列使用的容量总和。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-108\">For standard storage accounts, it's the sum of capacity used by blob, table, file, and queue.</span></span> <span data-ttu-id=\"dad79-109\">对于高级存储帐户和 Blob 存储帐户，它与 BlobCapacity 相同。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-109\">For premium storage accounts and Blob storage accounts, it is the same as BlobCapacity.</span></span>\n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 3"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-SuccessE2ELatency",
+                        "aggregation": 4,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "yellow"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Success end-to-end latency",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 4"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-SuccessServerLatency",
+                        "aggregation": 4,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "orange"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Success server latency",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 5"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"dad79-110\">*成功 E2E 延迟* - 向存储服务或指定的 API 操作发出的成功请求的平均端到端延迟。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-110\">*Success E2E Latency* - the average end-to-end latency of successful requests made to a storage service or the specified API operation.</span></span> <span data-ttu-id=\"dad79-111\">此值包括在 Azure 存储中读取请求、发送响应和接收响应确认所需的处理时间。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-111\">This value includes the required processing time within Azure Storage to read the request, send the response, and receive acknowledgment of the response.</span></span> \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 13"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"dad79-112\">*成功服务器延迟* - Azure 存储处理成功请求所用的平均时间。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-112\">*Success Server Latency* - the average time used to process a successful request by Azure Storage.</span></span> <span data-ttu-id=\"dad79-113\">此值不包括 SuccessE2ELatency 中指定的网络延迟。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-113\">This value does not include the network latency specified in SuccessE2ELatency.</span></span> \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 6"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-Ingress",
+                        "aggregation": 1,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "magenta"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Ingress",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 7"
+        },
+        {
+            "type": 10,
+            "content": {
+                "chartId": "workbook85d2d5d7-0e4c-4c24-8d42-47bf8300bdc0",
+                "version": "MetricsItem/1.0",
+                "size": 0,
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "TimeRange",
+                "resourceType": "microsoft.storage/storageaccounts",
+                "resourceParameter": "StorageAccount",
+                "metrics": [
+                    {
+                        "namespace": "microsoft.storage/storageaccounts",
+                        "metric": "microsoft.storage/storageaccounts-Transaction-Egress",
+                        "aggregation": 1,
+                        "chartType": 3,
+                        "splitBy": null,
+                        "color": "purple"
+                    },
+                    {
+                        "resourceId": "{StorageAccount}"
+                    }
+                ],
+                "title": "Egress",
+                "gridFormatting": []
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "metric - 8"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"dad79-114\">*流入量* - 流入数据量。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-114\">*Ingress* - the amount of ingress data.</span></span> <span data-ttu-id=\"dad79-115\">此数字包括从外部客户端到 Azure 存储流入的数据量，以及流入 Azure 中的数据量。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-115\">This number includes ingress from an external client into Azure Storage as well as ingress within Azure.</span></span> \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 15"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "<span data-ttu-id=\"dad79-116\">*流出量* - 流出数据量。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-116\">*Egress* - the amount of egress data.</span></span> <span data-ttu-id=\"dad79-117\">此数字包括从外部客户端到 Azure 存储流出的数据量，以及流出 Azure 中的数据量。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-117\">This number includes egress from an external client into Azure Storage as well as egress within Azure.</span></span> <span data-ttu-id=\"dad79-118\">因此，此数字不反映计费的流出量。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dad79-118\">As a result, this number does not reflect billable egress.</span></span> \n<br />\n<br />"
+            },
+            "conditionalVisibility": null,
+            "customWidth": "50",
+            "name": "text - 9"
+        }
+    ],
+    "defaultResourceIds": [],
+    "fallbackResourceIds": [],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
