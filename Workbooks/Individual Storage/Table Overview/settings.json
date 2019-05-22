@@ -1,12 +1,12 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"7a5c6-101\">存储帐户概述</span><span class=\"sxs-lookup\"><span data-stu-id=\"7a5c6-101\">Storage Account Overview</span></span>",
+    "name": "<span data-ttu-id=\"16c49-101\">表存储概述</span><span class=\"sxs-lookup\"><span data-stu-id=\"16c49-101\">Table Storage Overview</span></span>",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "workbook",
             "resourceType": "microsoft.storage/storageaccounts",
-            "order": 100
+            "order": 300
         }
     ]
 }
