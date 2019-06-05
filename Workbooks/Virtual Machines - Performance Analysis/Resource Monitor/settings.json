@@ -1,11 +1,16 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"b1120-101\">资源监视器（预览）</span><span class=\"sxs-lookup\"><span data-stu-id=\"b1120-101\">Resource Monitor (preview)</span></span>",
+    "name": "<span data-ttu-id=\"7d2b2-101\">资源监视器（预览）</span><span class=\"sxs-lookup\"><span data-stu-id=\"7d2b2-101\">Resource Monitor (preview)</span></span>",
     "author": "Microsoft",
     "isPreview": true,
     "galleries": [
         {
             "type": "workbook",
+            "resourceType": "microsoft.operationalinsights/workspaces",
+            "order": 200
+        },
+        {
+            "type": "vm-insights",
             "resourceType": "microsoft.operationalinsights/workspaces",
             "order": 200
         }
