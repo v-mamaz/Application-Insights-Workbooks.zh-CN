@@ -1,0 +1,12 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "<span data-ttu-id=\"dee64-101\">节点磁盘容量</span><span class=\"sxs-lookup\"><span data-stu-id=\"dee64-101\">Node Disk Capacity</span></span>",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "Microsoft.ContainerService/managedClusters",
+            "order": 100
+        }
+    ]
+}
