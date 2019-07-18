@@ -1,0 +1,13 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "<span data-ttu-id=\"48f0e-101\">条件访问见解（预览版）</span><span class=\"sxs-lookup\"><span data-stu-id=\"48f0e-101\">Conditional Access Insights (Preview)</span></span>",
+    "author": "Microsoft",
+    "isPreview": true,
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "microsoft.aadiam/tenant",
+            "order": 300
+        }
+    ]
+}
