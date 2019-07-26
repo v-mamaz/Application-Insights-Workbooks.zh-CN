@@ -1,12 +1,11 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "CPU 使用情况热度地图",
+    "name": "SQL 数据库",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "workbook",
-            "resourceType": "Azure Monitor",
-            "categoryKey": "azureMonitorVirtualMachines",
+            "resourceType": "microsoft.resources/resourcegroups",
             "order": 300
         }
     ]
