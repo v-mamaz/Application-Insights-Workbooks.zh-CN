@@ -1,15 +1,10 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"eb10f-101\">节点网络</span><span class=\"sxs-lookup\"><span data-stu-id=\"eb10f-101\">Node Network</span></span>",
+    "name": "<span data-ttu-id=\"aaa89-101\">节点网络</span><span class=\"sxs-lookup\"><span data-stu-id=\"aaa89-101\">Node Network</span></span>",
     "author": "Microsoft",
     "galleries": [
         {
             "type": "container-insights",
-            "resourceType": "Microsoft.ContainerService/managedClusters",
-            "order": 400
-        },
-        {
-            "type": "workbook",
             "resourceType": "Microsoft.ContainerService/managedClusters",
             "order": 400
         }
