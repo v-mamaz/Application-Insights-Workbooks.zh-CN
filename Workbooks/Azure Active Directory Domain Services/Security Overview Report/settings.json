@@ -1,0 +1,19 @@
+{
+    "name": "安全概述报表",
+    "description": "登录尝试的摘要，以及要签入的某些帐户的列表",
+    "icon": "aadds-logo",
+    "tags": [
+        "AADDS",
+        "Audit logs"
+    ],
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "Microsoft.AAD/domainServices",
+            "order": 100
+        }
+    ],
+    "order": 100,
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json"
+}
