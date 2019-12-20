@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"10538-101\">磁盘 IO 上下文窗格</span><span class=\"sxs-lookup\"><span data-stu-id=\"10538-101\">Disk IO Context Pane</span></span>",
+    "name": "磁盘 IO 上下文窗格",
     "author": "Microsoft",
     "isPreview": true,
     "galleries": [

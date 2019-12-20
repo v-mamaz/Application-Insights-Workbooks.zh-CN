@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"41b4b-101\">使用情况日历</span><span class=\"sxs-lookup\"><span data-stu-id=\"41b4b-101\">Usage Calendar</span></span>",
+    "name": "使用情况日历",
     "author": "Microsoft",
     "galleries": [
         {

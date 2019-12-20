@@ -43,7 +43,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"performance-analysis\"></a><span data-ttu-id=\"1ff18-101\">性能分析</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-101\">Performance Analysis</span></span>"
+                "json": "# <a name=\"performance-analysis\"></a>性能分析"
             },
             "conditionalVisibility": {
                 "parameterName": "ContextFree",
@@ -201,7 +201,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"1ff18-102\">⚠ 此工作簿需要[用于 VM 的 Azure Monitor（预览版）](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/vminsights-overview)已启用才能显示准确且完整的 VM 信息。</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-102\">⚠ This workbook requires [Azure Monitor for VMs (preview)](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/vminsights-overview) enabled in order to show accurate and complete information for your VMs.</span></span> <span data-ttu-id=\"1ff18-103\">按照该链接指向的说明载入计算机，或者选择不同的工作区。</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-103\">Follow the link to onboard machines or select a different workspace.</span></span>"
+                "json": "⚠ 此工作簿需要[用于 VM 的 Azure Monitor（预览版）](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/vminsights-overview)已启用才能显示准确且完整的 VM 信息。 按照该链接指向的说明载入计算机，或者选择不同的工作区。"
             },
             "conditionalVisibility": {
                 "parameterName": "Test",
@@ -221,7 +221,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h2 style=\"margin-bottom:0;padding-bottom:0;\"><span data-ttu-id=\"1ff18-104\">前 100 台计算机</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-104\">Top 100 Machines</span></span></h2>"
+                "json": "<h2 style=\"margin-bottom:0;padding-bottom:0;\">前 100 台计算机</h2>"
             },
             "conditionalVisibility": null,
             "name": "text - 5"
@@ -240,7 +240,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "Counter",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"1ff18-105\">为下表选择 VM 性能计数器</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-105\">Select a VM performance counter for the table below</span></span>",
+                        "description": "为下表选择 VM 性能计数器",
                         "isRequired": false,
                         "query": "// {Resource} {Test}\r\nPerf\r\n| where TimeGenerated {TimeRange}\r\n| where ObjectName != 'Network' and ObjectName != 'Network Interface'\r\n| summarize by CounterName, ObjectName, CounterText = CounterName\r\n| order by ObjectName asc, CounterText asc\r\n| project Counter = pack('counter', CounterName, 'object', ObjectName), CounterText, group = ObjectName",
                         "crossComponentResources": [
@@ -304,7 +304,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "Aggregators",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"1ff18-106\">选择一个或多个要在下表中显示的不同聚合</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-106\">Select one or more different aggregates to display in the table below</span></span>",
+                        "description": "选择一个或多个要在下表中显示的不同聚合",
                         "isRequired": true,
                         "multiSelect": true,
                         "quote": "",
@@ -321,7 +321,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "TableTrend",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"1ff18-107\">选择要在下表中的 Trend 列中显示的百分位数</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-107\">Select a percentile to display in the Trend column in the table below</span></span>",
+                        "description": "选择要在下表中的 Trend 列中显示的百分位数",
                         "isRequired": true,
                         "isHiddenWhenLocked": false,
                         "typeSettings": {
@@ -450,7 +450,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"1ff18-108\">没有任何性能计数器，请将计算机载入到此工作区或启用性能计数器。</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-108\">There are no performance counters, either onboard machines to this workspace or enable performance counters.</span></span>"
+                "json": "没有任何性能计数器，请将计算机载入到此工作区或启用性能计数器。"
             },
             "conditionalVisibility": {
                 "parameterName": "CounterTest",
@@ -666,7 +666,7 @@
         {
             "type": 1,
             "content": {
-                "json": "#### <a name=\"-total-bytes-networkdirection-counters-are-also-being-utilized-to-display-the-network-table-the-delta-of-total-bytes-networkdirection-over-a-time-period-is-being-calculated-to-match-up-with-the-bytes-networkdirectionsec-counter-to-display-an-accurate-representation-of-network-activity-over-all-machines\"></a><span data-ttu-id=\"1ff18-109\">ℹ `Total Bytes {NetworkDirection}` 计数器也被用于显示网络表。</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-109\">ℹ `Total Bytes {NetworkDirection}` counters are also being utilized to display the network table.</span></span> <span data-ttu-id=\"1ff18-110\">计算一段时间内 `Total Bytes {NetworkDirection}` 的增量以与 `Bytes {NetworkDirection}/sec` 计数器匹配，显示所有机器上网络活动的准确表示</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-110\">The delta of `Total Bytes {NetworkDirection}` over a time period is being calculated to match up with the `Bytes {NetworkDirection}/sec` counter to display an accurate representation of network activity over all machines</span></span>"
+                "json": "#### <a name=\"-total-bytes-no_loc_phnetworkdirectionno_loc_ph-counters-are-also-being-utilized-to-display-the-network-table-the-delta-of-total-bytes-no_loc_phnetworkdirectionno_loc_ph-over-a-time-period-is-being-calculated-to-match-up-with-the-bytes-no_loc_phnetworkdirectionno_loc_phsec-counter-to-display-an-accurate-representation-of-network-activity-over-all-machines\"></a>ℹ `Total Bytes {NetworkDirection}` 计数器也被用于显示网络表。 计算一段时间内 `Total Bytes {NetworkDirection}` 的增量以与 `Bytes {NetworkDirection}/sec` 计数器匹配，显示所有机器上网络活动的准确表示"
             },
             "conditionalVisibility": {
                 "parameterName": "ShowNetworkTable",
@@ -878,7 +878,7 @@
         {
             "type": 1,
             "content": {
-                "json": "---\n## <a name=\"top-10-machines\"></a><span data-ttu-id=\"1ff18-111\">前 10 台计算机</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-111\">Top 10 Machines</span></span>"
+                "json": "---\n## <a name=\"top-10-machines\"></a>前 10 台计算机"
             },
             "conditionalVisibility": null,
             "name": "text - 11"
@@ -886,7 +886,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"cpu-utilization-\"></a><span data-ttu-id=\"1ff18-112\">CPU 使用率百分比</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-112\">CPU Utilization %</span></span>"
+                "json": "### <a name=\"cpu-utilization-\"></a>CPU 使用率百分比"
             },
             "conditionalVisibility": null,
             "customWidth": "50",
@@ -895,7 +895,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"available-memory\"></a><span data-ttu-id=\"1ff18-113\">可用内存</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-113\">Available Memory</span></span>"
+                "json": "### <a name=\"available-memory\"></a>可用内存"
             },
             "conditionalVisibility": null,
             "customWidth": "50",
@@ -1140,7 +1140,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"bytes-sent-rate\"></a><span data-ttu-id=\"1ff18-114\">发送字节的速率</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-114\">Bytes Sent Rate</span></span>"
+                "json": "### <a name=\"bytes-sent-rate\"></a>发送字节的速率"
             },
             "conditionalVisibility": null,
             "customWidth": "50",
@@ -1149,7 +1149,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"bytes-received-rate\"></a><span data-ttu-id=\"1ff18-115\">接收字节的速率</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-115\">Bytes Received Rate</span></span>"
+                "json": "### <a name=\"bytes-received-rate\"></a>接收字节的速率"
             },
             "conditionalVisibility": null,
             "customWidth": "50",
@@ -1392,7 +1392,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"logical-disk-space-used-\"></a><span data-ttu-id=\"1ff18-116\">逻辑磁盘空间使用百分比</span><span class=\"sxs-lookup\"><span data-stu-id=\"1ff18-116\">Logical Disk Space Used %</span></span>"
+                "json": "### <a name=\"logical-disk-space-used-\"></a>逻辑磁盘空间使用百分比"
             },
             "conditionalVisibility": null,
             "customWidth": "50",

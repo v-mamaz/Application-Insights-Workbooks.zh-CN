@@ -316,7 +316,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"33157-101\">💡 _单击单元格中的链接可查看有关存储帐户的更多详细信息_</span><span class=\"sxs-lookup\"><span data-stu-id=\"33157-101\">💡 _Click on the links in the cells to see more details about a storage account_</span></span>"
+                "json": "💡 _单击单元格中的链接可查看有关存储帐户的更多详细信息_"
             },
             "conditionalVisibility": {
                 "parameterName": "Resources",
@@ -328,7 +328,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"33157-102\">⚠️ 此资源组中似乎没有任何存储帐户。</span><span class=\"sxs-lookup\"><span data-stu-id=\"33157-102\">⚠️ Looks like you don't have any storage accounts in this resource group.</span></span>"
+                "json": "⚠️ 此资源组中似乎没有任何存储帐户。"
             },
             "conditionalVisibility": {
                 "parameterName": "Resources",

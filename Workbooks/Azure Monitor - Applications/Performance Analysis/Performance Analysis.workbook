@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"application-performance-analysis\"></a><span data-ttu-id=\"67d80-101\">应用程序性能分析</span><span class=\"sxs-lookup\"><span data-stu-id=\"67d80-101\">Application Performance Analysis</span></span>"
+                "json": "## <a name=\"application-performance-analysis\"></a>应用程序性能分析"
             },
             "conditionalVisibility": null
         },
@@ -372,14 +372,14 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"67d80-102\">💡 在上表中选择一行，查看更多详细信息</span><span class=\"sxs-lookup\"><span data-stu-id=\"67d80-102\">💡 _Select a row in the table above to see more details_</span></span>\n<br />\n<br />\n"
+                "json": "💡 在上表中选择一行，查看更多详细信息\n<br />\n<br />\n"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"request-duration-milliseconds\"></a><span data-ttu-id=\"67d80-103\">请求持续时间（毫秒）</span><span class=\"sxs-lookup\"><span data-stu-id=\"67d80-103\">Request Duration (milliseconds)</span></span>"
+                "json": "### <a name=\"request-duration-milliseconds\"></a>请求持续时间（毫秒）"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -387,7 +387,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"request-count\"></a><span data-ttu-id=\"67d80-104\">请求计数</span><span class=\"sxs-lookup\"><span data-stu-id=\"67d80-104\">Request Count</span></span>"
+                "json": "### <a name=\"request-count\"></a>请求计数"
             },
             "conditionalVisibility": null,
             "customWidth": "50"

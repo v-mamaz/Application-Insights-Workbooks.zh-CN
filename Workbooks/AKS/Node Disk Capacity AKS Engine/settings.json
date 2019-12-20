@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"62838-101\">节点磁盘容量</span><span class=\"sxs-lookup\"><span data-stu-id=\"62838-101\">Node Disk Capacity</span></span>",
+    "name": "节点磁盘容量",
     "author": "Microsoft",
     "galleries": [
         {

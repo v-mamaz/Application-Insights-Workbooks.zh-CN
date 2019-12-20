@@ -5,14 +5,14 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"intune-enrollment-activity\"></a><span data-ttu-id=\"9c3b3-101\">Intune 注册活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c3b3-101\">Intune Enrollment Activity</span></span>"
+                "json": "# <a name=\"intune-enrollment-activity\"></a>Intune 注册活动"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"parameters\"></a><span data-ttu-id=\"9c3b3-102\">parameters</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c3b3-102\">Parameters</span></span>"
+                "json": "## <a name=\"parameters\"></a>parameters"
             },
             "conditionalVisibility": null
         },
@@ -137,7 +137,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-events-trend\"></a><span data-ttu-id=\"9c3b3-103\">注册事件趋势</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c3b3-103\">Enrollment Events Trend</span></span>"
+                "json": "## <a name=\"enrollment-events-trend\"></a>注册事件趋势"
             },
             "conditionalVisibility": null
         },
@@ -168,7 +168,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-statistics\"></a><span data-ttu-id=\"9c3b3-104\">注册统计信息</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c3b3-104\">Enrollment Statistics</span></span>"
+                "json": "## <a name=\"enrollment-statistics\"></a>注册统计信息"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -176,7 +176,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-success-by-enrollment-type\"></a><span data-ttu-id=\"9c3b3-105\">按注册类型划分的注册成功情况</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c3b3-105\">Enrollment Success by Enrollment Type</span></span>"
+                "json": "## <a name=\"enrollment-success-by-enrollment-type\"></a>按注册类型划分的注册成功情况"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -245,14 +245,14 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"enrollment-failures\"></a><span data-ttu-id=\"9c3b3-106\">注册失败</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c3b3-106\">Enrollment Failures</span></span>"
+                "json": "# <a name=\"enrollment-failures\"></a>注册失败"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-failure-reasons\"></a><span data-ttu-id=\"9c3b3-107\">注册失败原因</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c3b3-107\">Enrollment Failure reasons</span></span>"
+                "json": "## <a name=\"enrollment-failure-reasons\"></a>注册失败原因"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -260,7 +260,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-failures-by-platform\"></a><span data-ttu-id=\"9c3b3-108\">按平台划分的注册失败情况</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c3b3-108\">Enrollment Failures by Platform</span></span>"
+                "json": "## <a name=\"enrollment-failures-by-platform\"></a>按平台划分的注册失败情况"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -340,7 +340,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"enrollment-failures-by-enrollment-type\"></a><span data-ttu-id=\"9c3b3-109\">按注册类型划分的注册失败情况</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c3b3-109\">Enrollment Failures by Enrollment Type</span></span>"
+                "json": "## <a name=\"enrollment-failures-by-enrollment-type\"></a>按注册类型划分的注册失败情况"
             },
             "conditionalVisibility": null
         },

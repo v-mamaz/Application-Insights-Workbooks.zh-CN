@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"usage-analysis\"></a><span data-ttu-id=\"3f3ef-101\">使用情况分析</span><span class=\"sxs-lookup\"><span data-stu-id=\"3f3ef-101\">Usage Analysis</span></span>\n<span data-ttu-id=\"3f3ef-102\">使用此报告可了解应用程序的使用情况。</span><span class=\"sxs-lookup\"><span data-stu-id=\"3f3ef-102\">Use this report to understand usage of your applications.</span></span>\n\n<span data-ttu-id=\"3f3ef-103\">使用 `Subscription` 和 `Apps` 参数可选择要分析的应用程序。</span><span class=\"sxs-lookup\"><span data-stu-id=\"3f3ef-103\">Use the `Subscription` and `Apps` parameters to pick the application you want to analyze.</span></span> <span data-ttu-id=\"3f3ef-104\">使用 `Sources` 参数可以切换到分析页面视图、自定义事件或请求。</span><span class=\"sxs-lookup\"><span data-stu-id=\"3f3ef-104\">The `Sources` parameter will allow you to switch to analyzing page views, custom events or requests.</span></span> <span data-ttu-id=\"3f3ef-105\">使用 `Count` 可以在“匿名”用户和“已经过身份验证的”用户之间切换。</span><span class=\"sxs-lookup\"><span data-stu-id=\"3f3ef-105\">`Count` allows you to switch between _anonymous_ and _authenticated_ users.</span></span>"
+                "json": "## <a name=\"usage-analysis\"></a>使用情况分析\n使用此报告可了解应用程序的使用情况。\n\n使用 `Subscription` 和 `Apps` 参数可选择要分析的应用程序。 使用 `Sources` 参数可以切换到分析页面视图、自定义事件或请求。 使用 `Count` 可以在“匿名”用户和“已经过身份验证的”用户之间切换。"
             },
             "conditionalVisibility": null
         },
@@ -362,7 +362,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"3f3ef-106\">💡 在上表中选择一行，查看更多详细信息</span><span class=\"sxs-lookup\"><span data-stu-id=\"3f3ef-106\">💡 _Select a row in the table above to see more details_</span></span>\n<br />\n<br />\n"
+                "json": "💡 在上表中选择一行，查看更多详细信息\n<br />\n<br />\n"
             },
             "conditionalVisibility": null
         },
@@ -450,7 +450,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"3f3ef-107\">⚠️ _对于匿名用户而言，跨不同域中的应用程序的唯一计数聚合可能不准确_</span><span class=\"sxs-lookup\"><span data-stu-id=\"3f3ef-107\">⚠️ _Unique count aggregations across applications from different domains may not be accurate for anonymous users_</span></span>"
+                "json": "⚠️ _对于匿名用户而言，跨不同域中的应用程序的唯一计数聚合可能不准确_"
             },
             "conditionalVisibility": null
         }

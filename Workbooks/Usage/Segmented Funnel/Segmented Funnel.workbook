@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"segmented-funnel\"></a><span data-ttu-id=\"4a6d7-101\">分段漏斗图</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-101\">Segmented Funnel</span></span>\n---\n<span data-ttu-id=\"4a6d7-102\">漏斗图是一种计算应用中特定用户行为的转化率的有效工具。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-102\">Funnels are an effective tool in calculating conversions rates of specific user behaviors in your app.</span></span> <span data-ttu-id=\"4a6d7-103\">例如，它可以衡量访问你应用的用户执行感兴趣的事件（例如在应用中进行购买）的频率。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-103\">For instance, it could measure the rate at which users who come to your app perform an interesting event -- like make a purchase from within your app.</span></span>\n\n<span data-ttu-id=\"4a6d7-104\">分段漏斗图可以分析跨感兴趣维度（例如跨国家/地区、应用版本或设备类型）的转化率。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-104\">Segmenting a funnel allows the analysis of conversion rates across an interesting dimension -- say across countries, app versions or device type.</span></span> <span data-ttu-id=\"4a6d7-105\">这样可以识别潜在转化问题，例如：</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-105\">This allows you to identify potential conversions issues like:</span></span>\n* <span data-ttu-id=\"4a6d7-106\">加拿大的转换率比美国低 10％，或者 </span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-106\">Conversion in Canada is 10% lower than in the United States, or</span></span> \n* <span data-ttu-id=\"4a6d7-107\">在 Android 设备上进行购买的用户似乎并不多。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-107\">Not many users seem to be purchasing on Android devices.</span></span>\n\n<span data-ttu-id=\"4a6d7-108\">使用此报表可在选择的“标准”或“自定义”维度上创建分析转化率。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-108\">Use this report to create analyze conversion rates across a _standard_ or _custom_ dimension of your choice.</span></span>"
+                "json": "## <a name=\"segmented-funnel\"></a>分段漏斗图\n---\n漏斗图是一种计算应用中特定用户行为的转化率的有效工具。 例如，它可以衡量访问你应用的用户执行感兴趣的事件（例如在应用中进行购买）的频率。\n\n分段漏斗图可以分析跨感兴趣维度（例如跨国家/地区、应用版本或设备类型）的转化率。 这样可以识别潜在转化问题，例如：\n* 加拿大的转换率比美国低 10％，或者 \n* 在 Android 设备上进行购买的用户似乎并不多。\n\n使用此报表可在选择的“标准”或“自定义”维度上创建分析转化率。"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -34,7 +34,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "ConversionScope",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"4a6d7-109\">选择转化计算的范围。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-109\">Select the scope for your conversion calculations.</span></span> <span data-ttu-id=\"4a6d7-110\">在“会话”范围内，顶部和底部的活动都需要在同一个会话中进行，以计入转化。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-110\">In the Session scope, both the top and bottom activities need to happen in the same session to count towards conversion.</span></span> <span data-ttu-id=\"4a6d7-111\">对于两个用户范围，用户可在不同的会话中完成这两项活动。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-111\">For both User scopes, the user is allowed to have done both activities in different sessions.</span></span>",
+                        "description": "选择转化计算的范围。 在“会话”范围内，顶部和底部的活动都需要在同一个会话中进行，以计入转化。 对于两个用户范围，用户可在不同的会话中完成这两项活动。",
                         "isRequired": true,
                         "multiSelect": null,
                         "query": "datatable(key:string, display:string)\n[\n\"user_Id\", \"Anonymous Users\", \n\"user_AuthenticatedId\", \"Authenticated Users\",\"session_Id\", \"Sessions\",\n]",
@@ -48,7 +48,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"set-the-top-of-the-funnel\"></a><span data-ttu-id=\"4a6d7-112\">设置漏斗图的顶部</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-112\">Set the Top of the Funnel</span></span>"
+                "json": "### <a name=\"set-the-top-of-the-funnel\"></a>设置漏斗图的顶部"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -65,7 +65,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "TopStep",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"4a6d7-113\">选择构成漏斗图顶部的活动。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-113\">Select the activities that form the top of your funnel.</span></span>",
+                        "description": "选择构成漏斗图顶部的活动。",
                         "isRequired": true,
                         "multiSelect": true,
                         "quote": "'",
@@ -77,7 +77,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "TopFilters",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"4a6d7-114\">用于进一步筛选顶部步骤的分析查询代码片段。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-114\">An analytics query snippet to further filter the top step.</span></span> <span data-ttu-id=\"4a6d7-115\">示例：| where application_Version = '1.0'</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-115\">Example: | where application_Version = '1.0'</span></span>",
+                        "description": "用于进一步筛选顶部步骤的分析查询代码片段。 示例：| where application_Version = '1.0'",
                         "isRequired": false
                     },
                     {
@@ -99,7 +99,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"set-the-bottom-of-the-funnel\"></a><span data-ttu-id=\"4a6d7-116\">设置漏斗图底部</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-116\">Set the Bottom of the Funnel</span></span>"
+                "json": "### <a name=\"set-the-bottom-of-the-funnel\"></a>设置漏斗图底部"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -116,7 +116,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "BottomStep",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"4a6d7-117\">选择构成漏斗图底部的活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-117\">Select the activities that form the bottom of your funnel</span></span>",
+                        "description": "选择构成漏斗图底部的活动",
                         "isRequired": true,
                         "multiSelect": true,
                         "quote": "'",
@@ -128,7 +128,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "BottomFilters",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"4a6d7-118\">用于进一步筛选底部步骤的分析查询代码片段。</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-118\">An analytics query snippet to further filter the bottom step.</span></span> <span data-ttu-id=\"4a6d7-119\">示例：| where application_Version = '1.0'</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-119\">Example: | where application_Version = '1.0'</span></span>",
+                        "description": "用于进一步筛选底部步骤的分析查询代码片段。 示例：| where application_Version = '1.0'",
                         "isRequired": false
                     }
                 ]
@@ -139,7 +139,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"funnels\"></a><span data-ttu-id=\"4a6d7-120\">漏斗图</span><span class=\"sxs-lookup\"><span data-stu-id=\"4a6d7-120\">Funnels</span></span>"
+                "json": "# <a name=\"funnels\"></a>漏斗图"
             },
             "conditionalVisibility": null,
             "halfWidth": false
