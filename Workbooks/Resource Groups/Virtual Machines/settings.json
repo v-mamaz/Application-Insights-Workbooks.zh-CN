@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"43227-101\">虚拟机</span><span class=\"sxs-lookup\"><span data-stu-id=\"43227-101\">Virtual machines</span></span>",
+    "name": "虚拟机",
     "author": "Microsoft",
     "galleries": [
         {

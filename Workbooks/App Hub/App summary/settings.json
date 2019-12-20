@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"fad23-101\">应用程序摘要</span><span class=\"sxs-lookup\"><span data-stu-id=\"fad23-101\">Application summary</span></span>",
+    "name": "应用程序摘要",
     "author": "Microsoft",
     "galleries": [
         {

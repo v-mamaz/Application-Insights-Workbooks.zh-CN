@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"76de8-101\">SQL 数据库</span><span class=\"sxs-lookup\"><span data-stu-id=\"76de8-101\">Sql databases</span></span>",
+    "name": "SQL 数据库",
     "author": "Microsoft",
     "galleries": [
         {

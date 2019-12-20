@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"2dbf8-101\">按条件访问状态显示的登录</span><span class=\"sxs-lookup\"><span data-stu-id=\"2dbf8-101\">Sign-ins by Conditional Access Status</span></span>",
+    "name": "按条件访问状态显示的登录",
     "author": "Microsoft",
     "galleries": [
         {

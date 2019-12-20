@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"7a5c6-101\">存储帐户概述</span><span class=\"sxs-lookup\"><span data-stu-id=\"7a5c6-101\">Storage Account Overview</span></span>",
+    "name": "存储帐户概述",
     "author": "Microsoft",
     "galleries": [
         {

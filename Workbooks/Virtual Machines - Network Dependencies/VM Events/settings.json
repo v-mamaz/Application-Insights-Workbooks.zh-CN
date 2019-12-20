@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"a67f1-101\">VM 事件（预览）</span><span class=\"sxs-lookup\"><span data-stu-id=\"a67f1-101\">VM Events (preview)</span></span>",
+    "name": "VM 事件（预览）",
     "author": "Microsoft",
     "isPreview": true,
     "galleries": [

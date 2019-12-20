@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"24c16-101\">N 周期保留期</span><span class=\"sxs-lookup\"><span data-stu-id=\"24c16-101\">N-Period Retention</span></span>",
+    "name": "N 周期保留期",
     "author": "Microsoft",
     "galleries": [
         {

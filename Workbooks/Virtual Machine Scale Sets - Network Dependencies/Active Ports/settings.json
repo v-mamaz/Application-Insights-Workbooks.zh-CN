@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"5c44c-101\">活动端口</span><span class=\"sxs-lookup\"><span data-stu-id=\"5c44c-101\">Active Ports</span></span>",
+    "name": "活动端口",
     "author": "Microsoft",
     "galleries": [
         {

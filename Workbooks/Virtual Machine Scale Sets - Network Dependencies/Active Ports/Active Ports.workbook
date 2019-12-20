@@ -202,7 +202,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"port-activity-by-computer-process-ip-and-port\"></a><span data-ttu-id=\"2e323-101\">按计算机、进程、IP 和端口列出的端口活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"2e323-101\">Port activity by Computer, Process, IP and Port</span></span>"
+                "json": "## <a name=\"port-activity-by-computer-process-ip-and-port\"></a>按计算机、进程、IP 和端口列出的端口活动"
             },
             "conditionalVisibility": null,
             "name": "text - 1"

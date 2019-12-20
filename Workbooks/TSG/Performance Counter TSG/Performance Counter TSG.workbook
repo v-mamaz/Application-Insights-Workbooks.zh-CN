@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"troubleshooting-issues-using-performance-counters\"></a><span data-ttu-id=\"9c5d0-101\">使用性能计数器排除故障问题</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-101\">Troubleshooting Issues Using Performance Counters</span></span>"
+                "json": "# <a name=\"troubleshooting-issues-using-performance-counters\"></a>使用性能计数器排除故障问题"
             },
             "conditionalVisibility": null
         },
@@ -105,7 +105,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"problem---high-cpu-utilization\"></a><span data-ttu-id=\"9c5d0-102\">问题 - CPU 利用率较高</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-102\">Problem - High CPU Utilization</span></span>\n<span data-ttu-id=\"9c5d0-103\">CPU 利用率持续较高会导致部署的应用程序中出现性能和可用性问题。</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-103\">Consistently high CPU utilization can performance and availability problems in your deployed application.</span></span> <span data-ttu-id=\"9c5d0-104\">本节将帮助你了解哪些服务器运行得足够热，可能会影响应用程序的可靠性。</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-104\">This section will help you understand which of your servers are running hot enough to potentially affect the reliability of your application.</span></span> "
+                "json": "## <a name=\"problem---high-cpu-utilization\"></a>问题 - CPU 利用率较高\nCPU 利用率持续较高会导致部署的应用程序中出现性能和可用性问题。 本节将帮助你了解哪些服务器运行得足够热，可能会影响应用程序的可靠性。 "
             },
             "conditionalVisibility": null
         },
@@ -210,14 +210,14 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"causes\"></a><span data-ttu-id=\"9c5d0-105\">原因</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-105\">Causes</span></span>\n<span data-ttu-id=\"9c5d0-106\">CPU 利用率较高通常表示系统上的负载超出预配的计算资源的处理能力。</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-106\">High CPU utilization usually indicates that the load on your system is higher than the provisioned compute resources can handle.</span></span> <span data-ttu-id=\"9c5d0-107\">如果应用程序的使用量增加或部署中应用的性能下降，则可能发生这种情况。</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-107\">This may happen if the usage of your application has increased or due to a regression in the performance of the app in a deployment.</span></span>\n\n<span data-ttu-id=\"9c5d0-108\">其他可能的原因包括：</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-108\">Other possible reasons include:</span></span> \n1. <span data-ttu-id=\"9c5d0-109\">计算机上频繁的作业或计划的任务，</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-109\">Frequent jobs or scheduled tasks on the machine,</span></span> \n2. <span data-ttu-id=\"9c5d0-110\">过多的模块/插件/扩展，</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-110\">Excessive modules/plugins/extensions,</span></span> \n3. <span data-ttu-id=\"9c5d0-111\">基础计算资源上运行的过多 Web 应用，</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-111\">Too many web apps running on the underlying compute resources,</span></span> \n4. <span data-ttu-id=\"9c5d0-112\">搜索引擎蜘蛛程序和机器人。</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-112\">Search engine spiders and bots.</span></span> "
+                "json": "## <a name=\"causes\"></a>原因\nCPU 利用率较高通常表示系统上的负载超出预配的计算资源的处理能力。 如果应用程序的使用量增加或部署中应用的性能下降，则可能发生这种情况。\n\n其他可能的原因包括： \n1. 计算机上频繁的作业或计划的任务， \n2. 过多的模块/插件/扩展， \n3. 基础计算资源上运行的过多 Web 应用， \n4. 搜索引擎蜘蛛程序和机器人。 "
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"solutions\"></a><span data-ttu-id=\"9c5d0-113\">解决方案</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-113\">Solutions</span></span>\n<span data-ttu-id=\"9c5d0-114\">如果 CPU 利用率确实是负载增加的结果，则扩展最适当的响应：</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-114\">If the CPU utilization is truly a result of increased load, then scaling the most appropriate response:</span></span>\n* <span data-ttu-id=\"9c5d0-115\">横向扩展 - 添加更多计算资源。</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-115\">Scale out - to add more compute resources.</span></span> <span data-ttu-id=\"9c5d0-116\">如果 10 个 VM 用于为应用程序提供服务，请将其扩展为 15 个以减轻现有 VM 的负载。</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-116\">If 10 VMs used to serve the application, scale it to 15 to relieve the load off the existing VMs.</span></span>\n* <span data-ttu-id=\"9c5d0-117\">纵向扩展 - 使用更高质量的资源（从 2 核 CPU 升级到 8 核 CPU）</span><span class=\"sxs-lookup\"><span data-stu-id=\"9c5d0-117\">Scale up - use higher quality of resources (upgrade from 2 core CPU to and 8-core CPU)</span></span>"
+                "json": "## <a name=\"solutions\"></a>解决方案\n如果 CPU 利用率确实是负载增加的结果，则扩展最适当的响应：\n* 横向扩展 - 添加更多计算资源。 如果 10 个 VM 用于为应用程序提供服务，请将其扩展为 15 个以减轻现有 VM 的负载。\n* 纵向扩展 - 使用更高质量的资源（从 2 核 CPU 升级到 8 核 CPU）"
             },
             "conditionalVisibility": null
         }

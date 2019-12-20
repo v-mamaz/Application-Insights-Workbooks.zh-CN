@@ -5,14 +5,14 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"intune-audit-activity\"></a><span data-ttu-id=\"83268-101\">Intune 审核活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"83268-101\">Intune Audit Activity</span></span> "
+                "json": "# <a name=\"intune-audit-activity\"></a>Intune 审核活动 "
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"parameters\"></a><span data-ttu-id=\"83268-102\">parameters</span><span class=\"sxs-lookup\"><span data-stu-id=\"83268-102\">Parameters</span></span>"
+                "json": "## <a name=\"parameters\"></a>parameters"
             },
             "conditionalVisibility": null
         },
@@ -137,7 +137,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"audit-events-trend\"></a><span data-ttu-id=\"83268-103\">审核事件趋势</span><span class=\"sxs-lookup\"><span data-stu-id=\"83268-103\">Audit Events Trend</span></span>"
+                "json": "## <a name=\"audit-events-trend\"></a>审核事件趋势"
             },
             "conditionalVisibility": null
         },
@@ -168,7 +168,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"activity-types\"></a><span data-ttu-id=\"83268-104\">活动类型</span><span class=\"sxs-lookup\"><span data-stu-id=\"83268-104\">Activity Types</span></span>"
+                "json": "## <a name=\"activity-types\"></a>活动类型"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -176,7 +176,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"top-users-with-audited-actions\"></a><span data-ttu-id=\"83268-105\">使用经过审核的操作的主要用户</span><span class=\"sxs-lookup\"><span data-stu-id=\"83268-105\">Top users with audited actions</span></span>"
+                "json": "## <a name=\"top-users-with-audited-actions\"></a>使用经过审核的操作的主要用户"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -256,14 +256,14 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"remote-actions\"></a><span data-ttu-id=\"83268-106\">远程操作</span><span class=\"sxs-lookup\"><span data-stu-id=\"83268-106\">Remote actions</span></span>"
+                "json": "# <a name=\"remote-actions\"></a>远程操作"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"remote-actions-by-action-type\"></a><span data-ttu-id=\"83268-107\">按操作类型划分的远程操作</span><span class=\"sxs-lookup\"><span data-stu-id=\"83268-107\">Remote actions by action type</span></span>"
+                "json": "## <a name=\"remote-actions-by-action-type\"></a>按操作类型划分的远程操作"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -271,7 +271,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"remote-actions-top-users\"></a><span data-ttu-id=\"83268-108\">远程操作主要用户</span><span class=\"sxs-lookup\"><span data-stu-id=\"83268-108\">Remote actions top users</span></span>"
+                "json": "## <a name=\"remote-actions-top-users\"></a>远程操作主要用户"
             },
             "conditionalVisibility": null,
             "customWidth": "50"

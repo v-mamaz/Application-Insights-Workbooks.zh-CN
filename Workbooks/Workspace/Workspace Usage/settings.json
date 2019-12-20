@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"5fa5e-101\">工作区使用情况</span><span class=\"sxs-lookup\"><span data-stu-id=\"5fa5e-101\">Workspace Usage</span></span>",
+    "name": "工作区使用情况",
     "author": "Microsoft",
     "galleries": [
         {

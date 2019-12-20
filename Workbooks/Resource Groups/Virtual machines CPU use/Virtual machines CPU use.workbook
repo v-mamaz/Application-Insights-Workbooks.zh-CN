@@ -119,7 +119,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"6a798-101\">⚠️ 此资源组中似乎没有任何虚拟机。</span><span class=\"sxs-lookup\"><span data-stu-id=\"6a798-101\">⚠️ Looks like you don't have any virtual machines in this resource group.</span></span>"
+                "json": "⚠️ 此资源组中似乎没有任何虚拟机。"
             },
             "conditionalVisibility": {
                 "parameterName": "VirtualMachines",
@@ -348,7 +348,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"6a798-102\">💡 _单击单元格中的链接可查看有关虚拟机的更多详细信息_</span><span class=\"sxs-lookup\"><span data-stu-id=\"6a798-102\">💡 _Click on the links in the cell to see more details about the virtual machine_</span></span>"
+                "json": "💡 _单击单元格中的链接可查看有关虚拟机的更多详细信息_"
             },
             "conditionalVisibility": {
                 "parameterName": "VirtualMachines",

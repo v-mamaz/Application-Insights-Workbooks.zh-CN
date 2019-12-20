@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"e7f6a-101\">Workbench 故障排除</span><span class=\"sxs-lookup\"><span data-stu-id=\"e7f6a-101\">Workbench Troubleshooting</span></span>",
+    "name": "Workbench 故障排除",
     "author": "Azure Blockchain",
     "galleries": [
         {

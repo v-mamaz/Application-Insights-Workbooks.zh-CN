@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"b386e-101\">文件</span><span class=\"sxs-lookup\"><span data-stu-id=\"b386e-101\">Files</span></span>",
+    "name": "文件",
     "author": "Microsoft",
     "galleries": [
         {

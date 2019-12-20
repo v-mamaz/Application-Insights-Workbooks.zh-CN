@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"hdinsight-kafka-insights\"></a><span data-ttu-id=\"3aa90-101\">HDInsight Kafka 见解</span><span class=\"sxs-lookup\"><span data-stu-id=\"3aa90-101\">HDInsight Kafka Insights</span></span>"
+                "json": "# <a name=\"hdinsight-kafka-insights\"></a>HDInsight Kafka 见解"
             },
             "name": "text - 1"
         },
@@ -257,7 +257,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"metricskafkacl-table-not-found\"></a><span data-ttu-id=\"3aa90-102\">找不到 metrics_kafka_CL 表</span><span class=\"sxs-lookup\"><span data-stu-id=\"3aa90-102\">metrics_kafka_CL table not found</span></span>\n<span data-ttu-id=\"3aa90-103\">确保至少有 1 个 HDInsight Kafka 群集启用了 Azure Monitor 日志集成并链接到此工作区。</span><span class=\"sxs-lookup\"><span data-stu-id=\"3aa90-103\">Ensure you have at least 1 HDInsight Kafka cluster with Azure Monitor Logs integration enabled and linked to this workspace.</span></span> <span data-ttu-id=\"3aa90-104\">请参阅文档<a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-oms-log-analytics-tutorial\">使用 Azure Monitor 日志监视 HDInsight 群集</a>。</span><span class=\"sxs-lookup\"><span data-stu-id=\"3aa90-104\">See the documentation<a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-oms-log-analytics-tutorial\">, Use Azure Monitor logs to monitor HDInsight clusters</a>.</span></span>"
+                "json": "## <a name=\"metrics_kafka_cl-table-not-found\"></a>找不到 metrics_kafka_CL 表\n确保至少有 1 个 HDInsight Kafka 群集启用了 Azure Monitor 日志集成并链接到此工作区。 请参阅文档<a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-oms-log-analytics-tutorial\">使用 Azure Monitor 日志监视 HDInsight 群集</a>。"
             },
             "conditionalVisibility": {
                 "parameterName": "KafkaMetricsTableExists",

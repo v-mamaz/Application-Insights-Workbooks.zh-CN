@@ -207,14 +207,14 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"7516a-101\">💡 <em>从下表中选择一行以查看该条目的端口详细信息</em>。</span><span class=\"sxs-lookup\"><span data-stu-id=\"7516a-101\">💡 <em>Select a row from the table below to view port details for that entry.</em></span></span>"
+                "json": "💡 <em>从下表中选择一行以查看该条目的端口详细信息</em>。"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "<h2 style=\"font-weight:normal;\"><span data-ttu-id=\"7516a-102\">工作区中所有计算机的开放端口列表</span><span class=\"sxs-lookup\"><span data-stu-id=\"7516a-102\">List of Open Ports for all Computers in the Workspace</span></span></h2>"
+                "json": "<h2 style=\"font-weight:normal;\">工作区中所有计算机的开放端口列表</h2>"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -222,7 +222,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h2 style=\"font-weight:normal;\"><span data-ttu-id=\"7516a-103\">所选计算机上正由进程使用的端口</span><span class=\"sxs-lookup\"><span data-stu-id=\"7516a-103\">Ports in use by Processes on the Selected Computer</span></span></h2>"
+                "json": "<h2 style=\"font-weight:normal;\">所选计算机上正由进程使用的端口</h2>"
             },
             "conditionalVisibility": null,
             "customWidth": "50"

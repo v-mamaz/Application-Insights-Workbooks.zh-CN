@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"queue-storage-classic-metrics\"></a><span data-ttu-id=\"eae00-101\">队列存储（经典）指标</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-101\">Queue Storage (Classic) Metrics</span></span>"
+                "json": "# <a name=\"queue-storage-classic-metrics\"></a>队列存储（经典）指标"
             },
             "conditionalVisibility": null
         },
@@ -137,7 +137,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"total-requests\"></a><span data-ttu-id=\"eae00-102\">请求总数</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-102\">Total Requests</span></span>"
+                "json": "## <a name=\"total-requests\"></a>请求总数"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -145,7 +145,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"availability\"></a><span data-ttu-id=\"eae00-103\">可用性</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-103\">Availability</span></span>"
+                "json": "## <a name=\"availability\"></a>可用性"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -213,7 +213,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"eae00-104\">“请求总数”是指向存储服务或指定的 API 操作发出的请求数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-104\">*Total Requests* is the number of requests made to a storage service or the specified API operation.</span></span> <span data-ttu-id=\"eae00-105\">此数值包括成功和失败的请求数，以及引发错误的请求数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-105\">This number includes successful and failed requests, as well as requests which produced errors.</span></span>"
+                "json": "“请求总数”是指向存储服务或指定的 API 操作发出的请求数。 此数值包括成功和失败的请求数，以及引发错误的请求数。"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -221,7 +221,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"eae00-106\">“可用性”是存储服务或指定的 API 操作的可用性百分比。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-106\">*Availability* is the percentage of availability for the storage service or the specified API operation.</span></span> <span data-ttu-id=\"eae00-107\">可用性通过由 TotalBillableRequests 值除以适用的请求数（其中包括引发意外错误的请求）计算得出。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-107\">Availability is calculated by taking the TotalBillableRequests value and dividing it by the number of applicable requests, including those that produced unexpected errors.</span></span> <span data-ttu-id=\"eae00-108\">所有意外错误都会导致存储服务或指定的 API 操作的可用性下降。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-108\">All unexpected errors result in reduced availability for the storage service or the specified API operation.</span></span> "
+                "json": "“可用性”是存储服务或指定的 API 操作的可用性百分比。 可用性通过由 TotalBillableRequests 值除以适用的请求数（其中包括引发意外错误的请求）计算得出。 所有意外错误都会导致存储服务或指定的 API 操作的可用性下降。 "
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -236,7 +236,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"total-ingress\"></a><span data-ttu-id=\"eae00-109\">入口总数</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-109\">Total Ingress</span></span>"
+                "json": "## <a name=\"total-ingress\"></a>入口总数"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -244,7 +244,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"total-egress\"></a><span data-ttu-id=\"eae00-110\">出口总数</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-110\">Total Egress</span></span>"
+                "json": "## <a name=\"total-egress\"></a>出口总数"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -312,7 +312,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"eae00-111\">“入口总数”指流入的数据量（以字节为单位）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-111\">*Total ingress* is the amount of ingress data, in bytes.</span></span> <span data-ttu-id=\"eae00-112\">此数字包括从外部客户端到 Azure 存储流入的数据量，以及流入 Azure 中的数据量。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-112\">This number includes ingress from an external client into Azure Storage as well as ingress within Azure.</span></span>"
+                "json": "“入口总数”指流入的数据量（以字节为单位）。 此数字包括从外部客户端到 Azure 存储流入的数据量，以及流入 Azure 中的数据量。"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -320,7 +320,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"eae00-113\">“出口总数”指流出的数据量（以字节为单位）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-113\">*Total egress* is the amount of egress data, in bytes.</span></span> <span data-ttu-id=\"eae00-114\">此数字包括从外部客户端到 Azure 存储流出的数据量，以及流出 Azure 中的数据量。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-114\">This number includes egress from an external client into Azure Storage as well as egress within Azure.</span></span> <span data-ttu-id=\"eae00-115\">因此，此数字不反映计费的流出量。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-115\">As a result, this number does not reflect billable egress.</span></span>"
+                "json": "“出口总数”指流出的数据量（以字节为单位）。 此数字包括从外部客户端到 Azure 存储流出的数据量，以及流出 Azure 中的数据量。 因此，此数字不反映计费的流出量。"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -335,7 +335,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"average-e2e-latency\"></a><span data-ttu-id=\"eae00-116\">平均 E2E 延迟</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-116\">Average E2E Latency</span></span>"
+                "json": "## <a name=\"average-e2e-latency\"></a>平均 E2E 延迟"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -343,7 +343,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"average-server-latency\"></a><span data-ttu-id=\"eae00-117\">平均服务器延迟</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-117\">Average Server Latency</span></span>"
+                "json": "## <a name=\"average-server-latency\"></a>平均服务器延迟"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -411,7 +411,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"eae00-118\">“平均 E2E 延迟”是对存储服务或指定 API 操作的成功请求的平均端到端延迟（以毫秒为单位）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-118\">*Average E2E latency* is the average end-to-end latency of successful requests made to a storage service or the specified API operation, in milliseconds.</span></span> <span data-ttu-id=\"eae00-119\">此值包括在 Azure 存储中读取请求、发送响应和接收响应确认所需的处理时间。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-119\">This value includes the required processing time within Azure Storage to read the request, send the response, and receive acknowledgment of the response.</span></span>"
+                "json": "“平均 E2E 延迟”是对存储服务或指定 API 操作的成功请求的平均端到端延迟（以毫秒为单位）。 此值包括在 Azure 存储中读取请求、发送响应和接收响应确认所需的处理时间。"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -419,7 +419,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"eae00-120\">“平均服务器延迟”是 Azure 存储用于处理成功请求的平均延迟（以毫秒为单位）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-120\">*Average server latency* is the average latency used by Azure Storage to process a successful request, in milliseconds.</span></span> <span data-ttu-id=\"eae00-121\">此值不包括 AverageE2ELatency 中指定的网络延迟。</span><span class=\"sxs-lookup\"><span data-stu-id=\"eae00-121\">This value does not include the network latency specified in AverageE2ELatency.</span></span>"
+                "json": "“平均服务器延迟”是 Azure 存储用于处理成功请求的平均延迟（以毫秒为单位）。 此值不包括 AverageE2ELatency 中指定的网络延迟。"
             },
             "conditionalVisibility": null,
             "customWidth": "50"

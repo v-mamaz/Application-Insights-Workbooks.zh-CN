@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"active-users\"></a><span data-ttu-id=\"a16ec-101\">活动用户</span><span class=\"sxs-lookup\"><span data-stu-id=\"a16ec-101\">Active Users</span></span>\n\n<span data-ttu-id=\"a16ec-102\">活动用户会计算在之前的时间段内用户至少有一次使用过应用的次数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"a16ec-102\">Active users counts how many users have used your app at least once in a previous time period.</span></span> <span data-ttu-id=\"a16ec-103\">它通常用于回答“应用或功能有多少用户？”的问题。</span><span class=\"sxs-lookup\"><span data-stu-id=\"a16ec-103\">It is typically used to answer -- *How many users does your app or feature have?*.</span></span> <span data-ttu-id=\"a16ec-104\">编辑下面的 `Activities` 参数以自定义哪些自定义事件和页面视图符合活动使用情况。</span><span class=\"sxs-lookup\"><span data-stu-id=\"a16ec-104\">Edit the `Activities` parameter below to customize what custom events and page views qualify as active usage.</span></span> \n"
+                "json": "## <a name=\"active-users\"></a>活动用户\n\n活动用户会计算在之前的时间段内用户至少有一次使用过应用的次数。 它通常用于回答“应用或功能有多少用户？”的问题。 编辑下面的 `Activities` 参数以自定义哪些自定义事件和页面视图符合活动使用情况。 \n"
             },
             "conditionalVisibility": null
         },
@@ -33,7 +33,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "Activities",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"a16ec-105\">以逗号分隔的一组页面视图或要计为活动的事件。</span><span class=\"sxs-lookup\"><span data-stu-id=\"a16ec-105\">A comma separated set of Page views or Events that are to be counted as activities.</span></span> <span data-ttu-id=\"a16ec-106\">或使用“\\*”以包括所有事件。</span><span class=\"sxs-lookup\"><span data-stu-id=\"a16ec-106\">Or user '\\*' to include all events.</span></span>",
+                        "description": "以逗号分隔的一组页面视图或要计为活动的事件。 或使用“*”以包括所有事件。",
                         "isRequired": true,
                         "multiSelect": true,
                         "quote": "'",
@@ -46,7 +46,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "OtherFilters",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"a16ec-107\">进一步筛选活动的 KQL 代码片段。</span><span class=\"sxs-lookup\"><span data-stu-id=\"a16ec-107\">A KQL snippet that further filters the activities.</span></span> <span data-ttu-id=\"a16ec-108\">示例：| where application_Version == '1.0'</span><span class=\"sxs-lookup\"><span data-stu-id=\"a16ec-108\">Example: | where application_Version == '1.0'</span></span>",
+                        "description": "进一步筛选活动的 KQL 代码片段。 示例：| where application_Version == '1.0'",
                         "isRequired": false
                     }
                 ],
@@ -216,7 +216,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"trend-of-active-users\"></a><span data-ttu-id=\"a16ec-109\">活动用户的趋势</span><span class=\"sxs-lookup\"><span data-stu-id=\"a16ec-109\">Trend of Active Users</span></span>\n<span data-ttu-id=\"a16ec-110\">从上表中选择一行，查看该项的当前使用情况变化。</span><span class=\"sxs-lookup\"><span data-stu-id=\"a16ec-110\">Select a row from the table above to see changes in active usage for that item.</span></span>"
+                "json": "## <a name=\"trend-of-active-users\"></a>活动用户的趋势\n从上表中选择一行，查看该项的当前使用情况变化。"
             },
             "conditionalVisibility": null
         },

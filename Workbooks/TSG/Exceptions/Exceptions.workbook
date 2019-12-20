@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"troubleshooting-exceptions\"></a><span data-ttu-id=\"c1da2-101\">异常故障排除</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-101\">Troubleshooting Exceptions</span></span>\n<span data-ttu-id=\"c1da2-102\">此故障排除指南可以帮助分析应用程序的异常。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-102\">This troubleshooting guide helps you analyze your application's exceptions.</span></span>"
+                "json": "# <a name=\"troubleshooting-exceptions\"></a>异常故障排除\n此故障排除指南可以帮助分析应用程序的异常。"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -169,7 +169,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"c1da2-103\">设置上面的参数以调整分析集。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-103\">Set the parameters above to tune your analysis set.</span></span> <span data-ttu-id=\"c1da2-104\">使用上面的 `Show` 参数仅查看现有或新的失败。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-104\">Use the `Show` parameter above to see only existing or new failures.</span></span> <span data-ttu-id=\"c1da2-105\">比较 `UseComparisionTimeRange` 参数设置时间范围以查找现有失败。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-105\">The comparision `UseComparisionTimeRange` parameter sets the window of time to look for existing failures.</span></span> <span data-ttu-id=\"c1da2-106\">`Problem` 只是引发异常类型和方法的组合。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-106\">A `Problem` just a combination of exception type and method at which it is thrown.</span></span> <span data-ttu-id=\"c1da2-107\">改变参数可用于筛选出一小部分问题。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-107\">Changing this parameter allows you filter down to a smaller set of issues.</span></span>"
+                "json": "设置上面的参数以调整分析集。 使用上面的 `Show` 参数仅查看现有或新的失败。 比较 `UseComparisionTimeRange` 参数设置时间范围以查找现有失败。 `Problem` 只是引发异常类型和方法的组合。 改变参数可用于筛选出一小部分问题。"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -177,7 +177,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"exception-trend\"></a><span data-ttu-id=\"c1da2-108\">异常趋势</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-108\">Exception Trend</span></span>\n<span data-ttu-id=\"c1da2-109\">下面的图表显示了所选时间范围内异常的趋势。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-109\">The chart below shows the trend of exceptions over your chosen time range.</span></span> <span data-ttu-id=\"c1da2-110\">根据新的和现有的异常拆分。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-110\">It is split by new and existing exceptions.</span></span> "
+                "json": "## <a name=\"exception-trend\"></a>异常趋势\n下面的图表显示了所选时间范围内异常的趋势。 根据新的和现有的异常拆分。 "
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -201,7 +201,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"exception-details\"></a><span data-ttu-id=\"c1da2-111\">异常详细信息</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-111\">Exception Details</span></span>"
+                "json": "## <a name=\"exception-details\"></a>异常详细信息"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -209,7 +209,7 @@
         {
             "type": 1,
             "content": {
-                "json": "\n<span data-ttu-id=\"c1da2-112\">🔸 新的失败 🔹 现有失败</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-112\">🔸 New Failure 🔹 Existing Failure</span></span>"
+                "json": "\n🔸 新的失败 🔹 现有失败"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -264,7 +264,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"mitigation\"></a><span data-ttu-id=\"c1da2-113\">缓解措施</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-113\">Mitigation</span></span>\n<span data-ttu-id=\"c1da2-114\">使用此部分列出已知问题的恢复步骤。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-114\">Use this section to list out the recovery steps for known issues.</span></span> <span data-ttu-id=\"c1da2-115\">这允许与未来的问题调查员共享信息。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-115\">This allows sharing of information with future issue investigators.</span></span> "
+                "json": "## <a name=\"mitigation\"></a>缓解措施\n使用此部分列出已知问题的恢复步骤。 这允许与未来的问题调查员共享信息。 "
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -272,7 +272,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"customizing-your-troubleshooting-guide\"></a><span data-ttu-id=\"c1da2-116\">自定义故障排除指南</span><span class=\"sxs-lookup\"><span data-stu-id=\"c1da2-116\">Customizing your Troubleshooting Guide</span></span>\n```\n1. Start editing this TSG by clicking on the 'Edit' button on the toolbar on top. \n2. Use the edit buttons on bottom-right of markdown control to update it's contents. \n3. Update the parameters to tune your analysis set.\n4. You can also update the underlying query or grid properties to personalize the analysis/view.\n5. If you want to have two sections for different performance counters, use the clone button at the bottom toolbar of a control. Use the ↑ or ↓ buttons to move the controls up or down.\n```\n"
+                "json": "## <a name=\"customizing-your-troubleshooting-guide\"></a>自定义故障排除指南\n```\n1. Start editing this TSG by clicking on the 'Edit' button on the toolbar on top. \n2. Use the edit buttons on bottom-right of markdown control to update it's contents. \n3. Update the parameters to tune your analysis set.\n4. You can also update the underlying query or grid properties to personalize the analysis/view.\n5. If you want to have two sections for different performance counters, use the clone button at the bottom toolbar of a control. Use the ↑ or ↓ buttons to move the controls up or down.\n```\n"
             },
             "conditionalVisibility": null,
             "halfWidth": false

@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"f49fa-101\">代理运行状况</span><span class=\"sxs-lookup\"><span data-stu-id=\"f49fa-101\">Agent Health</span></span>",
+    "name": "代理运行状况",
     "author": "Microsoft",
     "galleries": [
         {

@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"3ded4-101\">💡 需先将 [MMA 代理](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows)安装在 Windows 计算机上，然后才能查看 `Events` 表中的“VM 意外重启”或“VM 故障”</span><span class=\"sxs-lookup\"><span data-stu-id=\"3ded4-101\">💡 You will need to install [MMA Agent](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows) on your Windows machine in order to view _Unexpected VM Reboots_ or _VM Crashes_ from the `Events` table</span></span>"
+                "json": "💡 需先将 [MMA 代理](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows)安装在 Windows 计算机上，然后才能查看 `Events` 表中的“VM 意外重启”或“VM 故障”"
             },
             "conditionalVisibility": null
         },
@@ -162,7 +162,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"unexpected-vm-reboots\"></a><span data-ttu-id=\"3ded4-102\">VM 意外重启</span><span class=\"sxs-lookup\"><span data-stu-id=\"3ded4-102\">Unexpected VM Reboots</span></span>"
+                "json": "## <a name=\"unexpected-vm-reboots\"></a>VM 意外重启"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -170,7 +170,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"vm-crashes\"></a><span data-ttu-id=\"3ded4-103\">VM 故障</span><span class=\"sxs-lookup\"><span data-stu-id=\"3ded4-103\">VM Crashes</span></span>"
+                "json": "## <a name=\"vm-crashes\"></a>VM 故障"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -264,7 +264,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"outbound-connection-failures\"></a><span data-ttu-id=\"3ded4-104\">出站连接失败</span><span class=\"sxs-lookup\"><span data-stu-id=\"3ded4-104\">Outbound Connection Failures</span></span> "
+                "json": "## <a name=\"outbound-connection-failures\"></a>出站连接失败 "
             },
             "conditionalVisibility": null
         },
@@ -340,7 +340,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"vpn-tunnel-stats\"></a><span data-ttu-id=\"3ded4-105\">VPN 隧道统计信息</span><span class=\"sxs-lookup\"><span data-stu-id=\"3ded4-105\">VPN Tunnel Stats</span></span>"
+                "json": "## <a name=\"vpn-tunnel-stats\"></a>VPN 隧道统计信息"
             },
             "conditionalVisibility": null
         },
@@ -389,7 +389,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"successful-activities\"></a><span data-ttu-id=\"3ded4-106\">成功的活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"3ded4-106\">Successful Activities</span></span>"
+                "json": "## <a name=\"successful-activities\"></a>成功的活动"
             },
             "conditionalVisibility": null,
             "customWidth": "33"
@@ -397,7 +397,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"failed-activities\"></a><span data-ttu-id=\"3ded4-107\">失败的活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"3ded4-107\">Failed Activities</span></span>"
+                "json": "## <a name=\"failed-activities\"></a>失败的活动"
             },
             "conditionalVisibility": null,
             "customWidth": "33"
@@ -405,7 +405,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"remaining-activities\"></a><span data-ttu-id=\"3ded4-108\">其余活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"3ded4-108\">Remaining Activities</span></span>"
+                "json": "## <a name=\"remaining-activities\"></a>其余活动"
             },
             "conditionalVisibility": null,
             "customWidth": "33"

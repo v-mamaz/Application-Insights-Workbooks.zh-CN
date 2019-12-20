@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"5c507-101\">应用使用率</span><span class=\"sxs-lookup\"><span data-stu-id=\"5c507-101\">App Usage</span></span>",
+    "name": "应用使用率",
     "author": "Microsoft",
     "galleries": [
         {

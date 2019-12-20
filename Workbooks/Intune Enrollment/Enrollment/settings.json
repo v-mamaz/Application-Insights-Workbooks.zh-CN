@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"121eb-101\">Intune 注册活动</span><span class=\"sxs-lookup\"><span data-stu-id=\"121eb-101\">Intune Enrollment Activity</span></span>",
+    "name": "Intune 注册活动",
     "author": "Microsoft",
     "galleries": [
         {

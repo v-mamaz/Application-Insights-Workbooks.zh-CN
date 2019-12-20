@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"virtual-machines-classic-metrics\"></a><span data-ttu-id=\"1fd01-101\">虚拟机（经典）指标</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-101\">Virtual Machines (Classic) Metrics</span></span>"
+                "json": "# <a name=\"virtual-machines-classic-metrics\"></a>虚拟机（经典）指标"
             },
             "conditionalVisibility": null
         },
@@ -152,7 +152,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"percentage-cpu\"></a><span data-ttu-id=\"1fd01-102\">CPU 百分比</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-102\">Percentage CPU</span></span>"
+                "json": "### <a name=\"percentage-cpu\"></a>CPU 百分比"
             },
             "conditionalVisibility": null
         },
@@ -189,7 +189,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"1fd01-103\">“CPU 百分比”是指当前虚拟机正在使用的已分配计算单位百分比。</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-103\">*Percentage CPU* is the percentage of allocated compute units that are currently in use by the Virtual Machine(s).</span></span>"
+                "json": "“CPU 百分比”是指当前虚拟机正在使用的已分配计算单位百分比。"
             },
             "conditionalVisibility": null
         },
@@ -203,7 +203,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"disk-reads\"></a><span data-ttu-id=\"1fd01-104\">磁盘读取数</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-104\">Disk Reads</span></span>"
+                "json": "### <a name=\"disk-reads\"></a>磁盘读取数"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -211,7 +211,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"disk-writes\"></a><span data-ttu-id=\"1fd01-105\">磁盘写入数</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-105\">Disk Writes</span></span>"
+                "json": "### <a name=\"disk-writes\"></a>磁盘写入数"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -281,7 +281,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"1fd01-106\">“磁盘读取数”是指监视期间从磁盘读取的平均字节数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-106\">*Disk reads* is the average bytes read from disk during monitoring period.</span></span>"
+                "json": "“磁盘读取数”是指监视期间从磁盘读取的平均字节数。"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -289,7 +289,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"1fd01-107\">“磁盘写入数”是指监视期间向磁盘写入的平均字节数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-107\">*Disk writes* is the average bytes written to disk during monitoring period.</span></span>"
+                "json": "“磁盘写入数”是指监视期间向磁盘写入的平均字节数。"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -304,7 +304,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"network-in\"></a><span data-ttu-id=\"1fd01-108\">网络传入</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-108\">Network In</span></span>"
+                "json": "### <a name=\"network-in\"></a>网络传入"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -312,7 +312,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"network-out\"></a><span data-ttu-id=\"1fd01-109\">网络传出</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-109\">Network Out</span></span>"
+                "json": "### <a name=\"network-out\"></a>网络传出"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -382,7 +382,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"1fd01-110\">“网络传入”是指虚拟机在所有网络接口上收到的字节数（传入流量）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-110\">*Network In*  is the number of bytes received on all network interfaces by the Virtual Machine(s) (Incoming Traffic).</span></span>"
+                "json": "“网络传入”是指虚拟机在所有网络接口上收到的字节数（传入流量）。"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -390,7 +390,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"1fd01-111\">“网络传出”是指虚拟机在所有网络接口上发出的字节数（传出流量）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"1fd01-111\">*Network out* is the number of bytes out on all network interfaces by the Virtual Machine(s) (Outgoing Traffic).</span></span>"
+                "json": "“网络传出”是指虚拟机在所有网络接口上发出的字节数（传出流量）。"
             },
             "conditionalVisibility": null,
             "customWidth": "50"

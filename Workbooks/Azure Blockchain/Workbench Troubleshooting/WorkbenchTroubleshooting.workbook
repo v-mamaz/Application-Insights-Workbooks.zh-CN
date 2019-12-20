@@ -5,14 +5,14 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"azure-blockchain-workbench-logs--troubleshooting-guide\"></a><span data-ttu-id=\"32f94-101\">Azure Blockchain Workbench 日志 & 故障排除指南</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-101\">Azure Blockchain Workbench Logs & Troubleshooting Guide</span></span>\n---\n\n<span data-ttu-id=\"32f94-102\">此工作簿旨在提供一些解决失败根本原因的方法。</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-102\">This workbook is designed to give you some ways to root cause your failures.</span></span> <span data-ttu-id=\"32f94-103\">插入 requestId 以遵循请求的流并查看其日志。</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-103\">Plug in the requestId to follow the request's flow and view its logs.</span></span><br/>\n<span data-ttu-id=\"32f94-104\">若了解一些常见错误，请查看我们的 [Github 故障排除指南](https://aka.ms/workbenchtroubleshooting)中的“日志中的常见错误”部分。</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-104\">To understand some of the common errors, please view the \"Common errors seen in logs\" section of our [Github troubleshooting guide](https://aka.ms/workbenchtroubleshooting).</span></span>"
+                "json": "## <a name=\"azure-blockchain-workbench-logs--troubleshooting-guide\"></a>Azure Blockchain Workbench 日志 & 故障排除指南\n---\n\n此工作簿旨在提供一些解决失败根本原因的方法。 插入 requestId 以遵循请求的流并查看其日志。<br/>\n若了解一些常见错误，请查看我们的 [Github 故障排除指南](https://aka.ms/workbenchtroubleshooting)中的“日志中的常见错误”部分。"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"logs-table\"></a><span data-ttu-id=\"32f94-105\">日志表</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-105\">Logs Table</span></span>\n---"
+                "json": "## <a name=\"logs-table\"></a>日志表\n---"
             },
             "conditionalVisibility": null
         },
@@ -115,14 +115,14 @@
         {
             "type": 1,
             "content": {
-                "json": "##### <a name=\"how-to-export\"></a><span data-ttu-id=\"32f94-106\">如何导出：</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-106\">How to export:</span></span>\n<span data-ttu-id=\"32f94-107\">单击下面 Workbench 日志表右上角的图标，然后单击右上方面板上的“导出”。</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-107\">Click on the icon to the top right of the Workbench logs table below and click on 'Export' on the top right panel.</span></span>"
+                "json": "##### <a name=\"how-to-export\"></a>如何导出：\n单击下面 Workbench 日志表右上角的图标，然后单击右上方面板上的“导出”。"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "<br/>\n<br/>\n<br/>\n<br/>\n\n## <a name=\"potential-liveness-issues\"></a><span data-ttu-id=\"32f94-108\">潜在运行情况问题</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-108\">Potential Liveness Issues</span></span>\n---\n<span data-ttu-id=\"32f94-109\">在下表中可以看到 Workbench 的任何请求是否使系统处于具有运行情况问题的状态。</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-109\">In the below tables you can see whether any of your requests from Workbench has gotten the system in a state with a liveness issue.</span></span> <span data-ttu-id=\"32f94-110\">这意味着请求未按预期处理，并将继续尝试无限提交。</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-110\">This means that the requests are not being processed as expected and will continue to try submitting infinitely.</span></span>\n<span data-ttu-id=\"32f94-111\">请注意，这些问题通常不是由 Workbench 代码库中的错误引起的，而是由服务中断引起的问题所导致。</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-111\">Note that these issues are generally not caused by bugs in the Workbench codebase, but rather issues that arise from services being down.</span></span>\n\n### <a name=\"trycommitcontractaction-counter\"></a><span data-ttu-id=\"32f94-112\">TryCommitContractAction 计数器</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-112\">TryCommitContractAction counter</span></span>\n<span data-ttu-id=\"32f94-113\">如果有超过 10 次尝试将合同/合同操作提交到区块链并且事务回执未到达，则可能发生以下两种情况之一：</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-113\">If there has been over 10 tries to commit the contract/contract action to the blockchain and the transaction receipt had not arrived, then one of two things could be happening:</span></span>\n1. <span data-ttu-id=\"32f94-114\">Eth-watcher 已关闭。</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-114\">The eth-watcher is down.</span></span>\n2. <span data-ttu-id=\"32f94-115\">区块链无响应或花费较长时间处理。</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-115\">The blockchain is unresponsive or taking a long time to process.</span></span>\n\n<span data-ttu-id=\"32f94-116\">此表显示可能存在此类问题的请求，以及系统 (eth-tx-submitter) 尝试将合同操作提交到区块链的次数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-116\">This table shows the requests that could have such issues, along with the number of times the system (eth-tx-submitter) has tried to commit the contract action to the blockchain.</span></span> "
+                "json": "<br/>\n<br/>\n<br/>\n<br/>\n\n## <a name=\"potential-liveness-issues\"></a>潜在运行情况问题\n---\n在下表中可以看到 Workbench 的任何请求是否使系统处于具有运行情况问题的状态。 这意味着请求未按预期处理，并将继续尝试无限提交。\n请注意，这些问题通常不是由 Workbench 代码库中的错误引起的，而是由服务中断引起的问题所导致。\n\n### <a name=\"trycommitcontractaction-counter\"></a>TryCommitContractAction 计数器\n如果有超过 10 次尝试将合同/合同操作提交到区块链并且事务回执未到达，则可能发生以下两种情况之一：\n1. Eth-watcher 已关闭。\n2. 区块链无响应或花费较长时间处理。\n\n此表显示可能存在此类问题的请求，以及系统 (eth-tx-submitter) 尝试将合同操作提交到区块链的次数。 "
             },
             "conditionalVisibility": null
         },
@@ -152,7 +152,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"32f94-117\"><span style=\"color:SpringGreen; font-size:2em;\">过去 24 小时内没有任何运行情况问题！</span></span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-117\"><span style=\"color:SpringGreen; font-size:2em;\">There are no liveness issues in the last 24 hours!</span></span></span>"
+                "json": "<span style=\"color:SpringGreen; font-size:2em;\">过去 24 小时内没有任何运行情况问题！</span>"
             },
             "conditionalVisibility": {
                 "parameterName": "hasLivenessBugInLast24hrs",
@@ -163,7 +163,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"32f94-118\"><span style=\"color:red; font-size:2em;\">有潜在运行情况问题 :(</span></span><span class=\"sxs-lookup\"><span data-stu-id=\"32f94-118\"><span style=\"color:red; font-size:2em;\">There are potential liveness issues :(</span></span></span>"
+                "json": "<span style=\"color:red; font-size:2em;\">有潜在运行情况问题 :(</span>"
             },
             "conditionalVisibility": {
                 "parameterName": "hasLivenessBugInLast24hrs",

@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "<span data-ttu-id=\"195b8-101\">CPU 使用情况热度地图</span><span class=\"sxs-lookup\"><span data-stu-id=\"195b8-101\">CPU Usage Heatmap</span></span>",
+    "name": "CPU 使用情况热度地图",
     "author": "Microsoft",
     "galleries": [
         {
