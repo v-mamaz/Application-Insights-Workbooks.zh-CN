@@ -787,7 +787,7 @@
         {
             "type": 1,
             "content": {
-                "json": "#### <a name=\"-total-bytes-networkdirection-and-bytes-networkdirectionsec-counters-are-both-being-utilized-to-display-the-network-table-the-delta-of-total-bytes-networkdirection-over-a-time-period-is-being-calculated-to-match-up-with-the-bytes-networkdirectionsec-counter-to-display-an-accurate-representation-of-network-activity-over-all-machines\"></a>ℹ `Total Bytes {NetworkDirection}` 和 `Bytes {NetworkDirection}/sec` 计数器均用于显示网络表。 计算一段时间内 `Total Bytes {NetworkDirection}` 的增量以与 `Bytes {NetworkDirection}/sec` 计数器匹配，显示所有机器上网络活动的准确表示"
+                "json": "#### <a name=\"-total-bytes-no_loc_phnetworkdirectionno_loc_ph-and-bytes-no_loc_phnetworkdirectionno_loc_phsec-counters-are-both-being-utilized-to-display-the-network-table-the-delta-of-total-bytes-no_loc_phnetworkdirectionno_loc_ph-over-a-time-period-is-being-calculated-to-match-up-with-the-bytes-no_loc_phnetworkdirectionno_loc_phsec-counter-to-display-an-accurate-representation-of-network-activity-over-all-machines\"></a>ℹ `Total Bytes {NetworkDirection}` 和 `Bytes {NetworkDirection}/sec` 计数器均用于显示网络表。 计算一段时间内 `Total Bytes {NetworkDirection}` 的增量以与 `Bytes {NetworkDirection}/sec` 计数器匹配，显示所有机器上网络活动的准确表示"
             },
             "conditionalVisibility": {
                 "parameterName": "ShowNetworkTable",

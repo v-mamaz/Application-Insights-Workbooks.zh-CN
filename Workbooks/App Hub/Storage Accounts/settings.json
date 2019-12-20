@@ -1,0 +1,17 @@
+{
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
+    "name": "存储帐户",
+    "author": "Microsoft",
+    "galleries": [
+        {
+            "type": "workbook",
+            "resourceType": "Monitoring Groups",
+            "order": 200
+        },
+        {
+            "type": "storage-insights",
+            "resourceType": "Monitoring Groups",
+            "order": 100
+        }
+    ]
+}
