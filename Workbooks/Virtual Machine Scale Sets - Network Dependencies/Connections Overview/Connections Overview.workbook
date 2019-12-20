@@ -871,7 +871,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"latency\"></a>Latency"
+                "json": "### <a name=\"latency\"></a>延迟"
             },
             "conditionalVisibility": {
                 "parameterName": "ShowDetail",

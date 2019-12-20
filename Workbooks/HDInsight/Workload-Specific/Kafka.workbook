@@ -257,7 +257,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"metricskafkacl-table-not-found\"></a>找不到 metrics_kafka_CL 表\n确保至少有 1 个 HDInsight Kafka 群集启用了 Azure Monitor 日志集成并链接到此工作区。 请参阅文档<a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-oms-log-analytics-tutorial\">使用 Azure Monitor 日志监视 HDInsight 群集</a>。"
+                "json": "## <a name=\"metrics_kafka_cl-table-not-found\"></a>找不到 metrics_kafka_CL 表\n确保至少有 1 个 HDInsight Kafka 群集启用了 Azure Monitor 日志集成并链接到此工作区。 请参阅文档<a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-oms-log-analytics-tutorial\">使用 Azure Monitor 日志监视 HDInsight 群集</a>。"
             },
             "conditionalVisibility": {
                 "parameterName": "KafkaMetricsTableExists",
