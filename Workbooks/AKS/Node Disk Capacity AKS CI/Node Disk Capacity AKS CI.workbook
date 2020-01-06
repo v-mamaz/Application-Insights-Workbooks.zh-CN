@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"f55a5-101\">_<a href='https://github.com/influxdata/telegraf/tree/master/plugins/inputs/disk'>此处</a>提供了有关此工作簿中的指标的详细信息_</span><span class=\"sxs-lookup\"><span data-stu-id=\"f55a5-101\">_More information about the metrics in this workbook is available <a href='https://github.com/influxdata/telegraf/tree/master/plugins/inputs/disk'>here</a>_</span></span>"
+                "json": "_<a href='https://github.com/influxdata/telegraf/tree/master/plugins/inputs/disk'>此处</a>提供了有关此工作簿中的指标的详细信息_"
             },
             "name": "text - 15"
         },
@@ -21,7 +21,7 @@
                         "name": "timeRange",
                         "label": "Time Range",
                         "type": 4,
-                        "description": "<span data-ttu-id=\"f55a5-102\">按时间范围筛选</span><span class=\"sxs-lookup\"><span data-stu-id=\"f55a5-102\">Filter by time range</span></span>",
+                        "description": "按时间范围筛选",
                         "isRequired": true,
                         "value": {
                             "durationMs": 21600000
@@ -83,7 +83,7 @@
                         "name": "selectedNodes1",
                         "label": "Node",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"f55a5-103\">按节点筛选</span><span class=\"sxs-lookup\"><span data-stu-id=\"f55a5-103\">Filter by node</span></span>",
+                        "description": "按节点筛选",
                         "multiSelect": true,
                         "quote": "'",
                         "delimiter": ",",
@@ -110,7 +110,7 @@
                         "name": "selectedDevices1",
                         "label": "Device",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"f55a5-104\">按设备筛选</span><span class=\"sxs-lookup\"><span data-stu-id=\"f55a5-104\">Filter by device</span></span>",
+                        "description": "按设备筛选",
                         "multiSelect": true,
                         "quote": "'",
                         "delimiter": ",",
@@ -213,7 +213,7 @@
                         "name": "topN",
                         "label": "Show",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"f55a5-105\">在下图中按已用磁盘百分比显示前 N 个磁盘</span><span class=\"sxs-lookup\"><span data-stu-id=\"f55a5-105\">Show the top N disks by used disk % in the chart below</span></span>",
+                        "description": "在下图中按已用磁盘百分比显示前 N 个磁盘",
                         "isRequired": true,
                         "typeSettings": {
                             "additionalResourceOptions": []
@@ -230,7 +230,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"f55a5-106\">按已用磁盘百分比显示前 {topN:label} 个磁盘</span><span class=\"sxs-lookup\"><span data-stu-id=\"f55a5-106\">{topN:label} Disks by Used Disk %</span></span></h3>"
+                "json": "<h3>按已用磁盘百分比显示前 {topN:label} 个磁盘</h3>"
             },
             "name": "text - 12"
         },
@@ -263,7 +263,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"f55a5-107\">磁盘容量概述</span><span class=\"sxs-lookup\"><span data-stu-id=\"f55a5-107\">Disk Capacity Overview</span></span></h3>"
+                "json": "<h3>磁盘容量概述</h3>"
             },
             "name": "text - 13"
         },
@@ -428,7 +428,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "selectedRowId",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"f55a5-108\">在网格中选择的行的 ID</span><span class=\"sxs-lookup\"><span data-stu-id=\"f55a5-108\">The Id of the row selected in the grid</span></span>",
+                        "description": "在网格中选择的行的 ID",
                         "query": "let selectedStateDisks = dynamic({DisksOfSelectedState});\r\nlet row = dynamic({selectedRow}).Id;\r\nlet usedPercent = InsightsMetrics\r\n| where Origin == 'container.azm.ms/telegraf'\r\n| where Namespace == 'disk' or Namespace =~ 'container.azm.ms/disk'\r\n| where Name == 'used_percent'\r\n| extend Tags = todynamic(Tags)\r\n| extend HostName = tostring(Tags.hostName), Device = strcat('/dev/', tostring(Tags.device))\r\n| extend NodeDisk = strcat(HostName, Device)\r\n| where \"*\" in ({selectedNodes1}) or HostName in ({selectedNodes1})\r\n| where \"*\" in ({selectedDevices1}) or Device in ({selectedDevices1})\r\n| where NodeDisk in (selectedStateDisks) or '*' in (selectedStateDisks);\r\nlet worstDiskAcrossNodes = toscalar(\r\n    usedPercent\r\n    | summarize UsedPercent = max(Val) by NodeDisk\r\n    | top 1 by UsedPercent desc\r\n    | project NodeDisk\r\n); \r\nprint(iif(isempty(row), worstDiskAcrossNodes, row))",
                         "isHiddenWhenLocked": true,
                         "timeContext": {
@@ -448,7 +448,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3><span data-ttu-id=\"f55a5-109\"><span style=\"text-decoration: underline\">{SelectedRowId}</span> 的详细信息：</span><span class=\"sxs-lookup\"><span data-stu-id=\"f55a5-109\">Details for <span style=\"text-decoration: underline\">{selectedRowId}</span>:</span></span></h3>"
+                "json": "<h3><span style=\"text-decoration: underline\">{selectedRowId}</span> 的详细信息：</h3>"
             },
             "name": "text - 13 - Copy"
         },

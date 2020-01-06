@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"application-failures-insights\"></a><span data-ttu-id=\"ce1c7-101\">应用程序失败见解</span><span class=\"sxs-lookup\"><span data-stu-id=\"ce1c7-101\">Application Failures Insights</span></span>\n"
+                "json": "# <a name=\"application-failures-insights\"></a>应用程序失败见解\n"
             },
             "conditionalVisibility": null
         },
@@ -205,7 +205,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"ce1c7-102\">💡 单击上表中的行以查看其他操作的详细信息</span><span class=\"sxs-lookup\"><span data-stu-id=\"ce1c7-102\">💡 *Click on the rows of the table above to see details for other operations*</span></span>"
+                "json": "💡 单击上表中的行以查看其他操作的详细信息"
             },
             "conditionalVisibility": null
         },
@@ -234,14 +234,14 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"details----selectedoperation\"></a><span data-ttu-id=\"ce1c7-103\">详细信息 -- {SelectedOperation}</span><span class=\"sxs-lookup\"><span data-stu-id=\"ce1c7-103\">Details -- {SelectedOperation}</span></span>\n"
+                "json": "## <a name=\"details----no_loc_phselectedoperationno_loc_ph\"></a>详细信息 -- {SelectedOperation}\n"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"failed-operations\"></a><span data-ttu-id=\"ce1c7-104\">失败的操作</span><span class=\"sxs-lookup\"><span data-stu-id=\"ce1c7-104\">Failed Operations</span></span>"
+                "json": "### <a name=\"failed-operations\"></a>失败的操作"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -249,7 +249,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"all-operations\"></a><span data-ttu-id=\"ce1c7-105\">所有操作</span><span class=\"sxs-lookup\"><span data-stu-id=\"ce1c7-105\">All Operations</span></span>"
+                "json": "### <a name=\"all-operations\"></a>所有操作"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -295,7 +295,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"top-failure-codes\"></a><span data-ttu-id=\"ce1c7-106\">主要失败代码</span><span class=\"sxs-lookup\"><span data-stu-id=\"ce1c7-106\">Top Failure Codes</span></span>"
+                "json": "### <a name=\"top-failure-codes\"></a>主要失败代码"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -303,7 +303,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"top-exceptions\"></a><span data-ttu-id=\"ce1c7-107\">主要异常</span><span class=\"sxs-lookup\"><span data-stu-id=\"ce1c7-107\">Top Exceptions</span></span>"
+                "json": "### <a name=\"top-exceptions\"></a>主要异常"
             },
             "conditionalVisibility": null,
             "customWidth": "50"
@@ -384,7 +384,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"top-failing-dependencies\"></a><span data-ttu-id=\"ce1c7-108\">主要失败依赖项</span><span class=\"sxs-lookup\"><span data-stu-id=\"ce1c7-108\">Top Failing Dependencies</span></span>"
+                "json": "### <a name=\"top-failing-dependencies\"></a>主要失败依赖项"
             },
             "conditionalVisibility": null
         },

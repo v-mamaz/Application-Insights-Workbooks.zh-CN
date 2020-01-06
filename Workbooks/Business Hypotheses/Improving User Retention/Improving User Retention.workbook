@@ -5,19 +5,19 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"hypothesis---proposed-change-will-improve-user-retention-by-expected-improvement\"></a><span data-ttu-id=\"c2b75-101\">假设 - _[建议的更改]_ 会通过 _[预期改进]_ 提高用户保留期</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-101\">Hypothesis - _[proposed change]_ will improve user retention by _[expected improvement]_</span></span>\n---\n<span data-ttu-id=\"c2b75-102\">一个好的假设是制定数据驱动决策的核心。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-102\">A good hypothesis is the heart of data-driven decision making.</span></span> <span data-ttu-id=\"c2b75-103\">假设帮助你将客户的应用使用情况相关信息转化为可操作性建议以实现改进。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-103\">Hypotheses help you turn information about your customers' usage of your app into actionable proposal for improvements.</span></span> <span data-ttu-id=\"c2b75-104\">利用此工作簿创建有关提高用户保留率的假设。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-104\">Use this workbook to craft a hypothesis about improving the retention rates of your users.</span></span>"
+                "json": "# <a name=\"hypothesis---_proposed-change_-will-improve-user-retention-by-_expected-improvement_\"></a>假设 - _[建议的更改]_ 会通过 _[预期改进]_ 提高用户保留期\n---\n一个好的假设是制定数据驱动决策的核心。 假设帮助你将客户的应用使用情况相关信息转化为可操作性建议以实现改进。 利用此工作簿创建有关提高用户保留率的假设。"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"problem---problem-statement\"></a><span data-ttu-id=\"c2b75-105\">问题 - [问题声明]</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-105\">Problem - _[problem statement]_</span></span>\n<span data-ttu-id=\"c2b75-106\">在此部分中添加问题的摘要。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-106\">Add a summary of the problem in the section.</span></span> <span data-ttu-id=\"c2b75-107\">摘要应简洁，不宜冗长。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-107\">The summary should be concise and not more than a few sentences long.</span></span> <span data-ttu-id=\"c2b75-108\">请清楚地描述问题并避免不必要的详细信息。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-108\">Clearly state the problem and avoid nonessential details.</span></span> \n\n\n"
+                "json": "## <a name=\"problem---_problem-statement_\"></a>问题 - [问题声明]\n在此部分中添加问题的摘要。 摘要应简洁，不宜冗长。 请清楚地描述问题并避免不必要的详细信息。 \n\n\n"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"whats-the-retention-problem\"></a><span data-ttu-id=\"c2b75-109\">什么是保留问题？</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-109\">What's the retention problem?</span></span>\n<span data-ttu-id=\"c2b75-110\">修改以下参数以显示正在分析的活动的保留率。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-110\">Modify the parameters below to show the retention rate of activities you are analyzing.</span></span> <span data-ttu-id=\"c2b75-111\">目标应突出显示应用中的保留问题。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-111\">Your goal should be highlighting a retention problem in your app.</span></span>"
+                "json": "### <a name=\"whats-the-retention-problem\"></a>什么是保留问题？\n修改以下参数以显示正在分析的活动的保留率。 目标应突出显示应用中的保留问题。"
             }
         },
         {
@@ -79,7 +79,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"as-a-benchmark-whats-the-retention-rate-of-a-similar-feature\"></a><span data-ttu-id=\"c2b75-112\">作为基准，类似功能的保留率如何？</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-112\">As a benchmark, what's the retention rate of a similar feature?</span></span>\n<span data-ttu-id=\"c2b75-113\">使用此部分可将活动的保留期与类似活动进行比较。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-113\">Use this section to compare the retention of your activities with similar ones.</span></span> <span data-ttu-id=\"c2b75-114\">这将有助于设置想要做出的改进的上下文。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-114\">This will help set the context of the improvements you are trying to make.</span></span>"
+                "json": "### <a name=\"as-a-benchmark-whats-the-retention-rate-of-a-similar-feature\"></a>作为基准，类似功能的保留率如何？\n使用此部分可将活动的保留期与类似活动进行比较。 这将有助于设置想要做出的改进的上下文。"
             }
         },
         {
@@ -119,13 +119,13 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"why-do-we-suspect-retention-for-this-feature-is-low\"></a><span data-ttu-id=\"c2b75-115\">我们为什么怀疑这项功能的保留期较低？</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-115\">Why do we suspect retention for this feature is low?</span></span>\n<span data-ttu-id=\"c2b75-116\">此部分解释了为什么保留期较低。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-116\">This section provides explanations for why the retention could be low.</span></span> <span data-ttu-id=\"c2b75-117\">建议的解决方案将解决此处识别的一部分或全部问题。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-117\">The solution you propose will address some or all of the issues identified here.</span></span>"
+                "json": "### <a name=\"why-do-we-suspect-retention-for-this-feature-is-low\"></a>我们为什么怀疑这项功能的保留期较低？\n此部分解释了为什么保留期较低。 建议的解决方案将解决此处识别的一部分或全部问题。"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"whats-the-potential-benefit-to-your-business-if-you-improve-retention-for-this-feature\"></a><span data-ttu-id=\"c2b75-118\">如果提高此功能的保留期，对你的业务潜在的好处是什么？</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-118\">What's the potential benefit to your business if you improve retention for this feature?</span></span>\n<span data-ttu-id=\"c2b75-119\">本部分有助于了解月度活跃用户的改进，如果保留期增加，可以看到这些改进。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-119\">This section helps you understand the improvements in monthly active users you can see if your retention increased.</span></span> <span data-ttu-id=\"c2b75-120\">使用 _RetentionGoal_ 参数可以使用建议的解决方案设置保留目标。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-120\">Use the _RetentionGoal_ parameter to set the goal for retention with the proposed solution.</span></span>"
+                "json": "### <a name=\"whats-the-potential-benefit-to-your-business-if-you-improve-retention-for-this-feature\"></a>如果提高此功能的保留期，对你的业务潜在的好处是什么？\n本部分有助于了解月度活跃用户的改进，如果保留期增加，可以看到这些改进。 使用 _RetentionGoal_ 参数可以使用建议的解决方案设置保留目标。"
             }
         },
         {
@@ -140,7 +140,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "RetentionGoal",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"c2b75-121\">保留率的目标表示为百分比 (0-100)</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-121\">The goal for Retention Rate expressed as percentage (0-100)</span></span>",
+                        "description": "保留率的目标表示为百分比 (0-100)",
                         "isRequired": true,
                         "query": "let timeRange = {TimeRange};\r\nlet monthDefinition = {RetentionPeriod};\r\nlet hlls = union customEvents, pageViews\r\n| where timestamp >= startofmonth(now() - timeRange - 2 * monthDefinition)\r\n| where name in ({Activities}) or '*' in ({Activities})\r\n| summarize Hlls = hll(user_Id) by bin(timestamp, 1d)\r\n| project DaysToMerge = timestamp, Hlls;\r\nlet churnSeriesWithHllsToInclude = materialize(range d from 0d to 0d step 1d\r\n| extend Day = startofday(now() - d)\r\n| extend R = range(0d, monthDefinition - 1d, 1d)\r\n| mvexpand R\r\n| extend ThisMonth = Day - totimespan(R)\r\n| extend LastMonth = Day - monthDefinition - totimespan(R)\r\n| project Day, ThisMonth, LastMonth);\r\nchurnSeriesWithHllsToInclude\r\n| extend DaysToMerge = ThisMonth\r\n| join kind= inner (hlls) on DaysToMerge \r\n| project Day, ThisMonthHlls = Hlls\r\n| union (\r\nchurnSeriesWithHllsToInclude\r\n| extend DaysToMerge = LastMonth\r\n| join kind= inner (hlls) on DaysToMerge\r\n| project Day, LastMonthHlls = Hlls)\r\n| summarize ThisMonth = hll_merge(ThisMonthHlls), LastMonth = hll_merge(LastMonthHlls) by Day\r\n| evaluate dcount_intersect(ThisMonth, LastMonth)\r\n| where Day >= startofday(now() - timeRange)\r\n| extend ChurnedUsers = (dcount_hll(LastMonth) - s1) // Last Months Users - Returning Users\r\n| project Retention = round(iff((s1 + ChurnedUsers) == 0, 0.0, 100.0 * s1 / (s1 + ChurnedUsers)) * 1.1, 1)\r\n| extend Retention = iff(Retention > 100, 100.0, Retention)\r\n"
                     }
@@ -162,55 +162,55 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"what-customer-evidence-do-you-have\"></a><span data-ttu-id=\"c2b75-122\">你是否拥有客户证据？</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-122\">What customer evidence do you have?</span></span>\n<span data-ttu-id=\"c2b75-123\">添加客户反馈，确认存在问题以及提出的解决方案将真正解决问题。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-123\">Add customer feedback that confirms that the existence of the problem and that your proposed solution will truly address it.</span></span>"
+                "json": "### <a name=\"what-customer-evidence-do-you-have\"></a>你是否拥有客户证据？\n添加客户反馈，确认存在问题以及提出的解决方案将真正解决问题。"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"how-are-your-competitors-solving-this-problem\"></a><span data-ttu-id=\"c2b75-124\">你的竞争对手如何解决此问题？</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-124\">How are your competitors solving this problem?</span></span>\n<span data-ttu-id=\"c2b75-125\">使用此部分显示竞争对手解决应用中的此问题的方法。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-125\">Use this section to show how your competitors address this problem in their apps.</span></span>\n"
+                "json": "### <a name=\"how-are-your-competitors-solving-this-problem\"></a>你的竞争对手如何解决此问题？\n使用此部分显示竞争对手解决应用中的此问题的方法。\n"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"open-questions\"></a><span data-ttu-id=\"c2b75-126\">未解决的问题</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-126\">Open Questions</span></span>\n<span data-ttu-id=\"c2b75-127\">列出所有仍未解决的问题或讨论。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-127\">List all questions or discussions that are still unresolved.</span></span>"
+                "json": "### <a name=\"open-questions\"></a>未解决的问题\n列出所有仍未解决的问题或讨论。"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"potential-solution---solution-description\"></a><span data-ttu-id=\"c2b75-128\">可能的解决方案 - [解决方案描述]</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-128\">Potential solution - _[solution description]_</span></span>\n<span data-ttu-id=\"c2b75-129\">使用本部分描述建议的解决方案。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-129\">Use this section describe the proposed solution.</span></span>\n"
+                "json": "## <a name=\"potential-solution---_solution-description_\"></a>可能的解决方案 - [解决方案描述]\n使用本部分描述建议的解决方案。\n"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"why-it-will-work\"></a><span data-ttu-id=\"c2b75-130\">解决方案为什么有用？</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-130\">Why it will work?</span></span>\n<span data-ttu-id=\"c2b75-131\">描述用户行为理论，这将导致此提议产生更高的用户保留率。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-131\">Describe your theory of user behavior that will result in this proposal leading to greater user retention.</span></span>"
+                "json": "### <a name=\"why-it-will-work\"></a>解决方案为什么有用？\n描述用户行为理论，这将导致此提议产生更高的用户保留率。"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"why-might-it-not-work\"></a><span data-ttu-id=\"c2b75-132\">为什么解决方案可能无效？</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-132\">Why might it not work?</span></span>\n<span data-ttu-id=\"c2b75-133\">思考一下并列出解决方案无法达成预期结果的原因 - 例如关于问题原因的替代理论。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-133\">Think about and list reason why the solution may not result in meeting the goals you have set - e.g. alternate theories for the cause of the problem.</span></span>"
+                "json": "### <a name=\"why-might-it-not-work\"></a>为什么解决方案可能无效？\n思考一下并列出解决方案无法达成预期结果的原因 - 例如关于问题原因的替代理论。"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"will-it-affect-other-scenarios\"></a><span data-ttu-id=\"c2b75-134\">解决方案是否会影响其他方案？</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-134\">Will it affect other scenarios?</span></span>\n<span data-ttu-id=\"c2b75-135\">列出可能受建议的解决方案影响的其他功能和方案。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-135\">List the other features and scenarios that could be affected by the proposed solution.</span></span> "
+                "json": "### <a name=\"will-it-affect-other-scenarios\"></a>解决方案是否会影响其他方案？\n列出可能受建议的解决方案影响的其他功能和方案。 "
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"expected-outcome---user-retention-improves-to-retentiongoal\"></a><span data-ttu-id=\"c2b75-136\">预期结果 - 用户保留期提高到 {RetentionGoal}%</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-136\">Expected outcome - User retention improves to {RetentionGoal}%</span></span>\n<span data-ttu-id=\"c2b75-137\">本部分中明确列出了实现建议的解决方案会出现的可预测性结果。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-137\">This section clearly lists out the measurable outcomes of implementing the proposed solution.</span></span>\n\n"
+                "json": "## <a name=\"expected-outcome---user-retention-improves-to-no_loc_phretentiongoalno_loc_ph\"></a>预期结果 - 用户保留期提高到 {RetentionGoal}%\n本部分中明确列出了实现建议的解决方案会出现的可预测性结果。\n\n"
             }
         },
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"primary-goal---retention-rate-hits-retentiongoal\"></a><span data-ttu-id=\"c2b75-138\">主要目标 - 保留率达到 {RetentionGoal}%</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-138\">Primary Goal - Retention Rate hits {RetentionGoal}%</span></span>\n"
+                "json": "### <a name=\"primary-goal---retention-rate-hits-no_loc_phretentiongoalno_loc_ph\"></a>主要目标 - 保留率达到 {RetentionGoal}%\n"
             }
         },
         {
@@ -228,7 +228,7 @@
         {
             "type": 1,
             "content": {
-                "json": "### <a name=\"other-goals\"></a><span data-ttu-id=\"c2b75-139\">其他目标</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-139\">Other Goals</span></span>\n<span data-ttu-id=\"c2b75-140\">列出可能与此工作相关的任何次要目标。</span><span class=\"sxs-lookup\"><span data-stu-id=\"c2b75-140\">List any secondary goals you may have related to this effort.</span></span> "
+                "json": "### <a name=\"other-goals\"></a>其他目标\n列出可能与此工作相关的任何次要目标。 "
             }
         }
     ]

@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"app-usage\"></a><span data-ttu-id=\"dd830-101\">应用使用率</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd830-101\">App Usage</span></span>\n<span data-ttu-id=\"dd830-102\">使用此报表查明人们何时使用应用，他们对哪些页面最感兴趣，用户在哪里以及他们使用什么浏览器和操作系统。</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd830-102\">Use this report to find out when people use your app, what pages they're most interested in, where your users are located, and what browsers and operating systems they use.</span></span> \n"
+                "json": "# <a name=\"app-usage\"></a>应用使用率\n使用此报表查明人们何时使用应用，他们对哪些页面最感兴趣，用户在哪里以及他们使用什么浏览器和操作系统。 \n"
             },
             "conditionalVisibility": null
         },
@@ -220,7 +220,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"dd830-103\">💡 选择表中的一项操作以查看其使用情况详细信息</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd830-103\">💡 *Select an operation in the table to see its usage details*</span></span>"
+                "json": "💡 选择表中的一项操作以查看其使用情况详细信息"
             },
             "conditionalVisibility": null
         },
@@ -249,7 +249,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"details---selectedoperationname\"></a><span data-ttu-id=\"dd830-104\">详细信息 - {SelectedOperationName}</span><span class=\"sxs-lookup\"><span data-stu-id=\"dd830-104\">Details - {SelectedOperationName}</span></span>\n"
+                "json": "## <a name=\"details---no_loc_phselectedoperationnameno_loc_ph\"></a>详细信息 - {SelectedOperationName}\n"
             },
             "conditionalVisibility": null
         },

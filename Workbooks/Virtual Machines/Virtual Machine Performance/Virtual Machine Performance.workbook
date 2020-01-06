@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"virtual-machine-performance\"></a><span data-ttu-id=\"5786b-101\">虚拟机性能</span><span class=\"sxs-lookup\"><span data-stu-id=\"5786b-101\">Virtual Machine Performance</span></span>\n<span data-ttu-id=\"5786b-102\">使用此工作簿分析 VM 的性能计数器（处理器、内存、磁盘等）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5786b-102\">Analyze the performance counters (processor, memory, disk, etc.) of your VMs using this workbook.</span></span>  <span data-ttu-id=\"5786b-103\">还可以选择使用工具栏中的 `Edit` 按钮自定义分析。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5786b-103\">You can also choose to customize the analysis by using the `Edit` button in the toolbar.</span></span>"
+                "json": "# <a name=\"virtual-machine-performance\"></a>虚拟机性能\n使用此工作簿分析 VM 的性能计数器（处理器、内存、磁盘等）。  还可以选择使用工具栏中的 `Edit` 按钮自定义分析。"
             },
             "conditionalVisibility": null
         },
@@ -213,14 +213,14 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"5786b-104\">使用 `Counter` 参数切换到另一个 VM 计数器。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5786b-104\">Use the `Counter` parameter to switch to a different VM counter.</span></span> <span data-ttu-id=\"5786b-105\">可以使用 `VirtualMachines` 参数在分析中包含更多 VM。</span><span class=\"sxs-lookup\"><span data-stu-id=\"5786b-105\">You can include more VMs in your analysis using the `VirtualMachines` parameter.</span></span> "
+                "json": "使用 `Counter` 参数切换到另一个 VM 计数器。 可以使用 `VirtualMachines` 参数在分析中包含更多 VM。 "
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"computers\"></a><span data-ttu-id=\"5786b-106\">计算机</span><span class=\"sxs-lookup\"><span data-stu-id=\"5786b-106\">Computers</span></span>"
+                "json": "## <a name=\"computers\"></a>计算机"
             },
             "conditionalVisibility": null
         },
@@ -274,14 +274,14 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"5786b-107\">单击行仅查看该计算机的趋势</span><span class=\"sxs-lookup\"><span data-stu-id=\"5786b-107\">*Click on a row to see trends for just that computer*</span></span>"
+                "json": "单击行仅查看该计算机的趋势"
             },
             "conditionalVisibility": null
         },
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"trend-computer\"></a><span data-ttu-id=\"5786b-108\">趋势：{computer}</span><span class=\"sxs-lookup\"><span data-stu-id=\"5786b-108\">Trend: {computer}</span></span>"
+                "json": "## <a name=\"trend-no_loc_phcomputerno_loc_ph\"></a>趋势：{computer}"
             },
             "conditionalVisibility": null
         },

@@ -6,7 +6,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"analysis-of-page-views\"></a><span data-ttu-id=\"abf4f-101\">页面视图分析</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-101\">Analysis of Page Views</span></span>\n<span data-ttu-id=\"abf4f-102\">页面视图对应于应用中的用户活动。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-102\">Page views correspond to user activity in your app.</span></span> <span data-ttu-id=\"abf4f-103\">了解用户与网页互动的方式可以深入了解应用中的工作内容以及需要改进的方面。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-103\">Understanding how your users interact with your pages will give you good insights into what is working in your app and what aspects need improvements.</span></span> \n\n<span data-ttu-id=\"abf4f-104\">此报表有助于了解常见的页面视图行为，例如：</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-104\">This report will help you understand common page view behaviors like:</span></span>\n* <span data-ttu-id=\"abf4f-105\">使用情况</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-105\">Usage</span></span>\n* <span data-ttu-id=\"abf4f-106\">在页面上所花费的时间</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-106\">Time spent on page</span></span>\n* <span data-ttu-id=\"abf4f-107\">首次互动的时间</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-107\">Time to first interaction</span></span>\n* <span data-ttu-id=\"abf4f-108\">退出率</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-108\">Exit rates</span></span> \n\n<span data-ttu-id=\"abf4f-109\">如果遥测不包括页面视图，请遵照这些[说明](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-javascript)开始收集 -- 这样做相对简单些。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-109\">If your telemetry does not include page views, then follow these [instructions](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-javascript) to begin collecting -- it is relatively straightforward.</span></span>"
+                "json": "# <a name=\"analysis-of-page-views\"></a>页面视图分析\n页面视图对应于应用中的用户活动。 了解用户与网页互动的方式可以深入了解应用中的工作内容以及需要改进的方面。 \n\n此报表有助于了解常见的页面视图行为，例如：\n* 使用情况\n* 在页面上所花费的时间\n* 首次互动的时间\n* 退出率 \n\n如果遥测不包括页面视图，请遵照这些[说明](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-javascript)开始收集 -- 这样做相对简单些。"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -55,7 +55,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "OptimizeCalculationsFor",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"abf4f-110\">使用此参数来实质上设置要在计算（采样）中使用的用户会话数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-110\">Use this parameter to essentially set the number of user sessions to use in calculations (sampling).</span></span> <span data-ttu-id=\"abf4f-111\">这样可以在分析的性能和准确性之间找到适当的平衡点。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-111\">This allows you to find the right balance between performance and accuracy for your analysis.</span></span> <span data-ttu-id=\"abf4f-112\">优化对象：性能 = 10000 个会话、平衡 = 100000 个示例、准确性 = 1000000 个会话</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-112\">Optimize for: Performance = 10,000 sessions, Balance = 100,000 samples, Accuracy = 1,000,000 sessions</span></span>",
+                        "description": "使用此参数来实质上设置要在计算（采样）中使用的用户会话数。 这样可以在分析的性能和准确性之间找到适当的平衡点。 优化对象：性能 = 10000 个会话、平衡 = 100000 个示例、准确性 = 1000000 个会话",
                         "isRequired": true,
                         "multiSelect": null,
                         "query": "datatable(x:string, y:string)[\n'10000', 'Performance',\n'100000', 'Balance',\n'1000000', 'Accuracy'\n]",
@@ -69,7 +69,7 @@
         {
             "type": 1,
             "content": {
-                "json": "---\n## <a name=\"usage\"></a><span data-ttu-id=\"abf4f-113\">使用情况</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-113\">Usage</span></span>\n<span data-ttu-id=\"abf4f-114\">本部分有助于了解应用页面的使用方式 -- 就用户数、会话数和观看数而言。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-114\">This section helps you understand how the pages of your app are used -- in terms of # of users, sessions and views.</span></span> "
+                "json": "---\n## <a name=\"usage\"></a>使用情况\n本部分有助于了解应用页面的使用方式 -- 就用户数、会话数和观看数而言。 "
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -121,7 +121,7 @@
         {
             "type": 1,
             "content": {
-                "json": "- <span data-ttu-id=\"abf4f-115\">`As % of App Users/Sessions/Views` 列比较所选页面视图和整个应用的使用情况。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-115\">The `As % of App Users/Sessions/Views` columns compare the usage of the selected page view with that of the whole app.</span></span>\n"
+                "json": "- `As % of App Users/Sessions/Views` 列比较所选页面视图和整个应用的使用情况。\n"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -129,7 +129,7 @@
         {
             "type": 1,
             "content": {
-                "json": "---\n## <a name=\"time-spent-on-page\"></a><span data-ttu-id=\"abf4f-116\">在页面上所花费的时间</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-116\">Time Spent on Page</span></span>\n<span data-ttu-id=\"abf4f-117\">此报表有助于了解客户在页面上花费的时间。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-117\">This report helps you understand the time spent by customers in your pages.</span></span> <span data-ttu-id=\"abf4f-118\">花费时间较长的页面通常表示良好的参与度，是理想的行为。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-118\">Longer time spent pages usually indicates good engagement and is generally the desired behavior.</span></span>"
+                "json": "---\n## <a name=\"time-spent-on-page\"></a>在页面上所花费的时间\n此报表有助于了解客户在页面上花费的时间。 花费时间较长的页面通常表示良好的参与度，是理想的行为。"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -146,7 +146,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "IgnoreDurationsOver",
                         "type": 1,
-                        "description": "<span data-ttu-id=\"abf4f-119\">使用此参数可以筛选可能花费更多时间的页面视图（例如，在非活动选项卡中保持打开状态）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-119\">Use this parameter to filter our page views that took more time that is possible (for example left open in a non-active tab).</span></span> <span data-ttu-id=\"abf4f-120\">默认值为 1 小时。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-120\">The default is 1 hour.</span></span> ",
+                        "description": "使用此参数可以筛选可能花费更多时间的页面视图（例如，在非活动选项卡中保持打开状态）。 默认值为 1 小时。 ",
                         "isRequired": true,
                         "query": "datatable(x:string)[ '3600s' ]"
                     }
@@ -203,7 +203,7 @@
         {
             "type": 1,
             "content": {
-                "json": "- <span data-ttu-id=\"abf4f-121\">计算可能会使用基于 `OptimizeCalculationsFor` 参数的采样。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-121\">The calculations may use sampling based on the `OptimizeCalculationsFor` parameter.</span></span> \n- <span data-ttu-id=\"abf4f-122\">此计算中在页面上所花费的时间不考虑退出时间（此会话的最后一页）。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-122\">Time Spent on Page does not consider exit pages (last page of the session) in this calculations.</span></span> <span data-ttu-id=\"abf4f-123\">因此，`Sampled Page Views` 列可能少于 {OptimizeCalculationsFor} 的采样计数。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-123\">The `Sampled Page Views` column may be fewer than the sampling count of {OptimizeCalculationsFor} because of this.</span></span>\n"
+                "json": "- 计算可能会使用基于 `OptimizeCalculationsFor` 参数的采样。 \n- 此计算中在页面上所花费的时间不考虑退出时间（此会话的最后一页）。 因此，`Sampled Page Views` 列可能少于 {OptimizeCalculationsFor} 的采样计数。\n"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -211,7 +211,7 @@
         {
             "type": 1,
             "content": {
-                "json": "---\n## <a name=\"time-to-first-interaction\"></a><span data-ttu-id=\"abf4f-124\">首次互动的时间</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-124\">Time to First Interaction</span></span>\n<span data-ttu-id=\"abf4f-125\">此报表有助于了解客户首次与应用的关键功能进行互动所花费的时间。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-125\">This report helps you understand the time taken by customers to first interact with critical features of your app.</span></span> <span data-ttu-id=\"abf4f-126\">它还有助于发现功能的可发现性或应用 UI/流的直观性问题。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-126\">It can help you uncover issues with discoverability of your features or the intuitiveness of your app's UI/flow.</span></span>"
+                "json": "---\n## <a name=\"time-to-first-interaction\"></a>首次互动的时间\n此报表有助于了解客户首次与应用的关键功能进行互动所花费的时间。 它还有助于发现功能的可发现性或应用 UI/流的直观性问题。"
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -228,7 +228,7 @@
                         "version": "KqlParameterItem/1.0",
                         "name": "TimeFrom",
                         "type": 2,
-                        "description": "<span data-ttu-id=\"abf4f-127\">对于用户，首次使用计算为该时间范围内的首次使用。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-127\">For users, the first use is calculated as the first use within the time range.</span></span> <span data-ttu-id=\"abf4f-128\">用户可能会在时间范围之前开始使用应用。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-128\">It is possible that the user started using your app before the time range.</span></span>",
+                        "description": "对于用户，首次使用计算为该时间范围内的首次使用。 用户可能会在时间范围之前开始使用应用。",
                         "isRequired": true,
                         "multiSelect": null,
                         "query": "datatable(x:string, y:string)[\n'session_Id', 'Start of the Session',\n'user_Id', 'First use by Anonymous User ⚠️',\n'user_AuthenticatedId', 'First use by Authenticated User ⚠️',\n];",
@@ -286,7 +286,7 @@
         {
             "type": 1,
             "content": {
-                "json": "- <span data-ttu-id=\"abf4f-129\">计算可能会使用基于 `OptimizeCalculationsFor` 参数的采样。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-129\">The calculation may use sampling based on the `OptimizeCalculationsFor` parameter.</span></span> "
+                "json": "- 计算可能会使用基于 `OptimizeCalculationsFor` 参数的采样。 "
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -294,7 +294,7 @@
         {
             "type": 1,
             "content": {
-                "json": "---\n## <a name=\"page-exit-rates\"></a><span data-ttu-id=\"abf4f-130\">页面退出率</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-130\">Page Exit Rates</span></span>\n<span data-ttu-id=\"abf4f-131\">当页面视图是在会话中查看的最后一页时，它被认为是对退出做出的贡献。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-131\">A page view is said to have contributed to an _exit_ when it is the last page viewed in the session.</span></span> <span data-ttu-id=\"abf4f-132\">假设用户已经退出应用 -- 通过导航到另一个应用或关闭应用/浏览器。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-132\">The user is presumed to have exited your app -- either by navigating to another app or closing the app/browser.</span></span> \n\n<span data-ttu-id=\"abf4f-133\">页面的退出率是会话中的最后一个视图百分比。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-133\">A page's _exit rate_ is the percentages of views that were the last in the session.</span></span> "
+                "json": "---\n## <a name=\"page-exit-rates\"></a>页面退出率\n当页面视图是在会话中查看的最后一页时，它被认为是对退出做出的贡献。 假设用户已经退出应用 -- 通过导航到另一个应用或关闭应用/浏览器。 \n\n页面的退出率是会话中的最后一个视图百分比。 "
             },
             "conditionalVisibility": null,
             "halfWidth": false
@@ -337,7 +337,7 @@
         {
             "type": 1,
             "content": {
-                "json": "- <span data-ttu-id=\"abf4f-134\">计算可能会使用基于 `OptimizeCalculationsFor` 参数的采样。</span><span class=\"sxs-lookup\"><span data-stu-id=\"abf4f-134\">The calculation may use sampling based on the `OptimizeCalculationsFor` parameter.</span></span> "
+                "json": "- 计算可能会使用基于 `OptimizeCalculationsFor` 参数的采样。 "
             },
             "conditionalVisibility": null,
             "halfWidth": false

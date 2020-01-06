@@ -4,7 +4,7 @@
         {
             "type": 1,
             "content": {
-                "json": "# <a name=\"failures-insights\"></a><span data-ttu-id=\"d1b99-101\">失败见解</span><span class=\"sxs-lookup\"><span data-stu-id=\"d1b99-101\">Failures Insights</span></span>\n"
+                "json": "# <a name=\"failures-insights\"></a>失败见解\n"
             },
             "conditionalVisibility": null,
             "name": "text - 0"
@@ -162,7 +162,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<span data-ttu-id=\"d1b99-102\">💡 单击上表中的行以查看其他操作的详细信息</span><span class=\"sxs-lookup\"><span data-stu-id=\"d1b99-102\">💡 *Click on the rows of the table above to see details for other operations*</span></span>"
+                "json": "💡 单击上表中的行以查看其他操作的详细信息"
             },
             "conditionalVisibility": null,
             "name": "text - 3"
@@ -195,7 +195,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"details----selectedoperation\"></a><span data-ttu-id=\"d1b99-103\">详细信息 -- {SelectedOperation}</span><span class=\"sxs-lookup\"><span data-stu-id=\"d1b99-103\">Details -- {SelectedOperation}</span></span>\n"
+                "json": "## <a name=\"details----no_loc_phselectedoperationno_loc_ph\"></a>详细信息 -- {SelectedOperation}\n"
             },
             "conditionalVisibility": null,
             "name": "text - 5"
