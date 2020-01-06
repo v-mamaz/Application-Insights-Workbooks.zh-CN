@@ -128,7 +128,7 @@
         {
             "type": 1,
             "content": {
-                "json": "{Message} _密钥保管库_"
+                "json": "{Message}\n密钥保管库"
             },
             "name": "text - 5",
             "styleSettings": {

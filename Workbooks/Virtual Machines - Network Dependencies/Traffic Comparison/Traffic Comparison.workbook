@@ -76,7 +76,7 @@
         {
             "type": 1,
             "content": {
-                "json": "比较工作区 <span title=\"{Workspace:value} 中计算机 <span title=\"{Computer:value}<span title=\"\"></span> 的两个时段的流量\">`{Workspace:label}`</span>\n\n---"
+                "json": "比较工作区 <span title=\"{Workspace:value}\">`{Workspace:label}`</span> 中计算机 <span title=\"{Computer:value}\">`{Computer}`</span> 的两个时段的流量\n\n---"
             },
             "conditionalVisibility": null
         },

@@ -371,7 +371,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>发送 {unit:label}/秒</h3>"
+                "json": "<h3>已发送 {unit:label}/秒</h3>"
             },
             "customWidth": "50",
             "name": "text - 5"
@@ -379,7 +379,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>接收 {unit:label}/秒</h3>"
+                "json": "<h3>已接收 {unit:label}/秒</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy"
@@ -437,7 +437,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>总共发送 {unit:label}（时间间隔为 {timeRange:grain}）</h3>"
+                "json": "<h3>发送的 {unit:label} 总数（按 {timeRange:grain} 时间间隔）</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy"
@@ -445,7 +445,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>总共接收 {unit:label}（时间间隔为 {timeRange:grain}）</h3>"
+                "json": "<h3>接收的 {unit:label} 总数（按 {timeRange:grain} 时间间隔）</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy"
@@ -563,7 +563,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>发送时出现的总错误数（时间间隔为 {timeRange:grain}）</h3>"
+                "json": "<h3>传出的总错误数（按 {timeRange:grain} 时间间隔）</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy - Copy"
@@ -571,7 +571,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>接收时出现的总错误数（时间间隔为 {timeRange:grain}）</h3>"
+                "json": "<h3>传入的总错误数（按 {timeRange:grain} 时间间隔）</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy - Copy - Copy"

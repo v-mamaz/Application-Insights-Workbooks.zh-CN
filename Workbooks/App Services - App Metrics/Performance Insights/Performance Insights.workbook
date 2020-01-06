@@ -251,7 +251,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"operation-details----selectedoperation\"></a>操作详细信息 -- {SelectedOperation}\n"
+                "json": "## <a name=\"operation-details----no_loc_phselectedoperationno_loc_ph\"></a>操作详细信息 -- {SelectedOperation}\n"
             },
             "conditionalVisibility": null
         },
@@ -400,7 +400,7 @@
         {
             "type": 1,
             "content": {
-                "json": "下面的图表显示了 {SelectedOperation} 依赖项的性能。 只对其持续时间介于整个分发的 p{StartPercentile} 和 p{EndPercentile} 之间的那些操作筛选数据。 更改参数 `AnalysisSet``StartPercentile` 或 `EndPercentile` 以调整分析的百分位窗口"
+                "json": "下面的图表显示了 *{SelectedOperation}* 的依赖项的性能。 只对其持续时间介于整个分发的 p{StartPercentile} 和 p{EndPercentile} 之间的那些操作筛选数据。 更改参数 `AnalysisSet``StartPercentile` 或 `EndPercentile` 以调整分析的百分位窗口"
             },
             "conditionalVisibility": {
                 "parameterName": "SelectedOperation",

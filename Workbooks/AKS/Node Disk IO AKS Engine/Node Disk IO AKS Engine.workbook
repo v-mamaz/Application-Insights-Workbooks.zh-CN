@@ -442,7 +442,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>总共读取 {unit:label}（时间间隔为 {timeRange:grain}）</h3>"
+                "json": "<h3>读取的 {unit:label} 总数（{timeRange:grain} 时间间隔）</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy"
@@ -450,7 +450,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>总共写入 {unit:label}（时间间隔为 {timeRange:grain}）</h3>"
+                "json": "<h3>写入的 {unit:label} 总数（{timeRange:grain} 时间间隔）</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy"
@@ -505,7 +505,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>每读取 {unit:label} 所用毫秒数</h3>"
+                "json": "<h3>每 {unit:label} 读取的毫秒数</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy"
@@ -513,7 +513,7 @@
         {
             "type": 1,
             "content": {
-                "json": "<h3>每写入 {unit:label} 所用毫秒数</h3>"
+                "json": "<h3>每 {unit:label} 写入的毫秒数</h3>"
             },
             "customWidth": "50",
             "name": "text - 5 - Copy - Copy - Copy - Copy"

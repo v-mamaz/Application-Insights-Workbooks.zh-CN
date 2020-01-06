@@ -88,7 +88,7 @@
         {
             "type": 1,
             "content": {
-                "json": "## <a name=\"perf-counter-trend-compared-to-the-rollingtimewindow-moving-average\"></a>性能计数器趋势与 {RollingTimeWindow} 移动平均相比"
+                "json": "## <a name=\"perf-counter-trend-compared-to-the-no_loc_phrollingtimewindowno_loc_ph-moving-average\"></a>性能计数器趋势与 {RollingTimeWindow} 移动平均相比"
             }
         },
         {

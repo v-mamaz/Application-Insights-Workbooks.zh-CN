@@ -565,7 +565,7 @@
         {
             "type": 1,
             "content": {
-                "json": "_\\* 显示 **{name}** 的 **{AuthResultA}** 次登录尝试_"
+                "json": "_\\* 显示 **{AuthResultA}** 登录尝试，针对 **{name}**_"
             },
             "conditionalVisibility": {
                 "parameterName": "TileView",
@@ -577,7 +577,7 @@
         {
             "type": 1,
             "content": {
-                "json": "_\\* 显示 **{name}** 的 **{AuthResultB}** 次登录尝试_"
+                "json": "_\\* 显示 **{AuthResultB}** 登录尝试，针对 **{name}**_"
             },
             "conditionalVisibility": {
                 "parameterName": "TIleView",
