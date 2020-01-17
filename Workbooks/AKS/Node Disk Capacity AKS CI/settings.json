@@ -1,17 +1,18 @@
 {
     "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/settings.json",
-    "name": "节点网络",
+    "name": "节点磁盘容量 CI",
     "author": "Microsoft",
+    "isPreview": true,
     "galleries": [
         {
             "type": "container-insights",
             "resourceType": "Microsoft.ContainerService/managedClusters",
-            "order": 400
+            "order": 100
         },
         {
             "type": "workbook",
             "resourceType": "Microsoft.ContainerService/managedClusters",
-            "order": 400
+            "order": 100
         }
     ]
 }
