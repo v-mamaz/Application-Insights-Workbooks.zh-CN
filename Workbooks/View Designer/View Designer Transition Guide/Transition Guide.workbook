@@ -1,0 +1,367 @@
+{
+    "version": "Notebook/1.0",
+    "items": [
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"getting-started-with-creating-new-views-in-workbooks\"></a>开始在工作簿中创建新视图"
+            },
+            "name": "text - 0"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"workbooks-quick-start-templates\"></a>工作簿快速入门模板\n\nLog analytics 工作区中的工作簿已包含了为复制现有视图设计器磁贴而设计的自定义模板。 可以通过以下链接快速访问这些模板，或者可以在工作簿库中打开这些模板"
+            },
+            "name": "text - 14"
+        },
+        {
+            "type": 11,
+            "content": {
+                "version": "LinkItem/1.0",
+                "style": "nav",
+                "links": [
+                    {
+                        "cellValue": "",
+                        "linkTarget": "WorkbookTemplate",
+                        "linkLabel": "Donut & List",
+                        "style": "primary",
+                        "workbookContext": {
+                            "componentIdSource": "workbook",
+                            "resourceIdsSource": "workbook",
+                            "templateIdSource": "static",
+                            "templateId": "Community-Workbooks/View Designer/Donut-List",
+                            "typeSource": "workbook",
+                            "gallerySource": "workbook"
+                        }
+                    },
+                    {
+                        "linkTarget": "WorkbookTemplate",
+                        "linkLabel": "Line Chart & List",
+                        "style": "primary",
+                        "workbookContext": {
+                            "componentIdSource": "workbook",
+                            "resourceIdsSource": "workbook",
+                            "templateIdSource": "static",
+                            "templateId": "Community-Workbooks/View Designer/LineChart-List",
+                            "typeSource": "workbook",
+                            "gallerySource": "workbook"
+                        }
+                    },
+                    {
+                        "linkTarget": "WorkbookTemplate",
+                        "linkLabel": "Number & List",
+                        "style": "primary",
+                        "workbookContext": {
+                            "componentIdSource": "workbook",
+                            "resourceIdsSource": "workbook",
+                            "templateIdSource": "static",
+                            "templateId": "Community-Workbooks/View Designer/Number List",
+                            "typeSource": "workbook",
+                            "gallerySource": "workbook"
+                        }
+                    },
+                    {
+                        "linkTarget": "WorkbookTemplate",
+                        "linkLabel": "Line Chart, Callout, & List",
+                        "style": "primary",
+                        "workbookContext": {
+                            "componentIdSource": "workbook",
+                            "resourceIdsSource": "workbook",
+                            "templateIdSource": "static",
+                            "templateId": "Community-Workbooks/View Designer/Line Chart Callout List",
+                            "typeSource": "workbook",
+                            "gallerySource": "workbook"
+                        },
+                        "alertRuleContext": {}
+                    },
+                    {
+                        "linkTarget": "WorkbookTemplate",
+                        "linkLabel": "Timeline & List",
+                        "style": "primary",
+                        "workbookContext": {
+                            "componentIdSource": "workbook",
+                            "resourceIdsSource": "workbook",
+                            "templateIdSource": "static",
+                            "templateId": "Community-Workbooks/View Designer/Timeline List",
+                            "typeSource": "workbook",
+                            "gallerySource": "workbook"
+                        },
+                        "alertRuleContext": {}
+                    }
+                ]
+            },
+            "name": "links - 13"
+        },
+        {
+            "type": 11,
+            "content": {
+                "version": "LinkItem/1.0",
+                "style": "paragraph",
+                "links": [
+                    {
+                        "cellValue": "https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ViewDesigner/ViewDesignerOverview.md",
+                        "linkTarget": "Url",
+                        "linkLabel": "View Designer transition guide",
+                        "preText": "For additional assistance, please reference the ",
+                        "postText": "",
+                        "style": "link"
+                    },
+                    {
+                        "cellValue": "https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-workbooks",
+                        "linkTarget": "Url",
+                        "linkLabel": "Workbooks documentation",
+                        "preText": " or the ",
+                        "style": "link"
+                    }
+                ]
+            },
+            "name": "links - 15"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "## <a name=\"learn-more-features-about-workbooks\"></a>了解有关工作簿的更多功能\n\n工作簿具有两种模式：编辑模式和阅读模式。 默认情况下，保存的工作簿和模板以读取模式打开，若要开始编辑，请单击顶部工具栏中的“编辑”按钮。"
+            },
+            "name": "text - 2"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "若要编辑单元格，只需选择位于每个单元右下角的“编辑”按钮。\n\n现在可以通过选择“添加参数”选项并选择“时间范围选取器”来创建时间范围筛选器，如以下示例所示："
+            },
+            "name": "text - 11"
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "parameters": [
+                    {
+                        "id": "b8228ea2-2b9d-40e0-8b52-be60e28e805a",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Time",
+                        "type": 4,
+                        "isRequired": true,
+                        "value": {
+                            "durationMs": 86400000
+                        },
+                        "typeSettings": {
+                            "selectableValues": [
+                                {
+                                    "durationMs": 300000
+                                },
+                                {
+                                    "durationMs": 900000
+                                },
+                                {
+                                    "durationMs": 1800000
+                                },
+                                {
+                                    "durationMs": 3600000
+                                },
+                                {
+                                    "durationMs": 14400000
+                                },
+                                {
+                                    "durationMs": 43200000
+                                },
+                                {
+                                    "durationMs": 86400000
+                                },
+                                {
+                                    "durationMs": 172800000
+                                },
+                                {
+                                    "durationMs": 259200000
+                                },
+                                {
+                                    "durationMs": 604800000
+                                },
+                                {
+                                    "durationMs": 1209600000
+                                },
+                                {
+                                    "durationMs": 2419200000
+                                },
+                                {
+                                    "durationMs": 2592000000
+                                },
+                                {
+                                    "durationMs": 5184000000
+                                },
+                                {
+                                    "durationMs": 7776000000
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "style": "pills",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces"
+            },
+            "name": "parameters - 3"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "参数还可以进一步自定义以显示订阅、资源，甚至可以基于查询。"
+            },
+            "name": "text - 4"
+        },
+        {
+            "type": 9,
+            "content": {
+                "version": "KqlParameterItem/1.0",
+                "crossComponentResources": [
+                    "{Subscriptions}"
+                ],
+                "parameters": [
+                    {
+                        "id": "b381b0aa-b7e0-457e-ae77-78a21fcd9b96",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Subscriptions",
+                        "type": 6,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "typeSettings": {
+                            "additionalResourceOptions": [
+                                "value::all"
+                            ],
+                            "includeAll": false
+                        },
+                        "timeContext": {
+                            "durationMs": 0
+                        },
+                        "timeContextFromParameter": "Time",
+                        "value": [
+                            "value::all"
+                        ]
+                    },
+                    {
+                        "id": "182f39eb-958f-449b-b97c-0517c39698e1",
+                        "version": "KqlParameterItem/1.0",
+                        "name": "Workspaces",
+                        "type": 5,
+                        "isRequired": true,
+                        "multiSelect": true,
+                        "quote": "'",
+                        "delimiter": ",",
+                        "query": "Resources\r\n| where type =~ 'microsoft.operationalinsights/workspaces'\r\n| project name, id\r\n| union (Resources\r\n| where type =~ 'microsoft.operationalinsights/workspaces'\r\n| order by name asc\r\n| take 5\r\n| project id, name)\r\n| summarize Count = count() by id, name\r\n| order by name asc\r\n| project value = id, label = id, selected = Count > 1",
+                        "crossComponentResources": [
+                            "{Subscriptions}"
+                        ],
+                        "typeSettings": {
+                            "additionalResourceOptions": [
+                                "value::all"
+                            ]
+                        },
+                        "timeContext": {
+                            "durationMs": 0
+                        },
+                        "timeContextFromParameter": "Time",
+                        "queryType": 1,
+                        "resourceType": "microsoft.resourcegraph/resources"
+                    }
+                ],
+                "style": "pills",
+                "queryType": 1,
+                "resourceType": "microsoft.resourcegraph/resources"
+            },
+            "name": "parameters - 5"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "### <a name=\"running-queries-and-making-visualizations-in-workbooks\"></a>在工作簿中运行查询和进行可视化\n\n查询会像在视图设计器或 LA 工作区中一样起作用。 有了工作簿，甚至可以更改查询的范围，无论它是多个工作区还是多个资源。\n\n工作簿还允许控制许多用于可视化的选项。 可以创建网格、饼图、条形图、折线图等。"
+            },
+            "name": "text - 6"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "若要开始使用示例查询，请执行以下操作：\n``` \nsearch *\n| summarize AggregatedValue = count() by Type \n| order by AggregatedValue desc\n ```\n 然后，在“可视化”下拉列表中，选择“饼图”。请注意，如果更新上述时间参数，可以更改显示的时间值。"
+            },
+            "name": "text - 8"
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "search *\r\n| summarize AggregatedValue = count() by Type \r\n| order by AggregatedValue desc",
+                "size": 0,
+                "title": "An Example Pie Chart",
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "Time",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces",
+                "visualization": "piechart"
+            },
+            "name": "query - 7"
+        },
+        {
+            "type": 1,
+            "content": {
+                "json": "我们也可以重复使用相同的查询并形成一个条形图。 为此，请在“可视化”下拉列表下选择“条形图”选项。\n\n对于可视化，还可以进行自定义，例如更改颜色和显示的数据，如以下示例所示。\n\n还可以对图表进行大量修饰更改（例如更改每个单元格的大小），“添加导出”或“固定到仪表板”选项已在 ⚙️ 中作为高级设置提供。"
+            },
+            "name": "text - 9"
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "search *\r\n| summarize AggregatedValue = count() by Type\r\n| order by AggregatedValue desc",
+                "size": 0,
+                "title": "One Example Bar Chart",
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "Time",
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces",
+                "visualization": "barchart"
+            },
+            "customWidth": "50",
+            "name": "query - 10"
+        },
+        {
+            "type": 3,
+            "content": {
+                "version": "KqlItem/1.0",
+                "query": "search *\r\n| summarize AggregatedValue = count() by Type\r\n| order by AggregatedValue desc",
+                "size": 0,
+                "showAnalytics": true,
+                "title": "Another Example Bar Chart",
+                "timeContext": {
+                    "durationMs": 0
+                },
+                "timeContextFromParameter": "Time",
+                "showExportToExcel": true,
+                "queryType": 0,
+                "resourceType": "microsoft.operationalinsights/workspaces",
+                "visualization": "barchart",
+                "chartSettings": {
+                    "seriesLabelSettings": [
+                        {
+                            "seriesName": "AzureDiagnostics",
+                            "color": "purple"
+                        },
+                        {
+                            "seriesName": "Usage",
+                            "color": "turquoise"
+                        }
+                    ]
+                }
+            },
+            "customWidth": "50",
+            "showPin": true,
+            "name": "query - 10 - Copy"
+        }
+    ],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
